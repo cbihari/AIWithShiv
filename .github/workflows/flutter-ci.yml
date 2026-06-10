@@ -1,0 +1,50 @@
+name: Flutter CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  analyze-test:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Generate native platform folders
+        run: flutter create --platforms=android,ios .
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Verify formatting
+        run: dart format --set-exit-if-changed lib test integration_test
+      - name: Analyze
+        run: flutter analyze
+      - name: Test
+        run: flutter test --coverage
+      - name: Enforce coverage floor
+        run: |
+          brew install lcov
+          COVERAGE=$(lcov --summary coverage/lcov.info | awk '/lines/ {print $2}' | sed 's/%//')
+          awk -v coverage="$COVERAGE" 'BEGIN { exit coverage >= 80 ? 0 : 1 }'
+      - name: Build Android debug
+        run: flutter build apk --debug --dart-define=APP_ENV=dev
+      - name: Build iOS no codesign
+        run: flutter build ios --debug --no-codesign --dart-define=APP_ENV=dev
+
+  functions:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: firebase/functions
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install Functions dependencies
+        run: npm install
+      - name: Build Functions
+        run: npm run build

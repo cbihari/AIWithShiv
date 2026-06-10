@@ -1,0 +1,127 @@
+[
+  {
+    "id": "ai-foundations",
+    "title": "AI Foundations",
+    "description": "Learn what AI is, how it learns from data, and where it appears in daily life.",
+    "category": "Foundations",
+    "ageGroups": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "lessonIds": [
+      "ai-foundations-lesson-01",
+      "ai-foundations-lesson-02",
+      "ai-foundations-lesson-03",
+      "ai-foundations-lesson-04",
+      "ai-foundations-lesson-05",
+      "ai-foundations-lesson-06",
+      "ai-foundations-lesson-07",
+      "ai-foundations-lesson-08",
+      "ai-foundations-lesson-09",
+      "ai-foundations-lesson-10"
+    ],
+    "imageUrl": "",
+    "xp": 300
+  },
+  {
+    "id": "prompt-power",
+    "title": "Prompt Power",
+    "description": "Practice writing clear prompts, improving answers, and checking AI output.",
+    "category": "Prompting",
+    "ageGroups": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "lessonIds": [
+      "prompt-power-lesson-01",
+      "prompt-power-lesson-02",
+      "prompt-power-lesson-03",
+      "prompt-power-lesson-04",
+      "prompt-power-lesson-05",
+      "prompt-power-lesson-06",
+      "prompt-power-lesson-07",
+      "prompt-power-lesson-08",
+      "prompt-power-lesson-09",
+      "prompt-power-lesson-10"
+    ],
+    "imageUrl": "",
+    "xp": 300
+  },
+  {
+    "id": "data-detectives",
+    "title": "Data Detectives",
+    "description": "Explore datasets, patterns, bias, privacy, and responsible data habits.",
+    "category": "Data",
+    "ageGroups": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "lessonIds": [
+      "data-detectives-lesson-01",
+      "data-detectives-lesson-02",
+      "data-detectives-lesson-03",
+      "data-detectives-lesson-04",
+      "data-detectives-lesson-05",
+      "data-detectives-lesson-06",
+      "data-detectives-lesson-07",
+      "data-detectives-lesson-08",
+      "data-detectives-lesson-09",
+      "data-detectives-lesson-10"
+    ],
+    "imageUrl": "",
+    "xp": 300
+  },
+  {
+    "id": "machine-learning-lab",
+    "title": "Machine Learning Lab",
+    "description": "Build intuition for models, training, testing, and prediction quality.",
+    "category": "Machine Learning",
+    "ageGroups": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "lessonIds": [
+      "machine-learning-lab-lesson-01",
+      "machine-learning-lab-lesson-02",
+      "machine-learning-lab-lesson-03",
+      "machine-learning-lab-lesson-04",
+      "machine-learning-lab-lesson-05",
+      "machine-learning-lab-lesson-06",
+      "machine-learning-lab-lesson-07",
+      "machine-learning-lab-lesson-08",
+      "machine-learning-lab-lesson-09",
+      "machine-learning-lab-lesson-10"
+    ],
+    "imageUrl": "",
+    "xp": 300
+  },
+  {
+    "id": "responsible-ai-builders",
+    "title": "Responsible AI Builders",
+    "description": "Use AI safely, fairly, creatively, and with human judgment.",
+    "category": "Safety",
+    "ageGroups": [
+      "kids",
+      "teens",
+      "adults"
+    ],
+    "lessonIds": [
+      "responsible-ai-builders-lesson-01",
+      "responsible-ai-builders-lesson-02",
+      "responsible-ai-builders-lesson-03",
+      "responsible-ai-builders-lesson-04",
+      "responsible-ai-builders-lesson-05",
+      "responsible-ai-builders-lesson-06",
+      "responsible-ai-builders-lesson-07",
+      "responsible-ai-builders-lesson-08",
+      "responsible-ai-builders-lesson-09",
+      "responsible-ai-builders-lesson-10"
+    ],
+    "imageUrl": "",
+    "xp": 300
+  }
+]

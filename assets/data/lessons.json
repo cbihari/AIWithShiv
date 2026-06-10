@@ -1,0 +1,702 @@
+[
+  {
+    "id": "ai-foundations-lesson-01",
+    "courseId": "ai-foundations",
+    "title": "What Is AI?",
+    "story": "Shiv and the learner investigate what is ai? through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Foundations",
+      "What",
+      "Practice"
+    ],
+    "durationMinutes": 6,
+    "xp": 25,
+    "order": 1
+  },
+  {
+    "id": "ai-foundations-lesson-02",
+    "courseId": "ai-foundations",
+    "title": "Humans and Smart Machines",
+    "story": "Shiv and the learner investigate humans and smart machines through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Foundations",
+      "Humans",
+      "Reflection"
+    ],
+    "durationMinutes": 7,
+    "xp": 30,
+    "order": 2
+  },
+  {
+    "id": "ai-foundations-lesson-03",
+    "courseId": "ai-foundations",
+    "title": "Rules vs Learning",
+    "story": "Shiv and the learner investigate rules vs learning through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Foundations",
+      "Rules",
+      "Practice"
+    ],
+    "durationMinutes": 8,
+    "xp": 35,
+    "order": 3
+  },
+  {
+    "id": "ai-foundations-lesson-04",
+    "courseId": "ai-foundations",
+    "title": "AI Around Us",
+    "story": "Shiv and the learner investigate ai around us through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Foundations",
+      "AI",
+      "Reflection"
+    ],
+    "durationMinutes": 9,
+    "xp": 40,
+    "order": 4
+  },
+  {
+    "id": "ai-foundations-lesson-05",
+    "courseId": "ai-foundations",
+    "title": "Data as Examples",
+    "story": "Shiv and the learner investigate data as examples through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Foundations",
+      "Data",
+      "Practice"
+    ],
+    "durationMinutes": 10,
+    "xp": 25,
+    "order": 5
+  },
+  {
+    "id": "ai-foundations-lesson-06",
+    "courseId": "ai-foundations",
+    "title": "Patterns and Predictions",
+    "story": "Shiv and the learner investigate patterns and predictions through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Foundations",
+      "Patterns",
+      "Reflection"
+    ],
+    "durationMinutes": 6,
+    "xp": 30,
+    "order": 6
+  },
+  {
+    "id": "ai-foundations-lesson-07",
+    "courseId": "ai-foundations",
+    "title": "AI Strengths",
+    "story": "Shiv and the learner investigate ai strengths through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Foundations",
+      "AI",
+      "Practice"
+    ],
+    "durationMinutes": 7,
+    "xp": 35,
+    "order": 7
+  },
+  {
+    "id": "ai-foundations-lesson-08",
+    "courseId": "ai-foundations",
+    "title": "AI Limits",
+    "story": "Shiv and the learner investigate ai limits through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Foundations",
+      "AI",
+      "Reflection"
+    ],
+    "durationMinutes": 8,
+    "xp": 40,
+    "order": 8
+  },
+  {
+    "id": "ai-foundations-lesson-09",
+    "courseId": "ai-foundations",
+    "title": "Asking Better Questions",
+    "story": "Shiv and the learner investigate asking better questions through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Foundations",
+      "Asking",
+      "Practice"
+    ],
+    "durationMinutes": 9,
+    "xp": 25,
+    "order": 9
+  },
+  {
+    "id": "ai-foundations-lesson-10",
+    "courseId": "ai-foundations",
+    "title": "Mini AI Mission",
+    "story": "Shiv and the learner investigate mini ai mission through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Foundations",
+      "Mini",
+      "Reflection"
+    ],
+    "durationMinutes": 10,
+    "xp": 30,
+    "order": 10
+  },
+  {
+    "id": "prompt-power-lesson-01",
+    "courseId": "prompt-power",
+    "title": "Prompt Ingredients",
+    "story": "Shiv and the learner investigate prompt ingredients through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Prompting",
+      "Prompt",
+      "Practice"
+    ],
+    "durationMinutes": 6,
+    "xp": 25,
+    "order": 11
+  },
+  {
+    "id": "prompt-power-lesson-02",
+    "courseId": "prompt-power",
+    "title": "Role and Goal",
+    "story": "Shiv and the learner investigate role and goal through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Prompting",
+      "Role",
+      "Reflection"
+    ],
+    "durationMinutes": 7,
+    "xp": 30,
+    "order": 12
+  },
+  {
+    "id": "prompt-power-lesson-03",
+    "courseId": "prompt-power",
+    "title": "Context Matters",
+    "story": "Shiv and the learner investigate context matters through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Prompting",
+      "Context",
+      "Practice"
+    ],
+    "durationMinutes": 8,
+    "xp": 35,
+    "order": 13
+  },
+  {
+    "id": "prompt-power-lesson-04",
+    "courseId": "prompt-power",
+    "title": "Examples Help",
+    "story": "Shiv and the learner investigate examples help through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Prompting",
+      "Examples",
+      "Reflection"
+    ],
+    "durationMinutes": 9,
+    "xp": 40,
+    "order": 14
+  },
+  {
+    "id": "prompt-power-lesson-05",
+    "courseId": "prompt-power",
+    "title": "Step-by-Step Prompts",
+    "story": "Shiv and the learner investigate step-by-step prompts through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Prompting",
+      "Step-by-Step",
+      "Practice"
+    ],
+    "durationMinutes": 10,
+    "xp": 25,
+    "order": 15
+  },
+  {
+    "id": "prompt-power-lesson-06",
+    "courseId": "prompt-power",
+    "title": "Refining Answers",
+    "story": "Shiv and the learner investigate refining answers through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Prompting",
+      "Refining",
+      "Reflection"
+    ],
+    "durationMinutes": 6,
+    "xp": 30,
+    "order": 16
+  },
+  {
+    "id": "prompt-power-lesson-07",
+    "courseId": "prompt-power",
+    "title": "Checking Sources",
+    "story": "Shiv and the learner investigate checking sources through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Prompting",
+      "Checking",
+      "Practice"
+    ],
+    "durationMinutes": 7,
+    "xp": 35,
+    "order": 17
+  },
+  {
+    "id": "prompt-power-lesson-08",
+    "courseId": "prompt-power",
+    "title": "Creative Prompts",
+    "story": "Shiv and the learner investigate creative prompts through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Prompting",
+      "Creative",
+      "Reflection"
+    ],
+    "durationMinutes": 8,
+    "xp": 40,
+    "order": 18
+  },
+  {
+    "id": "prompt-power-lesson-09",
+    "courseId": "prompt-power",
+    "title": "Prompt Safety",
+    "story": "Shiv and the learner investigate prompt safety through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Prompting",
+      "Prompt",
+      "Practice"
+    ],
+    "durationMinutes": 9,
+    "xp": 25,
+    "order": 19
+  },
+  {
+    "id": "prompt-power-lesson-10",
+    "courseId": "prompt-power",
+    "title": "Prompt Challenge",
+    "story": "Shiv and the learner investigate prompt challenge through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Prompting",
+      "Prompt",
+      "Reflection"
+    ],
+    "durationMinutes": 10,
+    "xp": 30,
+    "order": 20
+  },
+  {
+    "id": "data-detectives-lesson-01",
+    "courseId": "data-detectives",
+    "title": "What Is Data?",
+    "story": "Shiv and the learner investigate what is data? through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Data",
+      "What",
+      "Practice"
+    ],
+    "durationMinutes": 6,
+    "xp": 25,
+    "order": 21
+  },
+  {
+    "id": "data-detectives-lesson-02",
+    "courseId": "data-detectives",
+    "title": "Clean vs Messy Data",
+    "story": "Shiv and the learner investigate clean vs messy data through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Data",
+      "Clean",
+      "Reflection"
+    ],
+    "durationMinutes": 7,
+    "xp": 30,
+    "order": 22
+  },
+  {
+    "id": "data-detectives-lesson-03",
+    "courseId": "data-detectives",
+    "title": "Labels and Categories",
+    "story": "Shiv and the learner investigate labels and categories through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Data",
+      "Labels",
+      "Practice"
+    ],
+    "durationMinutes": 8,
+    "xp": 35,
+    "order": 23
+  },
+  {
+    "id": "data-detectives-lesson-04",
+    "courseId": "data-detectives",
+    "title": "Finding Patterns",
+    "story": "Shiv and the learner investigate finding patterns through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Data",
+      "Finding",
+      "Reflection"
+    ],
+    "durationMinutes": 9,
+    "xp": 40,
+    "order": 24
+  },
+  {
+    "id": "data-detectives-lesson-05",
+    "courseId": "data-detectives",
+    "title": "Sample Size",
+    "story": "Shiv and the learner investigate sample size through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Data",
+      "Sample",
+      "Practice"
+    ],
+    "durationMinutes": 10,
+    "xp": 25,
+    "order": 25
+  },
+  {
+    "id": "data-detectives-lesson-06",
+    "courseId": "data-detectives",
+    "title": "Bias in Data",
+    "story": "Shiv and the learner investigate bias in data through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Data",
+      "Bias",
+      "Reflection"
+    ],
+    "durationMinutes": 6,
+    "xp": 30,
+    "order": 26
+  },
+  {
+    "id": "data-detectives-lesson-07",
+    "courseId": "data-detectives",
+    "title": "Private Information",
+    "story": "Shiv and the learner investigate private information through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Data",
+      "Private",
+      "Practice"
+    ],
+    "durationMinutes": 7,
+    "xp": 35,
+    "order": 27
+  },
+  {
+    "id": "data-detectives-lesson-08",
+    "courseId": "data-detectives",
+    "title": "Data Visualization",
+    "story": "Shiv and the learner investigate data visualization through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Data",
+      "Data",
+      "Reflection"
+    ],
+    "durationMinutes": 8,
+    "xp": 40,
+    "order": 28
+  },
+  {
+    "id": "data-detectives-lesson-09",
+    "courseId": "data-detectives",
+    "title": "Fair Data Choices",
+    "story": "Shiv and the learner investigate fair data choices through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Data",
+      "Fair",
+      "Practice"
+    ],
+    "durationMinutes": 9,
+    "xp": 25,
+    "order": 29
+  },
+  {
+    "id": "data-detectives-lesson-10",
+    "courseId": "data-detectives",
+    "title": "Data Detective Case",
+    "story": "Shiv and the learner investigate data detective case through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Data",
+      "Data",
+      "Reflection"
+    ],
+    "durationMinutes": 10,
+    "xp": 30,
+    "order": 30
+  },
+  {
+    "id": "machine-learning-lab-lesson-01",
+    "courseId": "machine-learning-lab",
+    "title": "Models as Learners",
+    "story": "Shiv and the learner investigate models as learners through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Machine Learning",
+      "Models",
+      "Practice"
+    ],
+    "durationMinutes": 6,
+    "xp": 25,
+    "order": 31
+  },
+  {
+    "id": "machine-learning-lab-lesson-02",
+    "courseId": "machine-learning-lab",
+    "title": "Training Data",
+    "story": "Shiv and the learner investigate training data through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Machine Learning",
+      "Training",
+      "Reflection"
+    ],
+    "durationMinutes": 7,
+    "xp": 30,
+    "order": 32
+  },
+  {
+    "id": "machine-learning-lab-lesson-03",
+    "courseId": "machine-learning-lab",
+    "title": "Testing Data",
+    "story": "Shiv and the learner investigate testing data through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Machine Learning",
+      "Testing",
+      "Practice"
+    ],
+    "durationMinutes": 8,
+    "xp": 35,
+    "order": 33
+  },
+  {
+    "id": "machine-learning-lab-lesson-04",
+    "courseId": "machine-learning-lab",
+    "title": "Features",
+    "story": "Shiv and the learner investigate features through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Machine Learning",
+      "Features",
+      "Reflection"
+    ],
+    "durationMinutes": 9,
+    "xp": 40,
+    "order": 34
+  },
+  {
+    "id": "machine-learning-lab-lesson-05",
+    "courseId": "machine-learning-lab",
+    "title": "Classification",
+    "story": "Shiv and the learner investigate classification through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Machine Learning",
+      "Classification",
+      "Practice"
+    ],
+    "durationMinutes": 10,
+    "xp": 25,
+    "order": 35
+  },
+  {
+    "id": "machine-learning-lab-lesson-06",
+    "courseId": "machine-learning-lab",
+    "title": "Prediction Confidence",
+    "story": "Shiv and the learner investigate prediction confidence through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Machine Learning",
+      "Prediction",
+      "Reflection"
+    ],
+    "durationMinutes": 6,
+    "xp": 30,
+    "order": 36
+  },
+  {
+    "id": "machine-learning-lab-lesson-07",
+    "courseId": "machine-learning-lab",
+    "title": "Overfitting",
+    "story": "Shiv and the learner investigate overfitting through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Machine Learning",
+      "Overfitting",
+      "Practice"
+    ],
+    "durationMinutes": 7,
+    "xp": 35,
+    "order": 37
+  },
+  {
+    "id": "machine-learning-lab-lesson-08",
+    "courseId": "machine-learning-lab",
+    "title": "Improving Models",
+    "story": "Shiv and the learner investigate improving models through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Machine Learning",
+      "Improving",
+      "Reflection"
+    ],
+    "durationMinutes": 8,
+    "xp": 40,
+    "order": 38
+  },
+  {
+    "id": "machine-learning-lab-lesson-09",
+    "courseId": "machine-learning-lab",
+    "title": "Human Feedback",
+    "story": "Shiv and the learner investigate human feedback through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Machine Learning",
+      "Human",
+      "Practice"
+    ],
+    "durationMinutes": 9,
+    "xp": 25,
+    "order": 39
+  },
+  {
+    "id": "machine-learning-lab-lesson-10",
+    "courseId": "machine-learning-lab",
+    "title": "ML Lab Project",
+    "story": "Shiv and the learner investigate ml lab project through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Machine Learning",
+      "ML",
+      "Reflection"
+    ],
+    "durationMinutes": 10,
+    "xp": 30,
+    "order": 40
+  },
+  {
+    "id": "responsible-ai-builders-lesson-01",
+    "courseId": "responsible-ai-builders",
+    "title": "Safe AI Habits",
+    "story": "Shiv and the learner investigate safe ai habits through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Safety",
+      "Safe",
+      "Practice"
+    ],
+    "durationMinutes": 6,
+    "xp": 25,
+    "order": 41
+  },
+  {
+    "id": "responsible-ai-builders-lesson-02",
+    "courseId": "responsible-ai-builders",
+    "title": "Fact Checking",
+    "story": "Shiv and the learner investigate fact checking through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Safety",
+      "Fact",
+      "Reflection"
+    ],
+    "durationMinutes": 7,
+    "xp": 30,
+    "order": 42
+  },
+  {
+    "id": "responsible-ai-builders-lesson-03",
+    "courseId": "responsible-ai-builders",
+    "title": "Kind AI Use",
+    "story": "Shiv and the learner investigate kind ai use through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Safety",
+      "Kind",
+      "Practice"
+    ],
+    "durationMinutes": 8,
+    "xp": 35,
+    "order": 43
+  },
+  {
+    "id": "responsible-ai-builders-lesson-04",
+    "courseId": "responsible-ai-builders",
+    "title": "Copyright Basics",
+    "story": "Shiv and the learner investigate copyright basics through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Safety",
+      "Copyright",
+      "Reflection"
+    ],
+    "durationMinutes": 9,
+    "xp": 40,
+    "order": 44
+  },
+  {
+    "id": "responsible-ai-builders-lesson-05",
+    "courseId": "responsible-ai-builders",
+    "title": "Privacy First",
+    "story": "Shiv and the learner investigate privacy first through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Safety",
+      "Privacy",
+      "Practice"
+    ],
+    "durationMinutes": 10,
+    "xp": 25,
+    "order": 45
+  },
+  {
+    "id": "responsible-ai-builders-lesson-06",
+    "courseId": "responsible-ai-builders",
+    "title": "Bias Checks",
+    "story": "Shiv and the learner investigate bias checks through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Safety",
+      "Bias",
+      "Reflection"
+    ],
+    "durationMinutes": 6,
+    "xp": 30,
+    "order": 46
+  },
+  {
+    "id": "responsible-ai-builders-lesson-07",
+    "courseId": "responsible-ai-builders",
+    "title": "Human-in-the-Loop",
+    "story": "Shiv and the learner investigate human-in-the-loop through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Safety",
+      "Human-in-the-Loop",
+      "Practice"
+    ],
+    "durationMinutes": 7,
+    "xp": 35,
+    "order": 47
+  },
+  {
+    "id": "responsible-ai-builders-lesson-08",
+    "courseId": "responsible-ai-builders",
+    "title": "AI for Good",
+    "story": "Shiv and the learner investigate ai for good through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Safety",
+      "AI",
+      "Reflection"
+    ],
+    "durationMinutes": 8,
+    "xp": 40,
+    "order": 48
+  },
+  {
+    "id": "responsible-ai-builders-lesson-09",
+    "courseId": "responsible-ai-builders",
+    "title": "When Not to Use AI",
+    "story": "Shiv and the learner investigate when not to use ai through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Safety",
+      "When",
+      "Practice"
+    ],
+    "durationMinutes": 9,
+    "xp": 25,
+    "order": 49
+  },
+  {
+    "id": "responsible-ai-builders-lesson-10",
+    "courseId": "responsible-ai-builders",
+    "title": "Builder Pledge",
+    "story": "Shiv and the learner investigate builder pledge through a short mission, a real-world example, and one practical AI habit to try today.",
+    "concepts": [
+      "Safety",
+      "Builder",
+      "Reflection"
+    ],
+    "durationMinutes": 10,
+    "xp": 30,
+    "order": 50
+  }
+]

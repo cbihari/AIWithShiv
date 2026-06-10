@@ -1,0 +1,37 @@
+[
+  {
+    "id": "first-steps",
+    "title": "First Steps",
+    "description": "Earn your first 50 XP.",
+    "icon": "bolt",
+    "requiredXp": 50
+  },
+  {
+    "id": "prompt-apprentice",
+    "title": "Prompt Apprentice",
+    "description": "Reach 200 XP.",
+    "icon": "edit",
+    "requiredXp": 200
+  },
+  {
+    "id": "data-detective",
+    "title": "Data Detective",
+    "description": "Reach 500 XP.",
+    "icon": "search",
+    "requiredXp": 500
+  },
+  {
+    "id": "model-maker",
+    "title": "Model Maker",
+    "description": "Reach 900 XP.",
+    "icon": "science",
+    "requiredXp": 900
+  },
+  {
+    "id": "responsible-builder",
+    "title": "Responsible Builder",
+    "description": "Reach 1400 XP.",
+    "icon": "shield",
+    "requiredXp": 1400
+  }
+]

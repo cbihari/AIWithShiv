@@ -1,0 +1,11 @@
+{
+  "name": "aiwithshiv-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seed:firestore": "node scripts/seed_firestore.mjs"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.7.0"
+  }
+}

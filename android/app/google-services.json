@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "55694799834",
+    "project_id": "aiwithshiv-dev-c4197",
+    "storage_bucket": "aiwithshiv-dev-c4197.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:55694799834:android:906ac746689cfcac5d06e3",
+        "android_client_info": {
+          "package_name": "com.aiwithshiv.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZE6N2hikY2hfZtRjyNEVgQhaqOC1y838"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

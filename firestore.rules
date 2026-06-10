@@ -1,0 +1,105 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return signedIn() && request.auth.token.admin == true;
+    }
+
+    function owns(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    function userCreateIsSafe(userId) {
+      return owns(userId)
+        && request.resource.data.keys().hasOnly([
+          'displayName',
+          'email',
+          'ageGroup',
+          'parentEmail',
+          'screenTimeLimitMinutes',
+          'weeklyEmailReportsEnabled',
+          'createdAt'
+        ])
+        && !('role' in request.resource.data)
+        && !('admin' in request.resource.data);
+    }
+
+    match /courses/{courseId} {
+      allow read: if signedIn();
+      allow write: if isAdmin();
+    }
+
+    match /lessons/{lessonId} {
+      allow read: if signedIn();
+      allow write: if isAdmin();
+    }
+
+    match /quizzes/{quizId} {
+      allow read: if signedIn();
+      allow write: if isAdmin();
+    }
+
+    match /achievements/{achievementId} {
+      allow read: if signedIn();
+      allow write: if isAdmin();
+    }
+
+    match /rewards/{rewardId} {
+      allow read: if signedIn();
+      allow write: if isAdmin();
+    }
+
+    match /users/{userId} {
+      allow read, update: if owns(userId)
+        && !request.resource.data.diff(resource.data).affectedKeys().hasAny(['role', 'admin']);
+      allow create: if userCreateIsSafe(userId);
+      allow delete: if isAdmin();
+    }
+
+    match /user_progress/{userId} {
+      allow read: if owns(userId) || isAdmin();
+      allow create, update: if owns(userId)
+        && request.resource.data.keys().hasOnly([
+          'xp',
+          'coins',
+          'level',
+          'streakDays',
+          'completedLessons',
+          'badges',
+          'lastActivityAt',
+          'updatedAt'
+        ]);
+      allow delete: if isAdmin();
+    }
+
+    match /quizResults/{resultId} {
+      allow read: if signedIn() && resource.data.userId == request.auth.uid;
+      allow create: if signedIn()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.keys().hasOnly([
+          'userId',
+          'quizId',
+          'lessonId',
+          'score',
+          'totalQuestions',
+          'earnedXp',
+          'earnedCoins',
+          'completedAt'
+        ]);
+      allow update, delete: if false;
+    }
+
+    match /parentReports/{reportId} {
+      allow read: if signedIn() && resource.data.parentUid == request.auth.uid;
+      allow write: if isAdmin();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
