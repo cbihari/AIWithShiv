@@ -34,7 +34,9 @@ class QuizResult {
       earnedCoins: (json['earnedCoins'] as num).toInt(),
       completedAt: rawCompletedAt is DateTime
           ? rawCompletedAt
-          : rawCompletedAt.toDate() as DateTime,
+          : rawCompletedAt is String
+              ? DateTime.parse(rawCompletedAt)
+              : rawCompletedAt.toDate() as DateTime,
     );
   }
 

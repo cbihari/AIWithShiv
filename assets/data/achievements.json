@@ -1,37 +1,86 @@
 [
   {
-    "id": "first-steps",
-    "title": "First Steps",
-    "description": "Earn your first 50 XP.",
+    "id": "first-spark",
+    "title": "First Spark",
+    "description": "Complete your first lesson.",
     "icon": "bolt",
-    "requiredXp": 50
+    "requiredXp": 20
   },
   {
-    "id": "prompt-apprentice",
-    "title": "Prompt Apprentice",
-    "description": "Reach 200 XP.",
-    "icon": "edit",
-    "requiredXp": 200
+    "id": "quiz-champ",
+    "title": "Quiz Champ",
+    "description": "Complete your first quiz.",
+    "icon": "school",
+    "requiredXp": 40
   },
   {
-    "id": "data-detective",
-    "title": "Data Detective",
-    "description": "Reach 500 XP.",
+    "id": "game-starter",
+    "title": "Game Starter",
+    "description": "Complete your first AI game.",
+    "icon": "sports_esports",
+    "requiredXp": 99999
+  },
+  {
+    "id": "hundred-xp-hero",
+    "title": "100 XP Hero",
+    "description": "Earn 100 XP.",
+    "icon": "bolt",
+    "requiredXp": 100
+  },
+  {
+    "id": "pattern-detective",
+    "title": "Pattern Detective",
+    "description": "Spot patterns and odd items like a detective.",
     "icon": "search",
+    "requiredXp": 250
+  },
+  {
+    "id": "robot-trainer",
+    "title": "Robot Trainer",
+    "description": "Train ShivBot using examples.",
+    "icon": "smart_toy",
     "requiredXp": 500
   },
   {
-    "id": "model-maker",
-    "title": "Model Maker",
-    "description": "Reach 900 XP.",
-    "icon": "science",
-    "requiredXp": 900
+    "id": "safety-hero",
+    "title": "Safety Hero",
+    "description": "Learn how to protect private information.",
+    "icon": "shield",
+    "requiredXp": 800
   },
   {
-    "id": "responsible-builder",
-    "title": "Responsible Builder",
-    "description": "Reach 1400 XP.",
-    "icon": "shield",
-    "requiredXp": 1400
+    "id": "five-hundred-xp-legend",
+    "title": "500 XP Legend",
+    "description": "Earn 500 XP.",
+    "icon": "emoji_events",
+    "requiredXp": 500
+  },
+  {
+    "id": "course-champion",
+    "title": "Course Champion",
+    "description": "Complete one full course.",
+    "icon": "emoji_events",
+    "requiredXp": 99999
+  },
+  {
+    "id": "ai-world-explorer",
+    "title": "AI World Explorer",
+    "description": "Complete all 30 Phase 1 lessons.",
+    "icon": "travel_explore",
+    "requiredXp": 99999
+  },
+  {
+    "id": "ai-games-hero",
+    "title": "AI Games Hero",
+    "description": "Complete all AI games.",
+    "icon": "emoji_events",
+    "requiredXp": 99999
+  },
+  {
+    "id": "ai-master",
+    "title": "AI Master",
+    "description": "Complete the Phase 1 AI Hero journey.",
+    "icon": "workspace_premium",
+    "requiredXp": 1700
   }
 ]

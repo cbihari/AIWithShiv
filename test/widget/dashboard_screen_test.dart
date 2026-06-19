@@ -44,12 +44,13 @@ void main() {
         child: MaterialApp.router(routerConfig: router),
       ),
     );
-    await tester.pumpAndSettle();
+    await tester.pump(const Duration(milliseconds: 100));
 
-    expect(find.text('Today’s AI Quest'), findsOneWidget);
-    expect(find.text('Daily AI Lesson'), findsOneWidget);
-    expect(find.text('ShivBot'), findsOneWidget);
+    expect(find.text('Start Learning'), findsOneWidget);
+    expect(find.textContaining('Hey'), findsOneWidget);
+    expect(find.text('Ask Shiv'), findsOneWidget);
+    expect(find.text('AI Games'), findsOneWidget);
     expect(find.text('Daily Quiz'), findsWidgets);
-    expect(find.text('Badges'), findsOneWidget);
+    expect(find.text('My Trophies'), findsOneWidget);
   });
 }

@@ -29,7 +29,7 @@ class AdminDashboardScreen extends StatelessWidget {
           ),
           FeatureCard(
             title: 'Upload Images',
-            subtitle: 'Firebase Storage media',
+            subtitle: 'Local media placeholder',
             icon: Icons.image,
           ),
           FeatureCard(

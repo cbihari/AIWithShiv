@@ -44,7 +44,9 @@ class UserProgress {
       badges: List<String>.from(json['badges'] as List? ?? const []),
       lastActivityAt: rawLastActivity is DateTime
           ? rawLastActivity
-          : rawLastActivity?.toDate() as DateTime?,
+          : rawLastActivity is String
+              ? DateTime.tryParse(rawLastActivity)
+              : rawLastActivity?.toDate() as DateTime?,
     );
   }
 

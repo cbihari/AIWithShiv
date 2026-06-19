@@ -1,0 +1,62 @@
+[
+  {
+    "id": "train_robot",
+    "title": "Train the Robot",
+    "concept": "Machine Learning",
+    "description": "Teach ShivBot by giving correct examples.",
+    "ageGroup": "5-10",
+    "durationMinutes": 4,
+    "xpReward": 20,
+    "coinReward": 10,
+    "route": "/games/train-robot",
+    "isActive": true
+  },
+  {
+    "id": "ai_detective",
+    "title": "AI Detective",
+    "concept": "Pattern Recognition",
+    "description": "Find the odd item hiding inside a pattern.",
+    "ageGroup": "5-10",
+    "durationMinutes": 3,
+    "xpReward": 15,
+    "coinReward": 8,
+    "route": "/games/ai-detective",
+    "isActive": true
+  },
+  {
+    "id": "sort_like_ai",
+    "title": "Sort Like AI",
+    "concept": "Classification",
+    "description": "Sort animals, food, and vehicles into groups.",
+    "ageGroup": "5-10",
+    "durationMinutes": 4,
+    "xpReward": 20,
+    "coinReward": 10,
+    "route": "/games/sort-like-ai",
+    "isActive": true
+  },
+  {
+    "id": "robot_treasure_hunt",
+    "title": "Robot Treasure Hunt",
+    "concept": "Algorithm",
+    "description": "Move Shiv step by step to reach the treasure.",
+    "ageGroup": "5-10",
+    "durationMinutes": 5,
+    "xpReward": 25,
+    "coinReward": 12,
+    "route": "/games/robot-treasure-hunt",
+    "isActive": true
+  },
+  {
+    "id": "spot_ai_mistake",
+    "title": "Spot the AI Mistake",
+    "concept": "AI Safety",
+    "description": "Check AI answers and catch silly mistakes.",
+    "ageGroup": "5-10",
+    "durationMinutes": 4,
+    "xpReward": 20,
+    "coinReward": 10,
+    "route": "/games/spot-ai-mistake",
+    "isActive": true
+  }
+]

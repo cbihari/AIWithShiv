@@ -1,0 +1,1411 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI with Shiv - Comic Learning UI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Boogaloo&family=Noto+Sans+Devanagari:wght@700;800&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #ff3b30;
+      --yellow: #ffcc00;
+      --blue: #00b4d8;
+      --green: #06d6a0;
+      --navy: #1a1a2e;
+      --cream: #fff9f0;
+      --ink: #101018;
+      --saffron: #ff8a00;
+      --purple: #8b4cf6;
+      --shadow: 7px 7px 0 var(--ink);
+      --small-shadow: 4px 4px 0 var(--ink);
+      --panel-radius: 24px;
+      font-size: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      color: var(--ink);
+      font-family: "Nunito", "Noto Sans Devanagari", system-ui, sans-serif;
+      font-size: 18px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255, 204, 0, 0.32) 0 8%, transparent 8.5%),
+        radial-gradient(circle at 85% 18%, rgba(0, 180, 216, 0.35) 0 9%, transparent 9.5%),
+        radial-gradient(circle at 78% 78%, rgba(6, 214, 160, 0.24) 0 10%, transparent 10.5%),
+        linear-gradient(135deg, #251f56 0%, var(--navy) 45%, #420f32 100%);
+      overflow-x: hidden;
+      cursor: crosshair;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -2;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1.4px, transparent 1.4px);
+      background-size: 18px 18px;
+      mix-blend-mode: screen;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: -1;
+      background:
+        linear-gradient(115deg, transparent 0 48%, rgba(255, 204, 0, 0.12) 48.2% 52%, transparent 52.2%),
+        linear-gradient(25deg, transparent 0 38%, rgba(255, 59, 48, 0.12) 38.2% 41%, transparent 41.2%);
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .app {
+      width: min(1240px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 18px 0 56px;
+    }
+
+    .comic-panel {
+      position: relative;
+      border: 5px solid var(--ink);
+      border-radius: var(--panel-radius);
+      background-color: var(--cream);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .comic-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.23;
+      background-image: radial-gradient(var(--ink) 1.2px, transparent 1.2px);
+      background-size: 13px 13px;
+      mask-image: linear-gradient(130deg, black, transparent 72%);
+    }
+
+    .navbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      display: grid;
+      grid-template-columns: auto minmax(170px, 1fr) auto auto;
+      gap: 14px;
+      align-items: center;
+      padding: 12px 14px;
+      background: var(--cream);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: max-content;
+      color: var(--red);
+      text-decoration: none;
+      text-shadow: 2px 2px 0 var(--yellow), 4px 4px 0 var(--ink);
+      font-family: "Bangers", "Nunito", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      letter-spacing: 0;
+      line-height: 0.9;
+    }
+
+    .bolt {
+      display: inline-grid;
+      width: 38px;
+      height: 48px;
+      place-items: center;
+      color: var(--ink);
+      filter: drop-shadow(3px 3px 0 var(--red));
+    }
+
+    .xp-wrap {
+      display: grid;
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .xp-label {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      color: var(--navy);
+      font-family: "Boogaloo", "Nunito", sans-serif;
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .xp-bar {
+      height: 24px;
+      border: 4px solid var(--ink);
+      border-radius: 999px;
+      background: repeating-linear-gradient(-45deg, #ffffff 0 9px, #e8e8e8 9px 18px);
+      box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.8);
+      overflow: hidden;
+    }
+
+    .xp-fill {
+      width: 72%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--red), #ff7b00, var(--yellow));
+      border-right: 4px solid var(--ink);
+      animation: pulseFill 2.6s ease-in-out infinite;
+    }
+
+    .festival-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 8px 12px;
+      border: 4px solid var(--ink);
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--yellow);
+      box-shadow: var(--small-shadow);
+      font-weight: 900;
+    }
+
+    .avatar-button {
+      width: 62px;
+      height: 62px;
+      padding: 0;
+      border: 4px solid var(--ink);
+      border-radius: 50%;
+      background: var(--blue);
+      box-shadow: var(--small-shadow);
+      overflow: hidden;
+    }
+
+    .avatar-button .shiv-mini {
+      transform: scale(0.72) translate(-4px, 1px);
+      transform-origin: center;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(300px, 0.95fr) minmax(320px, 1.05fr);
+      gap: 26px;
+      align-items: stretch;
+      min-height: 520px;
+      margin-top: 24px;
+      padding: clamp(20px, 4vw, 42px);
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 204, 0, 0.9), transparent 22%),
+        radial-gradient(circle at 70% 30%, rgba(0, 180, 216, 0.8), transparent 20%),
+        linear-gradient(140deg, #ff3b30 0%, #ff7b00 40%, #4a1f9f 100%);
+    }
+
+    .hero::after {
+      content: "POW!";
+      position: absolute;
+      right: clamp(12px, 4vw, 48px);
+      top: 30px;
+      rotate: 8deg;
+      padding: 10px 18px;
+      border: 5px solid var(--ink);
+      border-radius: 50%;
+      color: var(--red);
+      background: var(--yellow);
+      box-shadow: var(--small-shadow);
+      font-family: "Bangers", sans-serif;
+      font-size: clamp(2.3rem, 5vw, 5rem);
+      text-shadow: 2px 2px 0 #fff;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+
+    .eyebrow {
+      width: fit-content;
+      margin: 0 0 14px;
+      padding: 8px 14px;
+      border: 4px solid var(--ink);
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--green);
+      box-shadow: var(--small-shadow);
+      font-weight: 900;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+      font-family: "Bangers", "Noto Sans Devanagari", cursive;
+      letter-spacing: 0;
+      line-height: 0.96;
+    }
+
+    h1 {
+      max-width: 760px;
+      color: var(--cream);
+      text-shadow: 4px 4px 0 var(--ink), 7px 7px 0 var(--blue);
+      font-size: clamp(4rem, 11vw, 9rem);
+    }
+
+    .hero-subtitle {
+      max-width: 620px;
+      margin: 18px 0 0;
+      color: #fffef8;
+      font-size: clamp(1.2rem, 2.1vw, 1.65rem);
+      font-weight: 900;
+      text-shadow: 2px 2px 0 rgba(16, 16, 24, 0.4);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .pressable {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 12px 18px;
+      border: 4px solid var(--ink);
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--yellow);
+      box-shadow: var(--small-shadow);
+      font-weight: 1000;
+      text-decoration: none;
+      transition: transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+    }
+
+    .pressable:hover,
+    .pressable:focus-visible {
+      animation: wiggle 420ms ease-in-out;
+      filter: saturate(1.15);
+    }
+
+    .pressable:active {
+      transform: translate(4px, 4px);
+      box-shadow: 0 0 0 var(--ink);
+    }
+
+    .pressable.alt {
+      background: var(--green);
+    }
+
+    .hero-stage {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      min-height: 410px;
+      isolation: isolate;
+    }
+
+    .flight-lines {
+      position: absolute;
+      inset: 8% -8% 8% 12%;
+      z-index: -1;
+      background:
+        linear-gradient(160deg, transparent 0 38%, var(--cream) 38.5% 40%, transparent 40.5%),
+        linear-gradient(155deg, transparent 0 47%, var(--yellow) 47.5% 49%, transparent 49.5%),
+        linear-gradient(150deg, transparent 0 58%, var(--blue) 58.5% 60%, transparent 60.5%);
+      opacity: 0.92;
+    }
+
+    .speech-bubble {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      max-width: 290px;
+      padding: 18px 20px;
+      border: 5px solid var(--ink);
+      border-radius: 28px 28px 28px 6px;
+      color: var(--ink);
+      background: var(--cream);
+      box-shadow: var(--small-shadow);
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      font-weight: 1000;
+      transform: rotate(-3deg);
+    }
+
+    .shiv {
+      --size: min(80vw, 360px);
+      position: relative;
+      width: var(--size);
+      height: calc(var(--size) * 1.12);
+      animation: fly 3s ease-in-out infinite;
+    }
+
+    .shiv-mini {
+      --size: 82px;
+      position: relative;
+      width: var(--size);
+      height: calc(var(--size) * 1.12);
+    }
+
+    .cape {
+      position: absolute;
+      left: 7%;
+      top: 33%;
+      width: 70%;
+      height: 46%;
+      border: 5px solid var(--ink);
+      border-radius: 55% 18% 58% 22%;
+      background: linear-gradient(135deg, var(--saffron), #ff4b2b);
+      transform: skewY(-10deg) rotate(-16deg);
+      box-shadow: var(--small-shadow);
+    }
+
+    .cape::after {
+      content: "★";
+      position: absolute;
+      right: 23%;
+      top: 31%;
+      color: var(--yellow);
+      font-size: calc(var(--size) * 0.14);
+      text-shadow: 2px 2px 0 var(--ink);
+    }
+
+    .head {
+      position: absolute;
+      left: 26%;
+      top: 4%;
+      width: 48%;
+      height: 35%;
+      border: 5px solid var(--ink);
+      border-radius: 34% 34% 42% 42%;
+      background: linear-gradient(160deg, #f8ffff, #78e5ff);
+      box-shadow: var(--small-shadow);
+    }
+
+    .antenna {
+      position: absolute;
+      left: 49%;
+      top: -16%;
+      width: 7%;
+      height: 18%;
+      border: 4px solid var(--ink);
+      border-bottom: 0;
+      border-radius: 999px 999px 0 0;
+      background: var(--cream);
+    }
+
+    .antenna::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -17px;
+      width: 18px;
+      height: 18px;
+      border: 4px solid var(--ink);
+      border-radius: 50%;
+      background: var(--yellow);
+      transform: translateX(-50%);
+    }
+
+    .tilak {
+      position: absolute;
+      left: 45%;
+      top: 14%;
+      width: 10%;
+      height: 22%;
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      background: var(--red);
+    }
+
+    .face {
+      position: absolute;
+      left: 14%;
+      top: 34%;
+      display: flex;
+      justify-content: space-between;
+      width: 72%;
+    }
+
+    .eye {
+      position: relative;
+      width: 28%;
+      height: calc(var(--size) * 0.08);
+      border: 4px solid var(--ink);
+      border-radius: 999px;
+      background: #fff;
+      overflow: hidden;
+    }
+
+    .eye::after {
+      content: "";
+      position: absolute;
+      left: 34%;
+      top: 18%;
+      width: 34%;
+      height: 62%;
+      border-radius: 50%;
+      background: var(--navy);
+    }
+
+    .shiv .eye,
+    .shiv-mini .eye {
+      animation: blink 4s infinite;
+    }
+
+    .smile {
+      position: absolute;
+      left: 38%;
+      top: 61%;
+      width: 24%;
+      height: 13%;
+      border-bottom: 5px solid var(--ink);
+      border-radius: 0 0 999px 999px;
+    }
+
+    .body {
+      position: absolute;
+      left: 27%;
+      top: 38%;
+      width: 46%;
+      height: 45%;
+      border: 5px solid var(--ink);
+      border-radius: 26px 26px 32px 32px;
+      background: linear-gradient(160deg, #fff, #c7f7ff 55%, var(--blue));
+      box-shadow: var(--small-shadow);
+    }
+
+    .chest {
+      position: absolute;
+      left: 26%;
+      top: 18%;
+      display: grid;
+      place-items: center;
+      width: 48%;
+      height: 36%;
+      border: 4px solid var(--ink);
+      border-radius: 16px;
+      color: var(--navy);
+      background: radial-gradient(circle, #fff 0 18%, var(--green) 19% 56%, #008f78 57%);
+      box-shadow: 0 0 22px rgba(6, 214, 160, 0.9);
+      font-family: "Bangers", sans-serif;
+      font-size: calc(var(--size) * 0.13);
+    }
+
+    .arm {
+      position: absolute;
+      top: 43%;
+      width: 18%;
+      height: 34%;
+      border: 5px solid var(--ink);
+      border-radius: 999px;
+      background: #c7f7ff;
+    }
+
+    .arm.left {
+      left: 11%;
+      transform: rotate(34deg);
+    }
+
+    .arm.right {
+      right: 11%;
+      transform: rotate(-46deg);
+      animation: fistPump 1.4s ease-in-out infinite;
+    }
+
+    .leg {
+      position: absolute;
+      top: 77%;
+      width: 17%;
+      height: 20%;
+      border: 5px solid var(--ink);
+      border-radius: 999px;
+      background: #9eefff;
+    }
+
+    .leg.left {
+      left: 32%;
+      transform: rotate(7deg);
+    }
+
+    .leg.right {
+      right: 32%;
+      transform: rotate(-7deg);
+    }
+
+    .section-title {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 46px 0 18px;
+      color: var(--cream);
+    }
+
+    .section-title h2 {
+      font-size: clamp(2.7rem, 6vw, 5.5rem);
+      text-shadow: 4px 4px 0 var(--ink), 6px 6px 0 var(--red);
+    }
+
+    .section-title p {
+      max-width: 520px;
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+
+    .subjects {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .subject-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+      padding: 20px;
+      color: var(--ink);
+      transform: rotate(var(--tilt));
+      transition: transform 180ms ease;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-8px) rotate(0deg);
+    }
+
+    .subject-card.math {
+      --tilt: -1.4deg;
+      background: linear-gradient(150deg, #ff9b22, #ffcc00);
+    }
+
+    .subject-card.science {
+      --tilt: 1.2deg;
+      background: linear-gradient(150deg, #5ddcff, #00b4d8);
+    }
+
+    .subject-card.hindi {
+      --tilt: -0.8deg;
+      background: linear-gradient(150deg, #ffb000, #ff6b35);
+    }
+
+    .subject-card.robot {
+      --tilt: 1.5deg;
+      background: linear-gradient(150deg, #b68cff, #7948ff);
+      color: #fff;
+    }
+
+    .subject-icon {
+      width: 86px;
+      height: 86px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      border: 5px solid var(--ink);
+      border-radius: 24px;
+      color: var(--ink);
+      background: var(--cream);
+      box-shadow: var(--small-shadow);
+      font-family: "Boogaloo", sans-serif;
+      font-size: 3.1rem;
+    }
+
+    .subject-card h3 {
+      font-size: clamp(2.3rem, 4vw, 3.2rem);
+      text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    .subject-card.robot h3 {
+      text-shadow: 3px 3px 0 var(--ink);
+    }
+
+    .subject-card p {
+      flex: 1;
+      margin: 12px 0 18px;
+      font-size: 1.04rem;
+      font-weight: 1000;
+    }
+
+    .subject-card svg {
+      width: 56px;
+      height: 56px;
+      stroke: currentColor;
+      stroke-width: 7;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .lesson {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 22px;
+      padding: 22px;
+      background:
+        radial-gradient(circle at 14% 18%, rgba(255, 204, 0, 0.55), transparent 22%),
+        linear-gradient(135deg, #fff9f0, #d9f8ff);
+    }
+
+    .lesson-side {
+      display: grid;
+      place-items: center;
+      min-height: 480px;
+      border: 5px dashed var(--ink);
+      border-radius: 22px;
+      background: rgba(255, 204, 0, 0.32);
+    }
+
+    .lesson-side .speech-bubble {
+      top: 26px;
+      left: 22px;
+      max-width: 250px;
+      transform: rotate(-4deg);
+    }
+
+    .lesson-card {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 480px;
+      padding: clamp(20px, 4vw, 34px);
+      border: 5px solid var(--ink);
+      border-radius: 28px;
+      background: var(--cream);
+      box-shadow: inset 0 0 0 6px rgba(255, 204, 0, 0.5);
+    }
+
+    .lesson-card h2 {
+      color: var(--red);
+      font-size: clamp(2.7rem, 6vw, 5.3rem);
+      text-shadow: 3px 3px 0 var(--yellow), 5px 5px 0 var(--ink);
+    }
+
+    .question-bubble {
+      position: relative;
+      margin: 18px 0;
+      padding: 18px;
+      border: 5px solid var(--ink);
+      border-radius: 30px 30px 8px 30px;
+      background: #fff;
+      box-shadow: var(--small-shadow);
+      font-size: clamp(1.3rem, 2.2vw, 1.8rem);
+      font-weight: 1000;
+    }
+
+    .answers {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .answer {
+      min-height: 74px;
+      padding: 14px;
+      border: 5px solid var(--ink);
+      border-radius: 22px;
+      color: var(--ink);
+      background: #fff;
+      box-shadow: var(--small-shadow);
+      font-size: clamp(1.2rem, 2vw, 1.55rem);
+      font-weight: 1000;
+      transition: transform 140ms ease, background 140ms ease;
+    }
+
+    .answer:hover,
+    .answer:focus-visible {
+      background: var(--yellow);
+      animation: wiggle 420ms ease-in-out;
+    }
+
+    .answer.correct {
+      background: var(--green);
+      animation: correctFlash 650ms ease;
+    }
+
+    .answer.wrong {
+      background: #ff817a;
+      animation: wrongWiggle 450ms ease;
+    }
+
+    .burst {
+      position: fixed;
+      z-index: 50;
+      min-width: 220px;
+      padding: 18px 24px;
+      border: 5px solid var(--ink);
+      border-radius: 50%;
+      color: var(--red);
+      background: var(--yellow);
+      box-shadow: var(--shadow);
+      font-family: "Bangers", sans-serif;
+      font-size: clamp(2.4rem, 7vw, 5.8rem);
+      text-align: center;
+      text-shadow: 2px 2px 0 #fff;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(0.4) rotate(-8deg);
+      animation: popBurst 900ms ease forwards;
+    }
+
+    .rewards {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 20px;
+      padding: 24px;
+      background:
+        radial-gradient(circle at 20% 25%, rgba(255, 204, 0, 0.45), transparent 19%),
+        linear-gradient(135deg, #431b76, #1a1a2e);
+      color: var(--cream);
+    }
+
+    .rank-card {
+      padding: 20px;
+      border: 5px solid var(--ink);
+      border-radius: 24px;
+      color: var(--ink);
+      background: var(--yellow);
+      box-shadow: var(--small-shadow);
+    }
+
+    .rank-card h3 {
+      color: var(--red);
+      font-size: clamp(2.5rem, 5vw, 4.4rem);
+      text-shadow: 2px 2px 0 #fff, 4px 4px 0 var(--ink);
+    }
+
+    .streak {
+      margin-top: 18px;
+      font-family: "Boogaloo", sans-serif;
+      font-size: clamp(5rem, 13vw, 9rem);
+      line-height: 0.84;
+      color: var(--red);
+      text-shadow: 3px 3px 0 var(--yellow), 7px 7px 0 var(--ink);
+    }
+
+    .badge-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      align-content: center;
+    }
+
+    .badge {
+      position: relative;
+      display: grid;
+      min-height: 150px;
+      place-items: center;
+      padding: 16px 10px;
+      border: 5px solid var(--ink);
+      color: var(--ink);
+      background: var(--cream);
+      clip-path: polygon(50% 0, 93% 18%, 84% 78%, 50% 100%, 16% 78%, 7% 18%);
+      font-family: "Bangers", sans-serif;
+      font-size: 1.75rem;
+      text-align: center;
+      text-shadow: 2px 2px 0 var(--yellow);
+    }
+
+    .badge:nth-child(2) {
+      background: var(--green);
+    }
+
+    .badge:nth-child(3) {
+      background: var(--blue);
+      color: #fff;
+      text-shadow: 2px 2px 0 var(--ink);
+    }
+
+    .badge:nth-child(4) {
+      background: var(--red);
+      color: #fff;
+      text-shadow: 2px 2px 0 var(--ink);
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(26, 26, 46, 0.76);
+      backdrop-filter: blur(5px);
+    }
+
+    .modal.open {
+      display: grid;
+      animation: pageFlipIn 260ms ease;
+    }
+
+    .level-card {
+      width: min(720px, 100%);
+      padding: clamp(24px, 6vw, 48px);
+      text-align: center;
+      background:
+        radial-gradient(circle at center, var(--yellow) 0 16%, transparent 17%),
+        conic-gradient(from 8deg, #ff3b30 0 10%, #ffcc00 10% 20%, #00b4d8 20% 30%, #06d6a0 30% 40%, #ff3b30 40% 50%, #ffcc00 50% 60%, #00b4d8 60% 70%, #06d6a0 70% 80%, #ff3b30 80% 90%, #ffcc00 90% 100%);
+    }
+
+    .level-card h2 {
+      color: var(--cream);
+      font-size: clamp(5rem, 16vw, 11rem);
+      text-shadow: 5px 5px 0 var(--ink), 9px 9px 0 var(--red);
+    }
+
+    .level-card p {
+      display: inline-block;
+      margin: 12px 0 22px;
+      padding: 10px 16px;
+      border: 4px solid var(--ink);
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--cream);
+      box-shadow: var(--small-shadow);
+      font-size: 1.35rem;
+      font-weight: 1000;
+    }
+
+    .confetti-piece,
+    .trail-star,
+    .diya {
+      position: fixed;
+      pointer-events: none;
+      z-index: 120;
+    }
+
+    .trail-star {
+      width: 10px;
+      height: 10px;
+      background: var(--yellow);
+      clip-path: polygon(50% 0, 62% 35%, 100% 35%, 69% 56%, 82% 100%, 50% 73%, 18% 100%, 31% 56%, 0 35%, 38% 35%);
+      animation: starFade 620ms ease forwards;
+    }
+
+    body.festival .navbar,
+    body.festival .comic-panel {
+      box-shadow: 0 0 0 5px rgba(255, 204, 0, 0.55), var(--shadow);
+    }
+
+    .diya {
+      bottom: 12px;
+      width: 42px;
+      height: 28px;
+      border: 4px solid var(--ink);
+      border-radius: 8px 8px 24px 24px;
+      background: var(--saffron);
+      animation: diyaFloat 2.2s ease-in-out infinite alternate;
+    }
+
+    .diya::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -26px;
+      width: 18px;
+      height: 28px;
+      border: 3px solid var(--ink);
+      border-radius: 60% 60% 50% 50%;
+      background: var(--yellow);
+      transform: translateX(-50%);
+    }
+
+    @keyframes fly {
+      0%, 100% { transform: translateY(0) rotate(-5deg); }
+      50% { transform: translateY(-16px) rotate(4deg); }
+    }
+
+    @keyframes blink {
+      0%, 92%, 100% { transform: scaleY(1); }
+      95% { transform: scaleY(0.08); }
+    }
+
+    @keyframes fistPump {
+      0%, 100% { transform: rotate(-46deg) translateY(0); }
+      50% { transform: rotate(-62deg) translateY(-8px); }
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(-3deg) scale(1.03); }
+      75% { transform: rotate(3deg) scale(1.03); }
+    }
+
+    @keyframes wrongWiggle {
+      0%, 100% { transform: translateX(0); }
+      20% { transform: translateX(-10px); }
+      40% { transform: translateX(10px); }
+      60% { transform: translateX(-6px); }
+      80% { transform: translateX(6px); }
+    }
+
+    @keyframes correctFlash {
+      0%, 100% { filter: brightness(1); }
+      45% { filter: brightness(1.5); transform: scale(1.05); }
+    }
+
+    @keyframes popBurst {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.35) rotate(-12deg); }
+      20% { opacity: 1; transform: translate(-50%, -50%) scale(1.05) rotate(5deg); }
+      72% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(-5deg); }
+      100% { opacity: 0; transform: translate(-50%, -65%) scale(0.8) rotate(8deg); }
+    }
+
+    @keyframes pulseFill {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(1.2); }
+    }
+
+    @keyframes pageFlipIn {
+      from { transform: perspective(900px) rotateY(-18deg); opacity: 0; }
+      to { transform: perspective(900px) rotateY(0deg); opacity: 1; }
+    }
+
+    @keyframes starFade {
+      to { opacity: 0; transform: translateY(-24px) scale(0.2) rotate(180deg); }
+    }
+
+    @keyframes confettiFall {
+      to { transform: translate(var(--x), var(--y)) rotate(500deg); opacity: 0; }
+    }
+
+    @keyframes diyaFloat {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+
+    @media (max-width: 980px) {
+      .navbar {
+        grid-template-columns: 1fr auto;
+      }
+
+      .xp-wrap,
+      .festival-toggle {
+        grid-column: 1 / -1;
+      }
+
+      .hero,
+      .lesson,
+      .rewards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .subjects {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .badge-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 620px) {
+      .app {
+        width: calc(100vw - 20px);
+        max-width: calc(100vw - 20px);
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-top: 8px;
+      }
+
+      .navbar,
+      .hero,
+      .lesson,
+      .rewards,
+      .subject-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+      }
+
+      .navbar > *,
+      .hero > *,
+      .lesson > *,
+      .rewards > * {
+        min-width: 0;
+      }
+
+      .comic-panel {
+        border-width: 4px;
+        box-shadow: 4px 4px 0 var(--ink);
+      }
+
+      .navbar {
+        top: 8px;
+        gap: 10px;
+        grid-template-columns: minmax(0, 1fr) auto;
+      }
+
+      .logo {
+        min-width: 0;
+        font-size: clamp(1.75rem, 9vw, 2.35rem);
+        text-shadow: 1px 1px 0 var(--yellow), 3px 3px 0 var(--ink);
+      }
+
+      .bolt {
+        width: 30px;
+        height: 38px;
+        flex: 0 0 auto;
+      }
+
+      .xp-label {
+        font-size: 1.18rem;
+      }
+
+      .xp-wrap {
+        width: 100%;
+      }
+
+      .xp-bar {
+        height: 22px;
+      }
+
+      .avatar-button {
+        width: 56px;
+        height: 56px;
+      }
+
+      .festival-toggle {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .hero {
+        padding: 18px;
+      }
+
+      .hero-copy,
+      .hero-subtitle {
+        width: 100%;
+        max-width: 100%;
+        padding-right: 10px;
+      }
+
+      .hero-stage {
+        width: 100%;
+        overflow: hidden;
+      }
+
+      .hero::after {
+        top: 80px;
+        right: 10px;
+        min-width: 120px;
+        font-size: 2.1rem;
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .speech-bubble {
+        position: relative;
+        top: auto;
+        left: auto;
+        justify-self: start;
+        width: calc(100% - 42px);
+        max-width: 260px;
+        margin: 0 0 8px;
+      }
+
+      .subjects,
+      .answers,
+      .badge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .subject-card {
+        min-height: 250px;
+        transform: none;
+      }
+
+      .lesson-side,
+      .lesson-card {
+        min-height: 390px;
+      }
+
+      h1 {
+        max-width: 100%;
+        width: 100%;
+        font-size: clamp(2.55rem, 11.2vw, 3.35rem);
+        white-space: nowrap;
+        text-shadow: 3px 3px 0 var(--ink), 5px 5px 0 var(--blue);
+      }
+
+      .hero-actions .pressable {
+        width: calc(100% - 12px);
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <nav class="navbar comic-panel" aria-label="Main navigation">
+      <a class="logo" href="#home" aria-label="AI with Shiv home">
+        <span class="bolt" aria-hidden="true">
+          <svg viewBox="0 0 24 32" width="38" height="48" role="img">
+            <path d="M14 1 3 17h8l-2 14 12-18h-8z" fill="#ffcc00" stroke="#101018" stroke-width="2.6" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        AI with Shiv
+      </a>
+      <div class="xp-wrap" aria-label="XP progress">
+        <div class="xp-label"><span>Hero XP</span><span id="xpText">720 / 1000</span></div>
+        <div class="xp-bar"><div class="xp-fill" id="xpFill"></div></div>
+      </div>
+      <button class="festival-toggle" id="festivalToggle" type="button" aria-pressed="false">Festival mode</button>
+      <button class="avatar-button" type="button" aria-label="Open Shiv profile">
+        <span class="shiv-mini" aria-hidden="true">
+          <span class="cape"></span><span class="head"><span class="antenna"></span><span class="tilak"></span><span class="face"><span class="eye"></span><span class="eye"></span></span><span class="smile"></span></span><span class="body"><span class="chest">AI</span></span><span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span>
+        </span>
+      </button>
+    </nav>
+
+    <main>
+      <section class="hero comic-panel" id="home">
+        <div class="hero-copy">
+          <p class="eyebrow">Shabash squad mission board</p>
+          <h1>AI with Shiv</h1>
+          <p class="hero-subtitle">A loud, joyful learning world where Indian kids solve missions with a robot-superhero buddy.</p>
+          <div class="hero-actions">
+            <a class="pressable" href="#subjects">Shuruaat karo!</a>
+            <button class="pressable alt" type="button" id="levelButton">Show level up</button>
+          </div>
+        </div>
+        <div class="hero-stage" aria-label="Shiv flying with a cape">
+          <div class="flight-lines" aria-hidden="true"></div>
+          <div class="speech-bubble">Namaste! Ready to learn today?</div>
+          <div class="shiv" aria-hidden="true">
+            <span class="cape"></span>
+            <span class="head"><span class="antenna"></span><span class="tilak"></span><span class="face"><span class="eye"></span><span class="eye"></span></span><span class="smile"></span></span>
+            <span class="body"><span class="chest">AI</span></span>
+            <span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-title" id="subjects">
+        <h2>Choose a mission</h2>
+        <p>Every subject is a comic panel with bold goals, big buttons, and Shiv cheering from the sidelines.</p>
+      </div>
+      <section class="subjects" aria-label="Subject missions">
+        <article class="subject-card math comic-panel">
+          <div class="subject-icon" aria-hidden="true">123</div>
+          <h3>Number Ninja</h3>
+          <p>Slice through patterns, sums, and number puzzles with star power.</p>
+          <a class="pressable" href="#lesson">Start mission</a>
+        </article>
+        <article class="subject-card science comic-panel">
+          <div class="subject-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><ellipse cx="32" cy="32" rx="24" ry="8"/><ellipse cx="32" cy="32" rx="8" ry="24" transform="rotate(55 32 32)"/><circle cx="32" cy="32" r="5" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <h3>Science Squad</h3>
+          <p>Explore atoms, plants, planets, and experiments that go zoom.</p>
+          <a class="pressable" href="#lesson">Start mission</a>
+        </article>
+        <article class="subject-card hindi comic-panel">
+          <div class="subject-icon" aria-hidden="true" style="font-family:'Noto Sans Devanagari', 'Nunito', sans-serif;">अ</div>
+          <h3>Bhasha Hero</h3>
+          <p>Read stories, spot sounds, and build Hindi word power.</p>
+          <a class="pressable" href="#lesson">Start mission</a>
+        </article>
+        <article class="subject-card robot comic-panel">
+          <div class="subject-icon" aria-hidden="true">
+            <svg viewBox="0 0 64 64"><rect x="13" y="18" width="38" height="32" rx="8"/><path d="M32 18V8M25 8h14M23 32h.1M41 32h.1M24 42h16"/></svg>
+          </div>
+          <h3>Robot School</h3>
+          <p>Learn AI basics with friendly circuits, prompts, and robot logic.</p>
+          <a class="pressable" href="#lesson">Start mission</a>
+        </article>
+      </section>
+
+      <div class="section-title" id="lesson">
+        <h2>Sample lesson</h2>
+        <p>Tap an answer. Correct answers trigger confetti and a comic burst; wrong answers wiggle gently.</p>
+      </div>
+      <section class="lesson comic-panel" aria-label="Sample question and answer lesson">
+        <aside class="lesson-side">
+          <div class="speech-bubble" id="shivLine">Think like a hero. I am with you!</div>
+          <div class="shiv" aria-hidden="true">
+            <span class="cape"></span>
+            <span class="head"><span class="antenna"></span><span class="tilak"></span><span class="face"><span class="eye"></span><span class="eye"></span></span><span class="smile"></span></span>
+            <span class="body"><span class="chest">AI</span></span>
+            <span class="arm left"></span><span class="arm right"></span><span class="leg left"></span><span class="leg right"></span>
+          </div>
+        </aside>
+        <div class="lesson-card">
+          <h2>Robot School</h2>
+          <div class="question-bubble">Which sentence is a good prompt for an AI tutor?</div>
+          <div class="answers">
+            <button class="answer" type="button" data-correct="false">Do homework.</button>
+            <button class="answer" type="button" data-correct="true">Explain fractions with mango slices.</button>
+            <button class="answer" type="button" data-correct="false">Answer fast.</button>
+            <button class="answer" type="button" data-correct="false">Make it magic.</button>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-title" id="rewards">
+        <h2>Trophy room</h2>
+        <p>Badges feel like superhero emblems, with rank names that kids can chase proudly.</p>
+      </div>
+      <section class="rewards comic-panel" aria-label="Progress and rewards">
+        <div class="rank-card">
+          <h3>Cosmic Shiv</h3>
+          <p>Rank path: Trainee -> Hero -> Legend -> COSMIC SHIV</p>
+          <div class="streak" aria-label="Seven day streak">7</div>
+          <p>day flaming streak</p>
+        </div>
+        <div class="badge-grid">
+          <div class="badge">Math Hero</div>
+          <div class="badge">Science Star</div>
+          <div class="badge">Hindi Champ</div>
+          <div class="badge">AI Legend</div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal" id="levelModal" role="dialog" aria-modal="true" aria-labelledby="levelTitle">
+    <div class="level-card comic-panel">
+      <h2 id="levelTitle">Level up!</h2>
+      <p>Shabash! You unlocked Hero rank.</p>
+      <button class="pressable" type="button" id="closeLevel">Back to mission</button>
+    </div>
+  </div>
+
+  <script>
+    const answers = document.querySelectorAll(".answer");
+    const shivLine = document.getElementById("shivLine");
+    const levelModal = document.getElementById("levelModal");
+    const levelButton = document.getElementById("levelButton");
+    const closeLevel = document.getElementById("closeLevel");
+    const festivalToggle = document.getElementById("festivalToggle");
+    const xpFill = document.getElementById("xpFill");
+    const xpText = document.getElementById("xpText");
+    let xp = 720;
+
+    function showBurst(text, x = window.innerWidth / 2, y = window.innerHeight / 2) {
+      const burst = document.createElement("div");
+      burst.className = "burst";
+      burst.textContent = text;
+      burst.style.left = `${x}px`;
+      burst.style.top = `${y}px`;
+      document.body.appendChild(burst);
+      setTimeout(() => burst.remove(), 900);
+    }
+
+    function confetti(originX, originY) {
+      const colors = ["#ff3b30", "#ffcc00", "#00b4d8", "#06d6a0", "#fff9f0"];
+      for (let i = 0; i < 34; i += 1) {
+        const piece = document.createElement("span");
+        piece.className = "confetti-piece";
+        piece.style.left = `${originX}px`;
+        piece.style.top = `${originY}px`;
+        piece.style.width = `${8 + Math.random() * 10}px`;
+        piece.style.height = `${8 + Math.random() * 12}px`;
+        piece.style.background = colors[i % colors.length];
+        piece.style.border = "2px solid #101018";
+        piece.style.setProperty("--x", `${(Math.random() - 0.5) * 520}px`);
+        piece.style.setProperty("--y", `${170 + Math.random() * 250}px`);
+        piece.style.animation = `confettiFall ${780 + Math.random() * 700}ms ease-out forwards`;
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 1600);
+      }
+    }
+
+    function openLevelModal() {
+      levelModal.classList.add("open");
+      showBurst("LEVEL UP!", window.innerWidth / 2, window.innerHeight * 0.24);
+      confetti(window.innerWidth / 2, window.innerHeight * 0.26);
+    }
+
+    answers.forEach((answer) => {
+      answer.addEventListener("click", () => {
+        answers.forEach((item) => item.classList.remove("correct", "wrong"));
+        const isCorrect = answer.dataset.correct === "true";
+        const rect = answer.getBoundingClientRect();
+        if (isCorrect) {
+          answer.classList.add("correct");
+          shivLine.textContent = "BOOM! Right answer! Shabash, hero!";
+          showBurst("CORRECT!", rect.left + rect.width / 2, rect.top);
+          confetti(rect.left + rect.width / 2, rect.top + rect.height / 2);
+          xp = Math.min(1000, xp + 80);
+          xpFill.style.width = `${xp / 10}%`;
+          xpText.textContent = `${xp} / 1000`;
+          if (xp >= 800) setTimeout(openLevelModal, 650);
+        } else {
+          answer.classList.add("wrong");
+          shivLine.textContent = "Try again, hero! I know you can crack it.";
+          showBurst("TRY AGAIN!", rect.left + rect.width / 2, rect.top);
+        }
+      });
+    });
+
+    levelButton.addEventListener("click", openLevelModal);
+    closeLevel.addEventListener("click", () => levelModal.classList.remove("open"));
+    levelModal.addEventListener("click", (event) => {
+      if (event.target === levelModal) levelModal.classList.remove("open");
+    });
+
+    festivalToggle.addEventListener("click", () => {
+      const isOn = document.body.classList.toggle("festival");
+      festivalToggle.setAttribute("aria-pressed", String(isOn));
+      festivalToggle.textContent = isOn ? "Diwali glow on" : "Festival mode";
+      document.querySelectorAll(".diya").forEach((diya) => diya.remove());
+      if (isOn) {
+        for (let i = 0; i < 8; i += 1) {
+          const diya = document.createElement("span");
+          diya.className = "diya";
+          diya.style.left = `${6 + i * 12}%`;
+          diya.style.animationDelay = `${i * 120}ms`;
+          document.body.appendChild(diya);
+        }
+      }
+    });
+
+    let lastTrail = 0;
+    document.addEventListener("pointermove", (event) => {
+      const now = performance.now();
+      if (now - lastTrail < 45) return;
+      lastTrail = now;
+      const star = document.createElement("span");
+      star.className = "trail-star";
+      star.style.left = `${event.clientX}px`;
+      star.style.top = `${event.clientY}px`;
+      document.body.appendChild(star);
+      setTimeout(() => star.remove(), 650);
+    });
+  </script>
+</body>
+</html>

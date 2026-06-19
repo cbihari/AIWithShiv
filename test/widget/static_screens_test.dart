@@ -9,8 +9,9 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('Age selection renders learner groups', (tester) async {
     await tester.pumpWidget(const MaterialApp(home: AgeSelectionScreen()));
-    expect(find.text('Tiny Explorers'), findsOneWidget);
-    expect(find.text('Adults'), findsOneWidget);
+    expect(find.text('Little Hero'), findsOneWidget);
+    expect(find.text('Super Learner'), findsOneWidget);
+    expect(find.text('Big Explorer'), findsOneWidget);
   });
 
   testWidgets('Parent consent renders consent action', (tester) async {
@@ -21,8 +22,8 @@ void main() {
 
   testWidgets('Welcome screen renders primary action', (tester) async {
     await tester.pumpWidget(const MaterialApp(home: WelcomeScreen()));
-    expect(find.text('Build your AI superpowers'), findsOneWidget);
-    expect(find.text('Start Learning'), findsOneWidget);
+    expect(find.text('Namaste! I am Shiv! 🤖⚡'), findsOneWidget);
+    expect(find.text("Let's Go! 🚀"), findsOneWidget);
   });
 
   testWidgets('Parent dashboard renders MVP parent features', (tester) async {

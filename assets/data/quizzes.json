@@ -1,1901 +1,1111 @@
 [
   {
-    "id": "ai-foundations-lesson-01-quiz",
-    "lessonId": "ai-foundations-lesson-01",
+    "id": "ai-masti-missions-lesson-01-quiz",
+    "lessonId": "ai-masti-missions-lesson-01",
+    "title": "Meet Shiv the AI Hero Checkpoint",
+    "questions": [
+      {
+        "id": "ai-masti-missions-lesson-01-q1",
+        "prompt": "Who is Shiv in the app?",
+        "options": [
+          "A friendly robot-superhero tutor",
+          "A scary exam robot",
+          "A secret password keeper",
+          "A cricket umpire"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Shiv is a friendly robot-superhero tutor who helps kids learn."
+      },
+      {
+        "id": "ai-masti-missions-lesson-01-q2",
+        "prompt": "Who stays in charge when using AI?",
+        "options": [
+          "Humans",
+          "Passwords",
+          "Unknown pop-ups",
+          "Only robots"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Humans stay in charge and make smart choices."
+      }
+    ]
+  },
+  {
+    "id": "ai-masti-missions-lesson-02-quiz",
+    "lessonId": "ai-masti-missions-lesson-02",
     "title": "What Is AI? Checkpoint",
     "questions": [
       {
-        "id": "ai-foundations-lesson-01-q1",
-        "prompt": "Which choice best matches the lesson idea: What Is AI??",
+        "id": "ai-masti-missions-lesson-02-q1",
+        "prompt": "AI is like what for kids?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
+          "A smart computer helper",
+          "A magic wand",
+          "A lunch box",
+          "A school bus"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
           0
         ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
+        "explanation": "AI is a smart computer helper, not magic."
       },
       {
-        "id": "ai-foundations-lesson-01-q2",
-        "prompt": "Select two helpful habits for what is ai?.",
+        "id": "ai-masti-missions-lesson-02-q2",
+        "prompt": "What can help AI learn?",
         "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Examples",
+          "Secrets",
+          "Angry shouting",
+          "No clues"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "AI learns better from clear examples."
       }
     ]
   },
   {
-    "id": "ai-foundations-lesson-02-quiz",
-    "lessonId": "ai-foundations-lesson-02",
-    "title": "Humans and Smart Machines Checkpoint",
+    "id": "ai-masti-missions-lesson-03-quiz",
+    "lessonId": "ai-masti-missions-lesson-03",
+    "title": "AI Around My Home Checkpoint",
     "questions": [
       {
-        "id": "ai-foundations-lesson-02-q1",
-        "prompt": "Which choice best matches the lesson idea: Humans and Smart Machines?",
+        "id": "ai-masti-missions-lesson-03-q1",
+        "prompt": "Which home tool can use AI?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 1,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "ai-foundations-lesson-02-q2",
-        "prompt": "Select two helpful habits for humans and smart machines.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "A song app suggesting music",
+          "A plain spoon",
+          "A pencil eraser",
+          "A cricket stump"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Some apps use AI to suggest helpful choices."
+      },
+      {
+        "id": "ai-masti-missions-lesson-03-q2",
+        "prompt": "What should still guide tech at home?",
+        "options": [
+          "Family rules",
+          "Random strangers",
+          "Secret codes",
+          "Silly guesses only"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Family rules help children use technology safely."
       }
     ]
   },
   {
-    "id": "ai-foundations-lesson-03-quiz",
-    "lessonId": "ai-foundations-lesson-03",
-    "title": "Rules vs Learning Checkpoint",
+    "id": "ai-masti-missions-lesson-04-quiz",
+    "lessonId": "ai-masti-missions-lesson-04",
+    "title": "AI at School Checkpoint",
     "questions": [
       {
-        "id": "ai-foundations-lesson-03-q1",
-        "prompt": "Which choice best matches the lesson idea: Rules vs Learning?",
+        "id": "ai-masti-missions-lesson-04-q1",
+        "prompt": "How can AI help at school?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 2,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "ai-foundations-lesson-03-q2",
-        "prompt": "Select two helpful habits for rules vs learning.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Practice reading words",
+          "Do all learning for you",
+          "Hide homework",
+          "Share school ID"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "AI can help practice, but the child still learns."
+      },
+      {
+        "id": "ai-masti-missions-lesson-04-q2",
+        "prompt": "What should a learner do with AI help?",
+        "options": [
+          "Think and try",
+          "Stop learning",
+          "Copy without checking",
+          "Share passwords"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Shabash! A learner thinks, tries, and checks."
       }
     ]
   },
   {
-    "id": "ai-foundations-lesson-04-quiz",
-    "lessonId": "ai-foundations-lesson-04",
-    "title": "AI Around Us Checkpoint",
+    "id": "ai-masti-missions-lesson-05-quiz",
+    "lessonId": "ai-masti-missions-lesson-05",
+    "title": "Teaching AI With Examples Checkpoint",
     "questions": [
       {
-        "id": "ai-foundations-lesson-04-q1",
-        "prompt": "Which choice best matches the lesson idea: AI Around Us?",
+        "id": "ai-masti-missions-lesson-05-q1",
+        "prompt": "What should you show a pretend fruit AI?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 3,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "ai-foundations-lesson-04-q2",
-        "prompt": "Select two helpful habits for ai around us.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Clear fruit examples",
+          "Wrong labels",
+          "Private photos",
+          "No examples"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Clear examples help AI learn the right idea."
+      },
+      {
+        "id": "ai-masti-missions-lesson-05-q2",
+        "prompt": "If AI makes a funny mistake, what helps?",
+        "options": [
+          "Better examples",
+          "More secrets",
+          "No checking",
+          "Closing your eyes"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Better examples can help AI improve."
       }
     ]
   },
   {
-    "id": "ai-foundations-lesson-05-quiz",
-    "lessonId": "ai-foundations-lesson-05",
-    "title": "Data as Examples Checkpoint",
+    "id": "ai-masti-missions-lesson-06-quiz",
+    "lessonId": "ai-masti-missions-lesson-06",
+    "title": "Patterns Are Like Treasure Clues Checkpoint",
     "questions": [
       {
-        "id": "ai-foundations-lesson-05-q1",
-        "prompt": "Which choice best matches the lesson idea: Data as Examples?",
+        "id": "ai-masti-missions-lesson-06-q1",
+        "prompt": "What comes after red, yellow, red, yellow?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
+          "Red",
+          "Bus",
+          "Dog",
+          "Phone"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
           0
         ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
+        "explanation": "The color pattern repeats red and yellow."
       },
       {
-        "id": "ai-foundations-lesson-05-q2",
-        "prompt": "Select two helpful habits for data as examples.",
+        "id": "ai-masti-missions-lesson-06-q2",
+        "prompt": "Why does Shiv like patterns?",
         "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "They are clues for guesses",
+          "They are passwords",
+          "They hide homework",
+          "They stop thinking"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Patterns help us make smart guesses."
       }
     ]
   },
   {
-    "id": "ai-foundations-lesson-06-quiz",
-    "lessonId": "ai-foundations-lesson-06",
-    "title": "Patterns and Predictions Checkpoint",
+    "id": "ai-masti-missions-lesson-07-quiz",
+    "lessonId": "ai-masti-missions-lesson-07",
+    "title": "Asking AI Good Questions Checkpoint",
     "questions": [
       {
-        "id": "ai-foundations-lesson-06-q1",
-        "prompt": "Which choice best matches the lesson idea: Patterns and Predictions?",
+        "id": "ai-masti-missions-lesson-07-q1",
+        "prompt": "Which question is clearer?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 1,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "ai-foundations-lesson-06-q2",
-        "prompt": "Select two helpful habits for patterns and predictions.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "How do I share 6 mangoes with 3 friends?",
+          "Help",
+          "Thing mango fast",
+          "Secret password please"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "A clear question gives useful details."
+      },
+      {
+        "id": "ai-masti-missions-lesson-07-q2",
+        "prompt": "What belongs in a good AI question?",
+        "options": [
+          "What you want and helpful details",
+          "Home address",
+          "Phone number",
+          "Only emojis"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Good questions include the goal and safe details."
       }
     ]
   },
   {
-    "id": "ai-foundations-lesson-07-quiz",
-    "lessonId": "ai-foundations-lesson-07",
-    "title": "AI Strengths Checkpoint",
+    "id": "ai-masti-missions-lesson-08-quiz",
+    "lessonId": "ai-masti-missions-lesson-08",
+    "title": "AI Can Make Mistakes Checkpoint",
     "questions": [
       {
-        "id": "ai-foundations-lesson-07-q1",
-        "prompt": "Which choice best matches the lesson idea: AI Strengths?",
+        "id": "ai-masti-missions-lesson-08-q1",
+        "prompt": "If AI says a potato is a fruit, what should you do?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 2,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "ai-foundations-lesson-07-q2",
-        "prompt": "Select two helpful habits for ai strengths.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Check the answer",
+          "Believe it always",
+          "Share a password",
+          "Never ask adults"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "AI can make mistakes, so important answers need checking."
+      },
+      {
+        "id": "ai-masti-missions-lesson-08-q2",
+        "prompt": "Who can help check important answers?",
+        "options": [
+          "Trusted adult",
+          "Unknown stranger",
+          "Random pop-up",
+          "Silly robot only"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Trusted adults help children check important answers."
       }
     ]
   },
   {
-    "id": "ai-foundations-lesson-08-quiz",
-    "lessonId": "ai-foundations-lesson-08",
-    "title": "AI Limits Checkpoint",
+    "id": "ai-masti-missions-lesson-09-quiz",
+    "lessonId": "ai-masti-missions-lesson-09",
+    "title": "Keep Secrets Safe Checkpoint",
     "questions": [
       {
-        "id": "ai-foundations-lesson-08-q1",
-        "prompt": "Which choice best matches the lesson idea: AI Limits?",
+        "id": "ai-masti-missions-lesson-09-q1",
+        "prompt": "Which thing should stay private?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 3,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "ai-foundations-lesson-08-q2",
-        "prompt": "Select two helpful habits for ai limits.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Password",
+          "Favorite mango",
+          "Safe joke",
+          "Drawing of a star"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Passwords and private details should stay safe."
+      },
+      {
+        "id": "ai-masti-missions-lesson-09-q2",
+        "prompt": "What is safe to ask ShivBot?",
+        "options": [
+          "Explain patterns with mangoes",
+          "My home address is...",
+          "My phone number is...",
+          "Here is my password"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Safe learning questions do not include private details."
       }
     ]
   },
   {
-    "id": "ai-foundations-lesson-09-quiz",
-    "lessonId": "ai-foundations-lesson-09",
-    "title": "Asking Better Questions Checkpoint",
+    "id": "ai-masti-missions-lesson-10-quiz",
+    "lessonId": "ai-masti-missions-lesson-10",
+    "title": "My First AI Hero Mission Checkpoint",
     "questions": [
       {
-        "id": "ai-foundations-lesson-09-q1",
-        "prompt": "Which choice best matches the lesson idea: Asking Better Questions?",
+        "id": "ai-masti-missions-lesson-10-q1",
+        "prompt": "Which is an AI Hero habit?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
+          "Ask clearly and check answers",
+          "Share secrets",
+          "Trust every answer",
+          "Ignore grown-ups"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
           0
         ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
+        "explanation": "AI Heroes ask clearly, check answers, and stay safe."
       },
       {
-        "id": "ai-foundations-lesson-09-q2",
-        "prompt": "Select two helpful habits for asking better questions.",
+        "id": "ai-masti-missions-lesson-10-q2",
+        "prompt": "What should you keep safe during an AI chat?",
         "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Private information",
+          "A mango color",
+          "A rangoli shape",
+          "A cricket score"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Private information should not be shared in AI chats."
       }
     ]
   },
   {
-    "id": "ai-foundations-lesson-10-quiz",
-    "lessonId": "ai-foundations-lesson-10",
-    "title": "Mini AI Mission Checkpoint",
+    "id": "pattern-playground-lesson-01-quiz",
+    "lessonId": "pattern-playground-lesson-01",
+    "title": "Color Patterns Checkpoint",
     "questions": [
       {
-        "id": "ai-foundations-lesson-10-q1",
-        "prompt": "Which choice best matches the lesson idea: Mini AI Mission?",
+        "id": "pattern-playground-lesson-01-q1",
+        "prompt": "Where can you see a color pattern?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 1,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "ai-foundations-lesson-10-q2",
-        "prompt": "Select two helpful habits for mini ai mission.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Rangoli",
+          "Password box",
+          "Phone number",
+          "Address card"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Rangoli can use repeating color patterns."
+      },
+      {
+        "id": "pattern-playground-lesson-01-q2",
+        "prompt": "What helps find the next color?",
+        "options": [
+          "Look at the repeat",
+          "Close your eyes",
+          "Share secrets",
+          "Guess any word"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Repeating clues help us find what comes next."
       }
     ]
   },
   {
-    "id": "prompt-power-lesson-01-quiz",
-    "lessonId": "prompt-power-lesson-01",
-    "title": "Prompt Ingredients Checkpoint",
+    "id": "pattern-playground-lesson-02-quiz",
+    "lessonId": "pattern-playground-lesson-02",
+    "title": "Shape Patterns Checkpoint",
     "questions": [
       {
-        "id": "prompt-power-lesson-01-q1",
-        "prompt": "Which choice best matches the lesson idea: Prompt Ingredients?",
+        "id": "pattern-playground-lesson-02-q1",
+        "prompt": "What comes after circle, square, circle, square?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 1,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "prompt-power-lesson-01-q2",
-        "prompt": "Select two helpful habits for prompt ingredients.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Circle",
+          "Mango",
+          "Tabla",
+          "Bus"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "The shape pattern repeats circle and square."
+      },
+      {
+        "id": "pattern-playground-lesson-02-q2",
+        "prompt": "Which item is a shape?",
+        "options": [
+          "Triangle",
+          "Tiffin",
+          "Homework",
+          "Cricket"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Triangle is a shape."
       }
     ]
   },
   {
-    "id": "prompt-power-lesson-02-quiz",
-    "lessonId": "prompt-power-lesson-02",
-    "title": "Role and Goal Checkpoint",
+    "id": "pattern-playground-lesson-03-quiz",
+    "lessonId": "pattern-playground-lesson-03",
+    "title": "Number Patterns Checkpoint",
     "questions": [
       {
-        "id": "prompt-power-lesson-02-q1",
-        "prompt": "Which choice best matches the lesson idea: Role and Goal?",
+        "id": "pattern-playground-lesson-03-q1",
+        "prompt": "What comes after 2, 4, 6, 8?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 2,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "prompt-power-lesson-02-q2",
-        "prompt": "Select two helpful habits for role and goal.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "10",
+          "3",
+          "Mango",
+          "Red"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "The numbers jump by 2 each time."
+      },
+      {
+        "id": "pattern-playground-lesson-03-q2",
+        "prompt": "Number patterns help us do what?",
+        "options": [
+          "Predict the next number",
+          "Share a phone number",
+          "Forget counting",
+          "Hide pencils"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Number patterns help us predict what may come next."
       }
     ]
   },
   {
-    "id": "prompt-power-lesson-03-quiz",
-    "lessonId": "prompt-power-lesson-03",
-    "title": "Context Matters Checkpoint",
+    "id": "pattern-playground-lesson-04-quiz",
+    "lessonId": "pattern-playground-lesson-04",
+    "title": "Sound Patterns Checkpoint",
     "questions": [
       {
-        "id": "prompt-power-lesson-03-q1",
-        "prompt": "Which choice best matches the lesson idea: Context Matters?",
+        "id": "pattern-playground-lesson-04-q1",
+        "prompt": "What comes after clap, tap, clap, tap?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 3,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "prompt-power-lesson-03-q2",
-        "prompt": "Select two helpful habits for context matters.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Clap",
+          "Bus",
+          "Mango",
+          "Star"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "The sound pattern repeats clap and tap."
+      },
+      {
+        "id": "pattern-playground-lesson-04-q2",
+        "prompt": "Which sense helps with sound patterns?",
+        "options": [
+          "Listening",
+          "Smelling",
+          "Running",
+          "Sleeping"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Listening helps us notice sound patterns."
       }
     ]
   },
   {
-    "id": "prompt-power-lesson-04-quiz",
-    "lessonId": "prompt-power-lesson-04",
-    "title": "Examples Help Checkpoint",
+    "id": "pattern-playground-lesson-05-quiz",
+    "lessonId": "pattern-playground-lesson-05",
+    "title": "What Comes Next? Checkpoint",
     "questions": [
       {
-        "id": "prompt-power-lesson-04-q1",
-        "prompt": "Which choice best matches the lesson idea: Examples Help?",
+        "id": "pattern-playground-lesson-05-q1",
+        "prompt": "Diya, star, diya, star. What comes next?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
+          "Diya",
+          "Phone",
+          "Dog",
+          "Pencil"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
           0
         ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
+        "explanation": "The festival light pattern repeats diya and star."
       },
       {
-        "id": "prompt-power-lesson-04-q2",
-        "prompt": "Select two helpful habits for examples help.",
+        "id": "pattern-playground-lesson-05-q2",
+        "prompt": "A prediction is what?",
         "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "A smart guess from clues",
+          "A private password",
+          "A scary rule",
+          "A hidden address"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Predictions are smart guesses from clues."
       }
     ]
   },
   {
-    "id": "prompt-power-lesson-05-quiz",
-    "lessonId": "prompt-power-lesson-05",
-    "title": "Step-by-Step Prompts Checkpoint",
+    "id": "pattern-playground-lesson-06-quiz",
+    "lessonId": "pattern-playground-lesson-06",
+    "title": "Odd One Out Checkpoint",
     "questions": [
       {
-        "id": "prompt-power-lesson-05-q1",
-        "prompt": "Which choice best matches the lesson idea: Step-by-Step Prompts?",
+        "id": "pattern-playground-lesson-06-q1",
+        "prompt": "Which item is odd: mango, apple, banana, bus?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 1,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "prompt-power-lesson-05-q2",
-        "prompt": "Select two helpful habits for step-by-step prompts.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Bus",
+          "Mango",
+          "Apple",
+          "Banana"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Bus is a vehicle. The others are fruits."
+      },
+      {
+        "id": "pattern-playground-lesson-06-q2",
+        "prompt": "Odd one out means what?",
+        "options": [
+          "Item that does not fit",
+          "Best secret",
+          "Longest word",
+          "Fastest car"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "The odd item does not fit the group."
       }
     ]
   },
   {
-    "id": "prompt-power-lesson-06-quiz",
-    "lessonId": "prompt-power-lesson-06",
-    "title": "Refining Answers Checkpoint",
+    "id": "pattern-playground-lesson-07-quiz",
+    "lessonId": "pattern-playground-lesson-07",
+    "title": "Simple Predictions Checkpoint",
     "questions": [
       {
-        "id": "prompt-power-lesson-06-q1",
-        "prompt": "Which choice best matches the lesson idea: Refining Answers?",
+        "id": "pattern-playground-lesson-07-q1",
+        "prompt": "A ball rolls toward a bat. What might happen?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 2,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "prompt-power-lesson-06-q2",
-        "prompt": "Select two helpful habits for refining answers.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "The bat may hit it",
+          "It becomes a password",
+          "It turns into homework",
+          "It calls a phone"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "A prediction uses clues to guess what may happen."
+      },
+      {
+        "id": "pattern-playground-lesson-07-q2",
+        "prompt": "Are predictions always perfect?",
+        "options": [
+          "No, we should check",
+          "Yes, always",
+          "Only on Diwali",
+          "Only with mangoes"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Predictions can be helpful but still need checking."
       }
     ]
   },
   {
-    "id": "prompt-power-lesson-07-quiz",
-    "lessonId": "prompt-power-lesson-07",
-    "title": "Checking Sources Checkpoint",
+    "id": "pattern-playground-lesson-08-quiz",
+    "lessonId": "pattern-playground-lesson-08",
+    "title": "Treasure Clues Checkpoint",
     "questions": [
       {
-        "id": "prompt-power-lesson-07-q1",
-        "prompt": "Which choice best matches the lesson idea: Checking Sources?",
+        "id": "pattern-playground-lesson-08-q1",
+        "prompt": "Why should clues be followed in order?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 3,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "prompt-power-lesson-07-q2",
-        "prompt": "Select two helpful habits for checking sources.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Order helps reach the goal",
+          "Order hides secrets",
+          "Order stops learning",
+          "Order shares address"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Step-by-step clues help us reach the goal."
+      },
+      {
+        "id": "pattern-playground-lesson-08-q2",
+        "prompt": "Which is a good treasure clue?",
+        "options": [
+          "Go to the blue door",
+          "Tell your password",
+          "Forget the map",
+          "Pick any secret"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "A good clue gives a clear safe step."
       }
     ]
   },
   {
-    "id": "prompt-power-lesson-08-quiz",
-    "lessonId": "prompt-power-lesson-08",
-    "title": "Creative Prompts Checkpoint",
+    "id": "pattern-playground-lesson-09-quiz",
+    "lessonId": "pattern-playground-lesson-09",
+    "title": "Detective Thinking Checkpoint",
     "questions": [
       {
-        "id": "prompt-power-lesson-08-q1",
-        "prompt": "Which choice best matches the lesson idea: Creative Prompts?",
+        "id": "pattern-playground-lesson-09-q1",
+        "prompt": "Before guessing, a detective should look for what?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
+          "Evidence",
+          "Passwords",
+          "Random pop-ups",
+          "Private photos"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
           0
         ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
+        "explanation": "Evidence helps us make better guesses."
       },
       {
-        "id": "prompt-power-lesson-08-q2",
-        "prompt": "Select two helpful habits for creative prompts.",
+        "id": "pattern-playground-lesson-09-q2",
+        "prompt": "If the tiffin spoon is missing, what helps?",
         "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Checking clues",
+          "Blaming quickly",
+          "Ignoring facts",
+          "Sharing address"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Careful thinkers check clues before guessing."
       }
     ]
   },
   {
-    "id": "prompt-power-lesson-09-quiz",
-    "lessonId": "prompt-power-lesson-09",
-    "title": "Prompt Safety Checkpoint",
+    "id": "pattern-playground-lesson-10-quiz",
+    "lessonId": "pattern-playground-lesson-10",
+    "title": "Pattern Hero Mission Checkpoint",
     "questions": [
       {
-        "id": "prompt-power-lesson-09-q1",
-        "prompt": "Which choice best matches the lesson idea: Prompt Safety?",
+        "id": "pattern-playground-lesson-10-q1",
+        "prompt": "Which skill belongs to a Pattern Hero?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 1,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "prompt-power-lesson-09-q2",
-        "prompt": "Select two helpful habits for prompt safety.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Finding what comes next",
+          "Sharing secrets",
+          "Never checking",
+          "Forgetting clues"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Pattern Heroes use clues to find what comes next."
+      },
+      {
+        "id": "pattern-playground-lesson-10-q2",
+        "prompt": "What should you do with important pattern guesses?",
+        "options": [
+          "Check them",
+          "Trust them always",
+          "Hide them",
+          "Turn off thinking"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Important guesses should be checked."
       }
     ]
   },
   {
-    "id": "prompt-power-lesson-10-quiz",
-    "lessonId": "prompt-power-lesson-10",
-    "title": "Prompt Challenge Checkpoint",
+    "id": "teach-the-robot-lesson-01-quiz",
+    "lessonId": "teach-the-robot-lesson-01",
+    "title": "Examples Teach Robots Checkpoint",
     "questions": [
       {
-        "id": "prompt-power-lesson-10-q1",
-        "prompt": "Which choice best matches the lesson idea: Prompt Challenge?",
+        "id": "teach-the-robot-lesson-01-q1",
+        "prompt": "What helps ShivBot learn fruits?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 2,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "prompt-power-lesson-10-q2",
-        "prompt": "Select two helpful habits for prompt challenge.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Fruit examples",
+          "No pictures",
+          "Secret numbers",
+          "Wrong names"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Fruit examples help ShivBot learn fruits."
+      },
+      {
+        "id": "teach-the-robot-lesson-01-q2",
+        "prompt": "Which is a fruit example?",
+        "options": [
+          "Mango",
+          "Bus",
+          "Shoe",
+          "Pencil"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Mango is a fruit example."
       }
     ]
   },
   {
-    "id": "data-detectives-lesson-01-quiz",
-    "lessonId": "data-detectives-lesson-01",
-    "title": "What Is Data? Checkpoint",
+    "id": "teach-the-robot-lesson-02-quiz",
+    "lessonId": "teach-the-robot-lesson-02",
+    "title": "Categories Are Buckets Checkpoint",
     "questions": [
       {
-        "id": "data-detectives-lesson-01-q1",
-        "prompt": "Which choice best matches the lesson idea: What Is Data??",
+        "id": "teach-the-robot-lesson-02-q1",
+        "prompt": "Where does a dog belong?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 2,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "data-detectives-lesson-01-q2",
-        "prompt": "Select two helpful habits for what is data?.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Animals",
+          "Food",
+          "Vehicles",
+          "Passwords"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Dog belongs in the animals category."
+      },
+      {
+        "id": "teach-the-robot-lesson-02-q2",
+        "prompt": "What is a category?",
+        "options": [
+          "A group for similar things",
+          "A secret code",
+          "A phone number",
+          "A scary rule"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "A category groups similar things together."
       }
     ]
   },
   {
-    "id": "data-detectives-lesson-02-quiz",
-    "lessonId": "data-detectives-lesson-02",
-    "title": "Clean vs Messy Data Checkpoint",
+    "id": "teach-the-robot-lesson-03-quiz",
+    "lessonId": "teach-the-robot-lesson-03",
+    "title": "Training ShivBot Checkpoint",
     "questions": [
       {
-        "id": "data-detectives-lesson-02-q1",
-        "prompt": "Which choice best matches the lesson idea: Clean vs Messy Data?",
+        "id": "teach-the-robot-lesson-03-q1",
+        "prompt": "Training ShivBot means what?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 3,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "data-detectives-lesson-02-q2",
-        "prompt": "Select two helpful habits for clean vs messy data.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Showing many examples",
+          "Giving no examples",
+          "Sharing address",
+          "Closing the app"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Training means learning from examples."
+      },
+      {
+        "id": "teach-the-robot-lesson-03-q2",
+        "prompt": "What kind of examples are best?",
+        "options": [
+          "Clear and correct",
+          "Wrong and messy",
+          "Private passwords",
+          "No labels"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Clear and correct examples help AI learn."
       }
     ]
   },
   {
-    "id": "data-detectives-lesson-03-quiz",
-    "lessonId": "data-detectives-lesson-03",
-    "title": "Labels and Categories Checkpoint",
+    "id": "teach-the-robot-lesson-04-quiz",
+    "lessonId": "teach-the-robot-lesson-04",
+    "title": "Good Data Checkpoint",
     "questions": [
       {
-        "id": "data-detectives-lesson-03-q1",
-        "prompt": "Which choice best matches the lesson idea: Labels and Categories?",
+        "id": "teach-the-robot-lesson-04-q1",
+        "prompt": "Which data helps ShivBot most?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
+          "Clear mango card with right label",
+          "Blurry card with wrong label",
+          "Password list",
+          "No label at all"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
           0
         ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
+        "explanation": "Good data is clear and correctly labeled."
       },
       {
-        "id": "data-detectives-lesson-03-q2",
-        "prompt": "Select two helpful habits for labels and categories.",
+        "id": "teach-the-robot-lesson-04-q2",
+        "prompt": "Good data should be what?",
         "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Clear and correct",
+          "Private and secret",
+          "Wrong and confusing",
+          "Always empty"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Good data helps AI learn safely and correctly."
       }
     ]
   },
   {
-    "id": "data-detectives-lesson-04-quiz",
-    "lessonId": "data-detectives-lesson-04",
-    "title": "Finding Patterns Checkpoint",
+    "id": "teach-the-robot-lesson-05-quiz",
+    "lessonId": "teach-the-robot-lesson-05",
+    "title": "Bad Data Checkpoint",
     "questions": [
       {
-        "id": "data-detectives-lesson-04-q1",
-        "prompt": "Which choice best matches the lesson idea: Finding Patterns?",
+        "id": "teach-the-robot-lesson-05-q1",
+        "prompt": "What can bad data cause?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 1,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "data-detectives-lesson-04-q2",
-        "prompt": "Select two helpful habits for finding patterns.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Mistakes",
+          "Magic",
+          "Perfect answers",
+          "No learning ever"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Bad data can cause wrong AI answers."
+      },
+      {
+        "id": "teach-the-robot-lesson-05-q2",
+        "prompt": "What should we do with wrong labels?",
+        "options": [
+          "Fix them",
+          "Hide them",
+          "Share them online",
+          "Ignore safety"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Fixing wrong labels helps ShivBot improve."
       }
     ]
   },
   {
-    "id": "data-detectives-lesson-05-quiz",
-    "lessonId": "data-detectives-lesson-05",
-    "title": "Sample Size Checkpoint",
+    "id": "teach-the-robot-lesson-06-quiz",
+    "lessonId": "teach-the-robot-lesson-06",
+    "title": "Sorting Like AI Checkpoint",
     "questions": [
       {
-        "id": "data-detectives-lesson-05-q1",
-        "prompt": "Which choice best matches the lesson idea: Sample Size?",
+        "id": "teach-the-robot-lesson-06-q1",
+        "prompt": "Where should a bus go?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 2,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "data-detectives-lesson-05-q2",
-        "prompt": "Select two helpful habits for sample size.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Vehicles",
+          "Fruits",
+          "Animals",
+          "Passwords"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Bus belongs with vehicles."
+      },
+      {
+        "id": "teach-the-robot-lesson-06-q2",
+        "prompt": "Sorting helps AI do what?",
+        "options": [
+          "Put things into groups",
+          "Collect secrets",
+          "Forget examples",
+          "Stop learning"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Sorting teaches groups and categories."
       }
     ]
   },
   {
-    "id": "data-detectives-lesson-06-quiz",
-    "lessonId": "data-detectives-lesson-06",
-    "title": "Bias in Data Checkpoint",
+    "id": "teach-the-robot-lesson-07-quiz",
+    "lessonId": "teach-the-robot-lesson-07",
+    "title": "Guessing From Examples Checkpoint",
     "questions": [
       {
-        "id": "data-detectives-lesson-06-q1",
-        "prompt": "Which choice best matches the lesson idea: Bias in Data?",
+        "id": "teach-the-robot-lesson-07-q1",
+        "prompt": "A yellow curved fruit may be what?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 3,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "data-detectives-lesson-06-q2",
-        "prompt": "Select two helpful habits for bias in data.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Banana",
+          "Cricket bat",
+          "School bus",
+          "Notebook"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "AI can guess banana from examples and clues."
+      },
+      {
+        "id": "teach-the-robot-lesson-07-q2",
+        "prompt": "AI guesses from what?",
+        "options": [
+          "Examples",
+          "Secrets",
+          "No clues",
+          "Angry faces"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "AI uses examples to make guesses."
       }
     ]
   },
   {
-    "id": "data-detectives-lesson-07-quiz",
-    "lessonId": "data-detectives-lesson-07",
-    "title": "Private Information Checkpoint",
+    "id": "teach-the-robot-lesson-08-quiz",
+    "lessonId": "teach-the-robot-lesson-08",
+    "title": "Recommendations Checkpoint",
     "questions": [
       {
-        "id": "data-detectives-lesson-07-q1",
-        "prompt": "Which choice best matches the lesson idea: Private Information?",
+        "id": "teach-the-robot-lesson-08-q1",
+        "prompt": "If you like cricket stories, Shiv may suggest what?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
+          "Another cricket story",
+          "A password",
+          "A random address",
+          "A private photo"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
           0
         ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
+        "explanation": "Recommendations use patterns in choices."
       },
       {
-        "id": "data-detectives-lesson-07-q2",
-        "prompt": "Select two helpful habits for private information.",
+        "id": "teach-the-robot-lesson-08-q2",
+        "prompt": "A recommendation is what?",
         "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "A helpful suggestion",
+          "A secret rule",
+          "A phone number",
+          "A wrong label"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "A recommendation is a suggestion based on clues."
       }
     ]
   },
   {
-    "id": "data-detectives-lesson-08-quiz",
-    "lessonId": "data-detectives-lesson-08",
-    "title": "Data Visualization Checkpoint",
+    "id": "teach-the-robot-lesson-09-quiz",
+    "lessonId": "teach-the-robot-lesson-09",
+    "title": "Learning From Mistakes Checkpoint",
     "questions": [
       {
-        "id": "data-detectives-lesson-08-q1",
-        "prompt": "Which choice best matches the lesson idea: Data Visualization?",
+        "id": "teach-the-robot-lesson-09-q1",
+        "prompt": "What helps ShivBot improve after a mistake?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 1,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "data-detectives-lesson-08-q2",
-        "prompt": "Select two helpful habits for data visualization.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
+          "Kind correction",
+          "More wrong labels",
+          "Private info",
+          "No feedback"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
-          0,
-          1
+          0
         ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Feedback and correction help ShivBot improve."
+      },
+      {
+        "id": "teach-the-robot-lesson-09-q2",
+        "prompt": "How should we fix AI mistakes?",
+        "options": [
+          "Check and correct kindly",
+          "Laugh and ignore always",
+          "Share secrets",
+          "Stop learning"
+        ],
+        "answerIndex": 0,
+        "correctAnswerIndexes": [
+          0
+        ],
+        "explanation": "Checking and correcting helps AI learn better."
       }
     ]
   },
   {
-    "id": "data-detectives-lesson-09-quiz",
-    "lessonId": "data-detectives-lesson-09",
-    "title": "Fair Data Choices Checkpoint",
+    "id": "teach-the-robot-lesson-10-quiz",
+    "lessonId": "teach-the-robot-lesson-10",
+    "title": "Robot Hero Mission Checkpoint",
     "questions": [
       {
-        "id": "data-detectives-lesson-09-q1",
-        "prompt": "Which choice best matches the lesson idea: Fair Data Choices?",
+        "id": "teach-the-robot-lesson-10-q1",
+        "prompt": "What does a Robot Hero use to train ShivBot?",
         "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 2,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "data-detectives-lesson-09-q2",
-        "prompt": "Select two helpful habits for fair data choices.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "data-detectives-lesson-10-quiz",
-    "lessonId": "data-detectives-lesson-10",
-    "title": "Data Detective Case Checkpoint",
-    "questions": [
-      {
-        "id": "data-detectives-lesson-10-q1",
-        "prompt": "Which choice best matches the lesson idea: Data Detective Case?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 3,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "data-detectives-lesson-10-q2",
-        "prompt": "Select two helpful habits for data detective case.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "machine-learning-lab-lesson-01-quiz",
-    "lessonId": "machine-learning-lab-lesson-01",
-    "title": "Models as Learners Checkpoint",
-    "questions": [
-      {
-        "id": "machine-learning-lab-lesson-01-q1",
-        "prompt": "Which choice best matches the lesson idea: Models as Learners?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 3,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "machine-learning-lab-lesson-01-q2",
-        "prompt": "Select two helpful habits for models as learners.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "machine-learning-lab-lesson-02-quiz",
-    "lessonId": "machine-learning-lab-lesson-02",
-    "title": "Training Data Checkpoint",
-    "questions": [
-      {
-        "id": "machine-learning-lab-lesson-02-q1",
-        "prompt": "Which choice best matches the lesson idea: Training Data?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
+          "Examples and good data",
+          "Passwords and addresses",
+          "No labels",
+          "Random shouting"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
           0
         ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
+        "explanation": "Examples and good data help train ShivBot."
       },
       {
-        "id": "machine-learning-lab-lesson-02-q2",
-        "prompt": "Select two helpful habits for training data.",
+        "id": "teach-the-robot-lesson-10-q2",
+        "prompt": "Which habit keeps AI learning safe?",
         "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "machine-learning-lab-lesson-03-quiz",
-    "lessonId": "machine-learning-lab-lesson-03",
-    "title": "Testing Data Checkpoint",
-    "questions": [
-      {
-        "id": "machine-learning-lab-lesson-03-q1",
-        "prompt": "Which choice best matches the lesson idea: Testing Data?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 1,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "machine-learning-lab-lesson-03-q2",
-        "prompt": "Select two helpful habits for testing data.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "machine-learning-lab-lesson-04-quiz",
-    "lessonId": "machine-learning-lab-lesson-04",
-    "title": "Features Checkpoint",
-    "questions": [
-      {
-        "id": "machine-learning-lab-lesson-04-q1",
-        "prompt": "Which choice best matches the lesson idea: Features?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 2,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "machine-learning-lab-lesson-04-q2",
-        "prompt": "Select two helpful habits for features.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "machine-learning-lab-lesson-05-quiz",
-    "lessonId": "machine-learning-lab-lesson-05",
-    "title": "Classification Checkpoint",
-    "questions": [
-      {
-        "id": "machine-learning-lab-lesson-05-q1",
-        "prompt": "Which choice best matches the lesson idea: Classification?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 3,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "machine-learning-lab-lesson-05-q2",
-        "prompt": "Select two helpful habits for classification.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "machine-learning-lab-lesson-06-quiz",
-    "lessonId": "machine-learning-lab-lesson-06",
-    "title": "Prediction Confidence Checkpoint",
-    "questions": [
-      {
-        "id": "machine-learning-lab-lesson-06-q1",
-        "prompt": "Which choice best matches the lesson idea: Prediction Confidence?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
+          "Check mistakes",
+          "Trust every guess",
+          "Use bad data",
+          "Share private photos"
         ],
         "answerIndex": 0,
         "correctAnswerIndexes": [
           0
         ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "machine-learning-lab-lesson-06-q2",
-        "prompt": "Select two helpful habits for prediction confidence.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "machine-learning-lab-lesson-07-quiz",
-    "lessonId": "machine-learning-lab-lesson-07",
-    "title": "Overfitting Checkpoint",
-    "questions": [
-      {
-        "id": "machine-learning-lab-lesson-07-q1",
-        "prompt": "Which choice best matches the lesson idea: Overfitting?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 1,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "machine-learning-lab-lesson-07-q2",
-        "prompt": "Select two helpful habits for overfitting.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "machine-learning-lab-lesson-08-quiz",
-    "lessonId": "machine-learning-lab-lesson-08",
-    "title": "Improving Models Checkpoint",
-    "questions": [
-      {
-        "id": "machine-learning-lab-lesson-08-q1",
-        "prompt": "Which choice best matches the lesson idea: Improving Models?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 2,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "machine-learning-lab-lesson-08-q2",
-        "prompt": "Select two helpful habits for improving models.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "machine-learning-lab-lesson-09-quiz",
-    "lessonId": "machine-learning-lab-lesson-09",
-    "title": "Human Feedback Checkpoint",
-    "questions": [
-      {
-        "id": "machine-learning-lab-lesson-09-q1",
-        "prompt": "Which choice best matches the lesson idea: Human Feedback?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 3,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "machine-learning-lab-lesson-09-q2",
-        "prompt": "Select two helpful habits for human feedback.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "machine-learning-lab-lesson-10-quiz",
-    "lessonId": "machine-learning-lab-lesson-10",
-    "title": "ML Lab Project Checkpoint",
-    "questions": [
-      {
-        "id": "machine-learning-lab-lesson-10-q1",
-        "prompt": "Which choice best matches the lesson idea: ML Lab Project?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "machine-learning-lab-lesson-10-q2",
-        "prompt": "Select two helpful habits for ml lab project.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "responsible-ai-builders-lesson-01-quiz",
-    "lessonId": "responsible-ai-builders-lesson-01",
-    "title": "Safe AI Habits Checkpoint",
-    "questions": [
-      {
-        "id": "responsible-ai-builders-lesson-01-q1",
-        "prompt": "Which choice best matches the lesson idea: Safe AI Habits?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "responsible-ai-builders-lesson-01-q2",
-        "prompt": "Select two helpful habits for safe ai habits.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "responsible-ai-builders-lesson-02-quiz",
-    "lessonId": "responsible-ai-builders-lesson-02",
-    "title": "Fact Checking Checkpoint",
-    "questions": [
-      {
-        "id": "responsible-ai-builders-lesson-02-q1",
-        "prompt": "Which choice best matches the lesson idea: Fact Checking?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 1,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "responsible-ai-builders-lesson-02-q2",
-        "prompt": "Select two helpful habits for fact checking.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "responsible-ai-builders-lesson-03-quiz",
-    "lessonId": "responsible-ai-builders-lesson-03",
-    "title": "Kind AI Use Checkpoint",
-    "questions": [
-      {
-        "id": "responsible-ai-builders-lesson-03-q1",
-        "prompt": "Which choice best matches the lesson idea: Kind AI Use?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 2,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "responsible-ai-builders-lesson-03-q2",
-        "prompt": "Select two helpful habits for kind ai use.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "responsible-ai-builders-lesson-04-quiz",
-    "lessonId": "responsible-ai-builders-lesson-04",
-    "title": "Copyright Basics Checkpoint",
-    "questions": [
-      {
-        "id": "responsible-ai-builders-lesson-04-q1",
-        "prompt": "Which choice best matches the lesson idea: Copyright Basics?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 3,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "responsible-ai-builders-lesson-04-q2",
-        "prompt": "Select two helpful habits for copyright basics.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "responsible-ai-builders-lesson-05-quiz",
-    "lessonId": "responsible-ai-builders-lesson-05",
-    "title": "Privacy First Checkpoint",
-    "questions": [
-      {
-        "id": "responsible-ai-builders-lesson-05-q1",
-        "prompt": "Which choice best matches the lesson idea: Privacy First?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "responsible-ai-builders-lesson-05-q2",
-        "prompt": "Select two helpful habits for privacy first.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "responsible-ai-builders-lesson-06-quiz",
-    "lessonId": "responsible-ai-builders-lesson-06",
-    "title": "Bias Checks Checkpoint",
-    "questions": [
-      {
-        "id": "responsible-ai-builders-lesson-06-q1",
-        "prompt": "Which choice best matches the lesson idea: Bias Checks?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 1,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "responsible-ai-builders-lesson-06-q2",
-        "prompt": "Select two helpful habits for bias checks.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "responsible-ai-builders-lesson-07-quiz",
-    "lessonId": "responsible-ai-builders-lesson-07",
-    "title": "Human-in-the-Loop Checkpoint",
-    "questions": [
-      {
-        "id": "responsible-ai-builders-lesson-07-q1",
-        "prompt": "Which choice best matches the lesson idea: Human-in-the-Loop?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 2,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "responsible-ai-builders-lesson-07-q2",
-        "prompt": "Select two helpful habits for human-in-the-loop.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "responsible-ai-builders-lesson-08-quiz",
-    "lessonId": "responsible-ai-builders-lesson-08",
-    "title": "AI for Good Checkpoint",
-    "questions": [
-      {
-        "id": "responsible-ai-builders-lesson-08-q1",
-        "prompt": "Which choice best matches the lesson idea: AI for Good?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 3,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "responsible-ai-builders-lesson-08-q2",
-        "prompt": "Select two helpful habits for ai for good.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "responsible-ai-builders-lesson-09-quiz",
-    "lessonId": "responsible-ai-builders-lesson-09",
-    "title": "When Not to Use AI Checkpoint",
-    "questions": [
-      {
-        "id": "responsible-ai-builders-lesson-09-q1",
-        "prompt": "Which choice best matches the lesson idea: When Not to Use AI?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "responsible-ai-builders-lesson-09-q2",
-        "prompt": "Select two helpful habits for when not to use ai.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
-      }
-    ]
-  },
-  {
-    "id": "responsible-ai-builders-lesson-10-quiz",
-    "lessonId": "responsible-ai-builders-lesson-10",
-    "title": "Builder Pledge Checkpoint",
-    "questions": [
-      {
-        "id": "responsible-ai-builders-lesson-10-q1",
-        "prompt": "Which choice best matches the lesson idea: Builder Pledge?",
-        "options": [
-          "Use AI with a clear goal and review the result",
-          "Trust every AI answer without checking it",
-          "Share private information to get faster answers",
-          "Avoid asking follow-up questions"
-        ],
-        "answerIndex": 1,
-        "correctAnswerIndexes": [
-          0
-        ],
-        "explanation": "A clear goal plus human review is the safest and most useful learning habit."
-      },
-      {
-        "id": "responsible-ai-builders-lesson-10-q2",
-        "prompt": "Select two helpful habits for builder pledge.",
-        "options": [
-          "Give useful context",
-          "Check important facts",
-          "Paste passwords or secrets",
-          "Ignore signs of bias"
-        ],
-        "answerIndex": 0,
-        "correctAnswerIndexes": [
-          0,
-          1
-        ],
-        "explanation": "Good context and fact checking make AI learning stronger; private data and ignored bias create risk."
+        "explanation": "Checking mistakes keeps AI learning safer."
       }
     ]
   }

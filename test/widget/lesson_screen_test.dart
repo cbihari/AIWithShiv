@@ -42,7 +42,8 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('ML Basics'), findsOneWidget);
-    expect(find.textContaining('Story:'), findsOneWidget);
-    expect(find.text('Take Quiz'), findsOneWidget);
+    expect(find.text('Shiv says:'), findsWidgets);
+    expect(find.textContaining('A game learns from examples.'), findsOneWidget);
+    expect(find.text('Keep Reading... 📖'), findsOneWidget);
   });
 }

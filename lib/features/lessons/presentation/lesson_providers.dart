@@ -1,13 +1,12 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../core/di/providers.dart';
 import '../../../shared/models/course.dart';
 import '../../../shared/models/lesson.dart';
-import '../data/firestore_lesson_repository.dart';
+import '../data/asset_lesson_repository.dart';
 import '../domain/lesson_repository.dart';
 
 final lessonRepositoryProvider = Provider<LessonRepository>((ref) {
-  return FirestoreLessonRepository(ref.watch(firestoreProvider));
+  return const AssetLessonRepository();
 });
 
 final coursesProvider = FutureProvider<List<Course>>((ref) {

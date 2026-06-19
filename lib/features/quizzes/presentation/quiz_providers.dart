@@ -1,16 +1,17 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/di/providers.dart';
+import '../../../core/services/analytics_service.dart';
 import '../../../shared/models/quiz.dart';
 import '../../../shared/models/quiz_result.dart';
 import '../../achievements/presentation/achievement_providers.dart';
 import '../../auth/presentation/auth_providers.dart';
 import '../../progress/presentation/progress_providers.dart';
-import '../data/firestore_quiz_repository.dart';
+import '../data/asset_quiz_repository.dart';
 import '../domain/quiz_repository.dart';
 
 final quizRepositoryProvider = Provider<QuizRepository>((ref) {
-  return FirestoreQuizRepository(ref.watch(firestoreProvider));
+  return const AssetQuizRepository();
 });
 
 final dailyQuizProvider = FutureProvider<Quiz?>((ref) {
@@ -133,11 +134,37 @@ class QuizViewModel extends StateNotifier<QuizUiState> {
           },
         ),
       );
+      final newBadges =
+          updatedProgress.badges.where((id) => !progress.badges.contains(id));
+      for (final badgeId in newBadges) {
+        await AnalyticsService.instance.badgeUnlocked(badgeId);
+      }
       await progressRepository.saveProgress(updatedProgress);
       state = state.copyWith(submitted: true, saving: false, result: result);
     } catch (error) {
       state = state.copyWith(saving: false, error: error.toString());
     }
+  }
+
+  Future<QuizResult?> submitSelectedAnswers(
+    Quiz quiz,
+    Map<String, Set<int>> selectedAnswers,
+  ) async {
+    state = const QuizUiState().copyWith(
+      selectedAnswers: selectedAnswers,
+      saving: true,
+    );
+    if (quiz.questions.any(
+      (question) => (selectedAnswers[question.id] ?? <int>{}).isEmpty,
+    )) {
+      state = state.copyWith(
+        saving: false,
+        error: 'Answer every question before submitting.',
+      );
+      return null;
+    }
+    await submit(quiz);
+    return state.result;
   }
 
   void reset() {

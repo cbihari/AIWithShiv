@@ -1,32 +1,32 @@
 [
   {
-    "id": "first-quiz-coins",
-    "title": "First Quiz Bonus",
-    "coins": 25,
+    "id": "first-masti-quiz-coins",
+    "title": "First Masti Quiz Bonus",
+    "coins": 20,
     "trigger": "first_quiz"
   },
   {
-    "id": "daily-streak-coins",
-    "title": "Daily Streak Spark",
+    "id": "daily-hero-spark",
+    "title": "Daily Hero Spark",
     "coins": 15,
     "trigger": "daily_streak"
   },
   {
-    "id": "course-finish-coins",
-    "title": "Course Finisher Chest",
-    "coins": 100,
+    "id": "masti-mission-chest",
+    "title": "Masti Mission Chest",
+    "coins": 80,
     "trigger": "course_complete"
   },
   {
-    "id": "perfect-score-coins",
-    "title": "Perfect Score Shine",
-    "coins": 50,
+    "id": "shabash-perfect-star",
+    "title": "Shabash Perfect Star",
+    "coins": 40,
     "trigger": "perfect_quiz"
   },
   {
-    "id": "builder-habit-coins",
-    "title": "Responsible Builder Bonus",
-    "coins": 40,
+    "id": "secret-shield-bonus",
+    "title": "Secret Shield Bonus",
+    "coins": 30,
     "trigger": "safety_habit"
   }
 ]

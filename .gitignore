@@ -19,6 +19,7 @@ android/app/release
 firebase/functions/lib/
 firebase/functions/node_modules/
 firebase-debug.log
+.firebase/
 .env
 *.iml
 .DS_Store

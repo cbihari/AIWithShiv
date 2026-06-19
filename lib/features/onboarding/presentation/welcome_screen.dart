@@ -1,48 +1,113 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class WelcomeScreen extends StatelessWidget {
+import '../../../core/services/sound_service.dart';
+import '../../../shared/widgets/child_comic_widgets.dart';
+import '../../../shared/widgets/comic_widgets.dart';
+
+class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
+
+  @override
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
+  late final AnimationController _floatController;
+  bool _buttonPressed = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _floatController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    )..repeat(reverse: true);
+  }
+
+  @override
+  void dispose() {
+    _floatController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.all(24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+      body: ChildComicBackground(
+        child: SafeArea(
+          child: Stack(
             children: [
-              const Spacer(),
-              Icon(
-                Icons.psychology_alt,
-                size: 110,
-                color: Theme.of(context).colorScheme.tertiary,
-              ),
-              const SizedBox(height: 24),
-              Text(
-                'Build your AI superpowers',
-                style: Theme.of(context).textTheme.headlineMedium,
-                textAlign: TextAlign.center,
-              ),
-              const SizedBox(height: 12),
-              const Text(
-                'Stories, games, quizzes, rewards, and a friendly AI buddy for every learner.',
-                textAlign: TextAlign.center,
-              ),
-              const Spacer(),
-              FilledButton(
-                onPressed: () => context.go('/age'),
-                child: const Text('Start Learning'),
-              ),
-              TextButton(
-                onPressed: () => context.go('/login'),
-                child: const Text('I already have an account'),
+              const Positioned.fill(child: FloatingStars()),
+              Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    AnimatedBuilder(
+                      animation: _floatController,
+                      builder: (context, child) {
+                        return Transform.translate(
+                          offset: Offset(
+                            0,
+                            math.sin(_floatController.value * math.pi) * -14,
+                          ),
+                          child: child,
+                        );
+                      },
+                      child: const Center(child: ShivAvatar(size: 190)),
+                    ),
+                    const SizedBox(height: 26),
+                    Text(
+                      'Namaste! I am Shiv! 🤖⚡',
+                      textAlign: TextAlign.center,
+                      style: comicDisplay(
+                        context,
+                        fontSize: 50,
+                        color: ComicColors.red,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      "Let's learn about AI together dost!",
+                      textAlign: TextAlign.center,
+                      style: comicBody(
+                        context,
+                        fontSize: 22,
+                        color: ComicColors.ink,
+                      ),
+                    ),
+                    const SizedBox(height: 34),
+                    AnimatedScale(
+                      scale: _buttonPressed ? 0.92 : 1,
+                      duration: const Duration(milliseconds: 110),
+                      child: ComicButton(
+                        label: "Let's Go! 🚀",
+                        color: ComicColors.red,
+                        expand: true,
+                        onPressed: _goNext,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  Future<void> _goNext() async {
+    setState(() => _buttonPressed = true);
+    await SoundService.instance.tap();
+    await Future<void>.delayed(const Duration(milliseconds: 130));
+    if (!mounted) return;
+    setState(() => _buttonPressed = false);
+    context.go('/age');
   }
 }

@@ -1,12 +1,11 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../core/di/providers.dart';
 import '../../../shared/models/user_progress.dart';
-import '../data/firestore_progress_repository.dart';
+import '../data/local_progress_repository.dart';
 import '../domain/progress_repository.dart';
 
 final progressRepositoryProvider = Provider<ProgressRepository>((ref) {
-  return FirestoreProgressRepository(ref.watch(firestoreProvider));
+  return LocalProgressRepository();
 });
 
 final userProgressProvider = StreamProvider.family<UserProgress, String>((

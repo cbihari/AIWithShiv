@@ -8,7 +8,7 @@ import 'package:aiwithshiv/shared/models/user_progress.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  test('Course serializes from and to Firestore shape', () {
+  test('Course serializes from and to JSON shape', () {
     final course = Course.fromJson(const {
       'id': 'ai-foundations',
       'title': 'AI Foundations',

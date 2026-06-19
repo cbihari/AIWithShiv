@@ -1,4 +1,4 @@
-enum AppEnvironment { dev, staging, prod }
+enum AppEnvironment { dev, qa, staging, prod }
 
 class Env {
   const Env._();
@@ -6,6 +6,28 @@ class Env {
   static const environment = String.fromEnvironment(
     'APP_ENV',
     defaultValue: 'dev',
+  );
+
+  static const enableAds = bool.fromEnvironment(
+    'ENABLE_ADS',
+    defaultValue: false,
+  );
+
+  static AppEnvironment get appEnvironment => switch (environment) {
+        'prod' => AppEnvironment.prod,
+        'qa' => AppEnvironment.qa,
+        'staging' => AppEnvironment.staging,
+        _ => AppEnvironment.dev,
+      };
+
+  static const authEnabled = bool.fromEnvironment(
+    'AUTH_ENABLED',
+    defaultValue: false,
+  );
+
+  static const shivBotProvider = String.fromEnvironment(
+    'SHIVBOT_PROVIDER',
+    defaultValue: 'local',
   );
 
   static const openAiApiBaseUrl = String.fromEnvironment(

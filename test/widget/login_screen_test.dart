@@ -1,32 +1,31 @@
 import 'package:aiwithshiv/features/auth/domain/auth_repository.dart';
 import 'package:aiwithshiv/features/auth/presentation/auth_providers.dart';
 import 'package:aiwithshiv/features/auth/presentation/login_screen.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 class FakeAuthRepository implements AuthRepository {
   @override
-  Stream<User?> authStateChanges() => const Stream.empty();
+  Stream<Object?> authStateChanges() => const Stream.empty();
 
   @override
-  Future<UserCredential> signIn(String email, String password) {
+  Future<void> signIn(String email, String password) {
     throw UnimplementedError();
   }
 
   @override
-  Future<UserCredential> signUp(String email, String password) {
+  Future<void> signUp(String email, String password) {
     throw UnimplementedError();
   }
 
   @override
-  Future<UserCredential> signInWithGoogle() {
+  Future<void> signInWithGoogle() {
     throw UnimplementedError();
   }
 
   @override
-  Future<UserCredential> signInWithApple() {
+  Future<void> signInWithApple() {
     throw UnimplementedError();
   }
 
