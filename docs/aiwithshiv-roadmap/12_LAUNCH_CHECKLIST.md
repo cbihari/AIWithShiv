@@ -6,22 +6,22 @@ Provide a practical Play Store and App Store launch checklist for AIWithShiv.
 
 ## Android Checklist
 
-- [ ] Confirm package name.
+- [x] Confirm package name.
 - [ ] Configure release signing.
-- [ ] Build Android App Bundle.
+- [x] Build Android App Bundle.
 - [ ] Test release APK/AAB on real Android device.
 - [ ] Confirm min SDK and target SDK.
-- [ ] Confirm launcher icon.
-- [ ] Confirm splash screen.
+- [x] Confirm launcher icon assets exist.
+- [x] Confirm splash screen assets exist.
 - [ ] Confirm app works offline.
-- [ ] Confirm no Firebase dependency in core flow.
+- [x] Confirm no Firebase dependency in core flow.
 
 ## iOS Checklist
 
-- [ ] Confirm bundle ID.
+- [x] Confirm bundle ID.
 - [ ] Configure signing team.
-- [ ] Configure app icons.
-- [ ] Configure launch screen.
+- [x] Configure app icons.
+- [x] Configure launch screen.
 - [ ] Build archive in Xcode.
 - [ ] Test on real iPhone.
 - [ ] Upload to TestFlight.
@@ -50,26 +50,26 @@ Provide a practical Play Store and App Store launch checklist for AIWithShiv.
 
 ## Child Safety Compliance
 
-- [ ] No child login required.
-- [ ] No phone/email/password required.
-- [ ] No direct AI API key in Flutter.
+- [x] No child login required.
+- [x] No phone/email/password required.
+- [x] No direct AI API key in Flutter.
 - [ ] Safe content review complete.
 - [ ] Ads policy reviewed if ads enabled.
-- [ ] Parent-friendly safety explanation complete.
+- [x] Parent-friendly safety explanation complete.
 
 ## Testing Checklist
 
-- [ ] `flutter analyze`
-- [ ] `flutter test`
-- [ ] Android release build.
-- [ ] iOS release/archive build.
-- [ ] Small screen test.
-- [ ] Hindi mode test.
+- [x] `flutter analyze`
+- [x] `flutter test`
+- [x] Android release build.
+- [x] iOS release/no-codesign build.
+- [x] Small screen automated tests.
+- [x] Hindi mode automated tests.
 - [ ] Voice narration test.
 - [ ] Offline airplane-mode test.
 - [ ] Low-end device performance test.
-- [ ] Back button/navigation test.
-- [ ] Game reward replay test.
+- [x] Back button/navigation automated tests.
+- [x] Game reward replay tests.
 - [ ] ShivBot fallback/backend test.
 
 ## Final Build Commands
@@ -134,4 +134,3 @@ The project already builds and tests locally in prior work. Current code has opt
 - Store forms are truthful.
 - No private key/API key ships in app.
 - Child safety claims are backed by implementation.
-
