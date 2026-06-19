@@ -1,4 +1,5 @@
 import 'package:aiwithshiv/core/localization/language_service.dart';
+import 'package:aiwithshiv/features/games/domain/game_repository.dart';
 import 'package:aiwithshiv/features/games/presentation/game_providers.dart';
 import 'package:aiwithshiv/features/games/presentation/games_screen.dart';
 import 'package:aiwithshiv/shared/models/game.dart';
@@ -33,11 +34,36 @@ void main() {
       expect(find.text('AI Mistake पकड़ो'), findsOneWidget);
     });
   }
+
+  for (final game in _games) {
+    testWidgets('Game route ${game.route} renders and backs to games list', (
+      tester,
+    ) async {
+      addTearDown(() => tester.view.resetPhysicalSize());
+      addTearDown(() => tester.view.resetDevicePixelRatio());
+      tester.view
+        ..physicalSize = const Size(320, 568)
+        ..devicePixelRatio = 1;
+
+      await tester.pumpWidget(_testApp(initialLocation: game.route));
+      await tester.pump(const Duration(milliseconds: 250));
+
+      expect(tester.takeException(), isNull);
+      expect(find.text(game.title), findsOneWidget);
+      expect(find.textContaining(game.concept), findsOneWidget);
+
+      await tester.tap(find.byIcon(Icons.arrow_back));
+      await tester.pumpAndSettle();
+
+      expect(tester.takeException(), isNull);
+      expect(find.text('🎮 AI Games'), findsOneWidget);
+    });
+  }
 }
 
-Widget _testApp() {
+Widget _testApp({String initialLocation = '/games'}) {
   final router = GoRouter(
-    initialLocation: '/games',
+    initialLocation: initialLocation,
     routes: [
       GoRoute(
         path: '/games',
@@ -48,9 +74,26 @@ Widget _testApp() {
         builder: (_, __) => const Scaffold(body: Text('Dashboard')),
       ),
       GoRoute(
-        path: '/games/:id',
-        builder: (_, state) => Scaffold(
-          body: Text('Game ${state.pathParameters['id']}'),
+        path: '/games/train-robot',
+        builder: (_, __) => const GameDetailScreen(gameId: 'train_robot'),
+      ),
+      GoRoute(
+        path: '/games/ai-detective',
+        builder: (_, __) => const GameDetailScreen(gameId: 'ai_detective'),
+      ),
+      GoRoute(
+        path: '/games/sort-like-ai',
+        builder: (_, __) => const GameDetailScreen(gameId: 'sort_like_ai'),
+      ),
+      GoRoute(
+        path: '/games/robot-treasure-hunt',
+        builder: (_, __) =>
+            const GameDetailScreen(gameId: 'robot_treasure_hunt'),
+      ),
+      GoRoute(
+        path: '/games/spot-ai-mistake',
+        builder: (_, __) => const GameDetailScreen(
+          gameId: 'spot_ai_mistake',
         ),
       ),
     ],
@@ -58,7 +101,7 @@ Widget _testApp() {
 
   return ProviderScope(
     overrides: [
-      gamesProvider.overrideWith((ref) async => _games),
+      gameRepositoryProvider.overrideWithValue(const _FakeGameRepository()),
       gameProgressProvider.overrideWith(
         (ref) async => GameProgress.starter('guest').copyWith(
           completedGames: const ['train_robot'],
@@ -67,6 +110,21 @@ Widget _testApp() {
     ],
     child: MaterialApp.router(routerConfig: router),
   );
+}
+
+class _FakeGameRepository implements GameRepository {
+  const _FakeGameRepository();
+
+  @override
+  Future<LearningGame?> getGame(String id) async {
+    for (final game in _games) {
+      if (game.id == id) return game;
+    }
+    return null;
+  }
+
+  @override
+  Future<List<LearningGame>> getGames() async => _games;
 }
 
 const _games = [

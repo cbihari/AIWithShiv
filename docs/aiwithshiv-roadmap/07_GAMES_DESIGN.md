@@ -103,18 +103,30 @@ Games are loaded from `assets/data/games.json`, listed at `/games`, and opened t
 
 ## Recommended Next Steps
 
-1. Keep current 5 games for v1 unless more time is available.
-2. Add one missing safety-focused game next: Secret Shield Mission.
+1. Keep current 5 games for v1.
+2. Add one missing safety-focused game next after v1 launch: Secret Shield Mission.
 3. Add course game mapping after current navigation is stable.
+
+## V1 Scope Decision
+
+AIWithShiv v1 will ship with the current 5 active games instead of expanding to 9 games before launch.
+
+Reason:
+
+- The current 5 games already cover machine learning, pattern recognition, classification, algorithms, and AI safety.
+- Reward fairness, route coverage, back navigation, and compact-screen QA are now tested.
+- Expanding to 9 games before launch would add new content, balance, QA, and overflow risk.
+
+Future games remain in the roadmap for post-launch expansion.
 
 ## Implementation Checklist
 
-- [ ] Every active game route registered.
-- [ ] Every active game has test coverage.
-- [ ] First completion grants XP/coins once.
-- [ ] Replay grants no duplicate reward.
-- [ ] Back button returns to `/games`.
-- [ ] UI fits iPhone SE/small Android.
+- [x] Every active game route registered.
+- [x] Every active game has test coverage.
+- [x] First completion grants XP/coins once.
+- [x] Replay grants no duplicate reward.
+- [x] Back button returns to `/games`.
+- [x] UI fits iPhone SE/small Android.
 
 ## Acceptance Criteria
 
@@ -122,4 +134,3 @@ Games are loaded from `assets/data/games.json`, listed at `/games`, and opened t
 - Rewards are fair and non-duplicating.
 - Games teach a real AI concept.
 - Games do not interrupt learning with ads.
-
