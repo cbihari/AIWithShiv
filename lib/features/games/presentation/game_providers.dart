@@ -82,10 +82,15 @@ class GameCompletionNotifier
 
       var awardedXp = 0;
       var awardedCoins = 0;
+      final activeGameCount =
+          (await _ref.read(gameRepositoryProvider).getGames())
+              .where((game) => game.isActive)
+              .length;
       final gameBadges = _gameBadgesFor(
         alreadyCompleted
             ? gameProgress.completedGames
             : {...updatedGameProgress.completedGames, game.id}.toList(),
+        activeGameCount: activeGameCount,
       );
       if (!alreadyCompleted) {
         awardedXp = game.xpReward;
@@ -172,13 +177,17 @@ class GameCompletionNotifier
     return 1;
   }
 
-  Set<String> _gameBadgesFor(List<String> completedGames) {
+  Set<String> _gameBadgesFor(
+    List<String> completedGames, {
+    required int activeGameCount,
+  }) {
     final completed = completedGames.toSet();
     return {
       if (completed.isNotEmpty) 'game-starter',
       if (completed.contains('ai_detective')) 'pattern-detective',
       if (completed.contains('train_robot')) 'robot-trainer',
-      if (completed.length >= 5) 'ai-games-hero',
+      if (activeGameCount > 0 && completed.length >= activeGameCount)
+        'ai-games-hero',
     };
   }
 }

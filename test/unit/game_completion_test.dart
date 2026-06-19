@@ -51,23 +51,27 @@ class FakeAchievementRepository implements AchievementRepository {
       ];
 }
 
+class FakeGameRepository implements GameRepository {
+  const FakeGameRepository(this.games);
+
+  final List<LearningGame> games;
+
+  @override
+  Future<LearningGame?> getGame(String id) async {
+    for (final game in games) {
+      if (game.id == id) return game;
+    }
+    return null;
+  }
+
+  @override
+  Future<List<LearningGame>> getGames() async => games;
+}
+
 void main() {
   test('completing game updates local progress and rewards once', () async {
     final progressRepository = FakeProgressRepository();
     final gameProgressRepository = FakeGameProgressRepository();
-    final container = ProviderContainer(
-      overrides: [
-        currentUserIdProvider.overrideWithValue('local-child'),
-        progressRepositoryProvider.overrideWithValue(progressRepository),
-        gameProgressRepositoryProvider
-            .overrideWithValue(gameProgressRepository),
-        achievementRepositoryProvider.overrideWithValue(
-          FakeAchievementRepository(),
-        ),
-      ],
-    );
-    addTearDown(container.dispose);
-
     const game = LearningGame(
       id: 'train_robot',
       title: 'Train the Robot',
@@ -80,6 +84,21 @@ void main() {
       route: '/games/train-robot',
       isActive: true,
     );
+    final container = ProviderContainer(
+      overrides: [
+        currentUserIdProvider.overrideWithValue('local-child'),
+        progressRepositoryProvider.overrideWithValue(progressRepository),
+        gameProgressRepositoryProvider
+            .overrideWithValue(gameProgressRepository),
+        gameRepositoryProvider.overrideWithValue(const FakeGameRepository([
+          game,
+        ])),
+        achievementRepositoryProvider.overrideWithValue(
+          FakeAchievementRepository(),
+        ),
+      ],
+    );
+    addTearDown(container.dispose);
 
     final notifier = container.read(gameCompletionProvider.notifier);
     final first = await notifier.completeGame(game: game, score: 6);
@@ -91,6 +110,7 @@ void main() {
     expect(progressRepository.progress.coins, 60);
     expect(progressRepository.progress.badges, contains('game-starter'));
     expect(progressRepository.progress.badges, contains('robot-trainer'));
+    expect(progressRepository.progress.badges, contains('ai-games-hero'));
     expect(gameProgressRepository.progress.completedGames, ['train_robot']);
     expect(gameProgressRepository.progress.totalGameXp, 20);
     expect(gameProgressRepository.progress.totalGameCoins, 10);
@@ -101,19 +121,6 @@ void main() {
   test('game achievements unlock for detective and all games', () async {
     final progressRepository = FakeProgressRepository();
     final gameProgressRepository = FakeGameProgressRepository();
-    final container = ProviderContainer(
-      overrides: [
-        currentUserIdProvider.overrideWithValue('local-child'),
-        progressRepositoryProvider.overrideWithValue(progressRepository),
-        gameProgressRepositoryProvider
-            .overrideWithValue(gameProgressRepository),
-        achievementRepositoryProvider.overrideWithValue(
-          FakeAchievementRepository(),
-        ),
-      ],
-    );
-    addTearDown(container.dispose);
-
     const games = [
       LearningGame(
         id: 'train_robot',
@@ -176,6 +183,20 @@ void main() {
         isActive: true,
       ),
     ];
+    final container = ProviderContainer(
+      overrides: [
+        currentUserIdProvider.overrideWithValue('local-child'),
+        progressRepositoryProvider.overrideWithValue(progressRepository),
+        gameProgressRepositoryProvider
+            .overrideWithValue(gameProgressRepository),
+        gameRepositoryProvider
+            .overrideWithValue(const FakeGameRepository(games)),
+        achievementRepositoryProvider.overrideWithValue(
+          FakeAchievementRepository(),
+        ),
+      ],
+    );
+    addTearDown(container.dispose);
 
     final notifier = container.read(gameCompletionProvider.notifier);
     for (final game in games) {
@@ -188,5 +209,59 @@ void main() {
     expect(progressRepository.progress.badges, contains('ai-games-hero'));
     expect(progressRepository.progress.xp, 100);
     expect(progressRepository.progress.coins, 100);
+  });
+
+  test('AI Games Hero uses active game count instead of fixed threshold',
+      () async {
+    final progressRepository = FakeProgressRepository();
+    final gameProgressRepository = FakeGameProgressRepository();
+    const games = [
+      LearningGame(
+        id: 'train_robot',
+        title: 'Train the Robot',
+        concept: 'Machine Learning',
+        description: 'Teach with examples.',
+        ageGroup: '5-10',
+        durationMinutes: 4,
+        xpReward: 20,
+        coinReward: 10,
+        route: '/games/train-robot',
+        isActive: true,
+      ),
+      LearningGame(
+        id: 'sort_like_ai',
+        title: 'Sort Like AI',
+        concept: 'Classification',
+        description: 'Sort items.',
+        ageGroup: '5-10',
+        durationMinutes: 4,
+        xpReward: 20,
+        coinReward: 10,
+        route: '/games/sort-like-ai',
+        isActive: true,
+      ),
+    ];
+    final container = ProviderContainer(
+      overrides: [
+        currentUserIdProvider.overrideWithValue('local-child'),
+        progressRepositoryProvider.overrideWithValue(progressRepository),
+        gameProgressRepositoryProvider
+            .overrideWithValue(gameProgressRepository),
+        gameRepositoryProvider
+            .overrideWithValue(const FakeGameRepository(games)),
+        achievementRepositoryProvider.overrideWithValue(
+          FakeAchievementRepository(),
+        ),
+      ],
+    );
+    addTearDown(container.dispose);
+
+    final notifier = container.read(gameCompletionProvider.notifier);
+    await notifier.completeGame(game: games.first, score: 5);
+    expect(
+        progressRepository.progress.badges, isNot(contains('ai-games-hero')));
+
+    await notifier.completeGame(game: games.last, score: 5);
+    expect(progressRepository.progress.badges, contains('ai-games-hero'));
   });
 }
