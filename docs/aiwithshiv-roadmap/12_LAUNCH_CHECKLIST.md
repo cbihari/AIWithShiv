@@ -7,7 +7,8 @@ Provide a practical Play Store and App Store launch checklist for AIWithShiv.
 ## Android Checklist
 
 - [x] Confirm package name.
-- [ ] Configure release signing.
+- [x] Configure release signing support.
+- [ ] Create real Play upload keystore locally.
 - [x] Build Android App Bundle.
 - [ ] Test release APK/AAB on real Android device.
 - [ ] Confirm min SDK and target SDK.
