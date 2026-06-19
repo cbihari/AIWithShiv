@@ -539,6 +539,7 @@ class _MenuGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final compact = MediaQuery.sizeOf(context).width < 360;
     final cards = [
       _MenuCardData(
         emoji: '📚',
@@ -581,11 +582,11 @@ class _MenuGrid extends StatelessWidget {
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
       itemCount: cards.length,
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         crossAxisSpacing: 14,
         mainAxisSpacing: 14,
-        childAspectRatio: 1.12,
+        mainAxisExtent: compact ? 150 : 166,
       ),
       itemBuilder: (context, index) => _MenuCard(data: cards[index]),
     );
@@ -610,61 +611,80 @@ class _MenuCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PressableComicCard(
-      color: data.color,
-      onTap: data.onTap,
-      child: Stack(
-        children: [
-          Center(
-            child: Padding(
-              padding: const EdgeInsets.all(12),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(data.emoji, style: const TextStyle(fontSize: 48)),
-                  const SizedBox(height: 8),
-                  SizedBox(
-                    height: 62,
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final compact = constraints.maxWidth < 150;
+        return PressableComicCard(
+          color: data.color,
+          onTap: data.onTap,
+          child: Stack(
+            children: [
+              Center(
+                child: Padding(
+                  padding: EdgeInsets.all(compact ? 10 : 12),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        data.emoji,
+                        style: TextStyle(fontSize: compact ? 40 : 48),
+                      ),
+                      const SizedBox(height: 8),
+                      SizedBox(
+                        width: double.infinity,
+                        height: compact ? 58 : 64,
+                        child: FittedBox(
+                          fit: BoxFit.scaleDown,
+                          child: SizedBox(
+                            width: compact ? 118 : 140,
+                            child: Text(
+                              data.title,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              textAlign: TextAlign.center,
+                              style: comicDisplay(
+                                context,
+                                fontSize: compact ? 27 : 30,
+                                color: data.textColor,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              if (data.badge != null)
+                Positioned(
+                  right: 8,
+                  top: 8,
+                  child: Container(
+                    constraints: const BoxConstraints(maxWidth: 58),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                    decoration: BoxDecoration(
+                      color: ComicColors.red,
+                      border: Border.all(color: ComicColors.ink, width: 2),
+                      borderRadius: BorderRadius.circular(999),
+                    ),
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
                       child: Text(
-                        data.title,
-                        textAlign: TextAlign.center,
-                        style: comicDisplay(
+                        data.badge!,
+                        style: comicBody(
                           context,
-                          fontSize: 30,
-                          color: data.textColor,
+                          fontSize: 14,
+                          color: ComicColors.cream,
                         ),
                       ),
                     ),
                   ),
-                ],
-              ),
-            ),
+                ),
+            ],
           ),
-          if (data.badge != null)
-            Positioned(
-              right: 8,
-              top: 8,
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                decoration: BoxDecoration(
-                  color: ComicColors.red,
-                  border: Border.all(color: ComicColors.ink, width: 2),
-                  borderRadius: BorderRadius.circular(999),
-                ),
-                child: Text(
-                  data.badge!,
-                  style: comicBody(
-                    context,
-                    fontSize: 14,
-                    color: ComicColors.cream,
-                  ),
-                ),
-              ),
-            ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

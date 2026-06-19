@@ -153,12 +153,13 @@ class _CourseHeader extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final compact = MediaQuery.sizeOf(context).width < 360;
     final userId = ref.watch(currentUserIdProvider) ?? 'guest';
     final progress = ref.watch(userProgressProvider(userId)).valueOrNull;
     final done =
         (progress?.completedLessons.length ?? 0).clamp(0, totalLessons);
     return Container(
-      padding: const EdgeInsets.all(18),
+      padding: EdgeInsets.all(compact ? 14 : 18),
       decoration: BoxDecoration(
         color: ComicColors.red,
         border: Border.all(color: ComicColors.ink, width: 4),
@@ -177,37 +178,61 @@ class _CourseHeader extends ConsumerWidget {
               Expanded(
                 child: Text(
                   title,
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: comicDisplay(
                     context,
-                    fontSize: 38,
+                    fontSize: compact ? 30 : 38,
                     color: ComicColors.cream,
                   ),
                 ),
               ),
+              SizedBox(width: compact ? 8 : 12),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                constraints: BoxConstraints(maxWidth: compact ? 78 : 108),
+                padding: EdgeInsets.symmetric(
+                  horizontal: compact ? 8 : 10,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: ComicColors.yellow,
                   border: Border.all(color: ComicColors.ink, width: 3),
                   borderRadius: BorderRadius.circular(999),
                 ),
-                child: Text(
-                  '⚡ $xp XP',
-                  style:
-                      comicBody(context, fontSize: 16, color: ComicColors.ink),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    '⚡ $xp XP',
+                    style: comicBody(
+                      context,
+                      fontSize: compact ? 14 : 16,
+                      color: ComicColors.ink,
+                    ),
+                  ),
                 ),
               ),
             ],
           ),
           Text(
             description,
-            style: comicBody(context, fontSize: 16, color: ComicColors.cream),
+            maxLines: 4,
+            overflow: TextOverflow.ellipsis,
+            style: comicBody(
+              context,
+              fontSize: compact ? 15 : 16,
+              color: ComicColors.cream,
+            ),
           ),
           const SizedBox(height: 14),
           Text(
             strings.lessonsDone(done, totalLessons),
-            style: comicBody(context, fontSize: 16, color: ComicColors.cream),
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: comicBody(
+              context,
+              fontSize: compact ? 15 : 16,
+              color: ComicColors.cream,
+            ),
           ),
           const SizedBox(height: 6),
           ClipRRect(
@@ -299,6 +324,7 @@ class _LessonCardState extends State<_LessonCard>
 
   @override
   Widget build(BuildContext context) {
+    final compact = MediaQuery.sizeOf(context).width < 360;
     final borderColor = widget.completed
         ? ComicColors.green
         : widget.current
@@ -332,130 +358,231 @@ class _LessonCardState extends State<_LessonCard>
             child: WhiteComicItemCard(
               child: Opacity(
                 opacity: widget.locked ? 0.55 : 1,
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      radius: 28,
-                      backgroundColor: widget.completed
-                          ? ComicColors.green
-                          : widget.locked
-                              ? Colors.grey
-                              : ComicColors.red,
-                      child: Text(
-                        widget.locked ? '🔒' : '${widget.number}',
-                        style: comicNumber(
-                          context,
-                          fontSize: widget.locked ? 22 : 32,
-                          color: ComicColors.cream,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 14),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            widget.title,
-                            style: comicBody(
-                              context,
-                              fontSize: 20,
-                              color: ComicColors.ink,
-                            ),
-                          ),
-                          const SizedBox(height: 6),
-                          Text(
-                            widget.completed
-                                ? 'Completed! Shabash!'
-                                : widget.locked
-                                    ? 'Complete previous lesson first'
-                                    : '⏱ ${widget.minutes} min   ⚡ ${widget.xp} XP',
-                            style: comicBody(
-                              context,
-                              fontSize: 16,
-                              color: widget.completed
-                                  ? ComicColors.green
-                                  : widget.locked
-                                      ? Colors.grey.shade700
-                                      : ComicColors.ink,
-                            ),
-                          ),
-                          if (widget.current) ...[
-                            const SizedBox(height: 8),
-                            Wrap(
-                              spacing: 6,
-                              runSpacing: 6,
-                              children: [
-                                for (final concept in widget.concepts.take(3))
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 8,
-                                      vertical: 4,
-                                    ),
-                                    decoration: BoxDecoration(
-                                      color: ComicColors.yellow,
-                                      border: Border.all(
-                                        color: ComicColors.ink,
-                                        width: 2,
-                                      ),
-                                      borderRadius: BorderRadius.circular(999),
-                                    ),
-                                    child: Text(
-                                      concept,
-                                      style: comicBody(context, fontSize: 12),
-                                    ),
-                                  ),
-                              ],
-                            ),
-                          ],
-                        ],
-                      ),
-                    ),
-                    if (widget.completed)
-                      const Icon(Icons.check_circle,
-                          color: ComicColors.green, size: 36)
-                    else if (widget.current)
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 10, vertical: 8),
-                        decoration: BoxDecoration(
-                          color: ComicColors.red,
-                          border: Border.all(color: ComicColors.ink, width: 2),
-                          borderRadius: BorderRadius.circular(999),
-                        ),
-                        child: Text(
-                          '▶ START',
-                          style: comicBody(
-                            context,
-                            fontSize: 12,
-                            color: ComicColors.cream,
-                          ),
-                        ),
-                      )
-                    else if (!widget.locked)
-                      Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 8, vertical: 5),
-                        decoration: BoxDecoration(
-                          color: ComicColors.yellow,
-                          border: Border.all(color: ComicColors.ink, width: 2),
-                          borderRadius: BorderRadius.circular(999),
-                        ),
-                        child: Text(
-                          '${widget.xp} XP',
-                          style: comicBody(context, fontSize: 14),
-                        ),
-                      )
-                    else
-                      const Icon(Icons.lock, size: 30, color: Colors.grey),
-                  ],
-                ),
+                child:
+                    compact ? _compactContent(context) : _wideContent(context),
               ),
             ),
           ),
         ),
       ),
     );
+  }
+
+  Widget _wideContent(BuildContext context) {
+    return Row(
+      children: [
+        _NumberBadge(
+          number: widget.number,
+          completed: widget.completed,
+          locked: widget.locked,
+          compact: false,
+        ),
+        const SizedBox(width: 14),
+        Expanded(child: _LessonTextBlock(widget: widget, compact: false)),
+        _TrailingStatus(widget: widget, compact: false),
+      ],
+    );
+  }
+
+  Widget _compactContent(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _NumberBadge(
+              number: widget.number,
+              completed: widget.completed,
+              locked: widget.locked,
+              compact: true,
+            ),
+            const SizedBox(width: 10),
+            Expanded(child: _LessonTextBlock(widget: widget, compact: true)),
+          ],
+        ),
+        const SizedBox(height: 10),
+        Align(
+          alignment: Alignment.centerRight,
+          child: _TrailingStatus(widget: widget, compact: true),
+        ),
+      ],
+    );
+  }
+}
+
+class _NumberBadge extends StatelessWidget {
+  const _NumberBadge({
+    required this.number,
+    required this.completed,
+    required this.locked,
+    required this.compact,
+  });
+
+  final int number;
+  final bool completed;
+  final bool locked;
+  final bool compact;
+
+  @override
+  Widget build(BuildContext context) {
+    return CircleAvatar(
+      radius: compact ? 24 : 28,
+      backgroundColor: completed
+          ? ComicColors.green
+          : locked
+              ? Colors.grey
+              : ComicColors.red,
+      child: Text(
+        locked ? '🔒' : '$number',
+        style: comicNumber(
+          context,
+          fontSize: locked ? 20 : (compact ? 28 : 32),
+          color: ComicColors.cream,
+        ),
+      ),
+    );
+  }
+}
+
+class _LessonTextBlock extends StatelessWidget {
+  const _LessonTextBlock({required this.widget, required this.compact});
+
+  final _LessonCard widget;
+  final bool compact;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          widget.title,
+          maxLines: compact ? 3 : 2,
+          overflow: TextOverflow.ellipsis,
+          style: comicBody(
+            context,
+            fontSize: compact ? 18 : 20,
+            color: ComicColors.ink,
+          ),
+        ),
+        const SizedBox(height: 6),
+        Text(
+          widget.completed
+              ? 'Completed! Shabash!'
+              : widget.locked
+                  ? 'Complete previous lesson first'
+                  : '⏱ ${widget.minutes} min   ⚡ ${widget.xp} XP',
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
+          style: comicBody(
+            context,
+            fontSize: compact ? 14 : 16,
+            color: widget.completed
+                ? ComicColors.green
+                : widget.locked
+                    ? Colors.grey.shade700
+                    : ComicColors.ink,
+          ),
+        ),
+        if (widget.current) ...[
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 6,
+            runSpacing: 6,
+            children: [
+              for (final concept in widget.concepts.take(3))
+                Container(
+                  constraints: BoxConstraints(maxWidth: compact ? 118 : 170),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 8,
+                    vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: ComicColors.yellow,
+                    border: Border.all(
+                      color: ComicColors.ink,
+                      width: 2,
+                    ),
+                    borderRadius: BorderRadius.circular(999),
+                  ),
+                  child: Text(
+                    concept,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: comicBody(context, fontSize: compact ? 11 : 12),
+                  ),
+                ),
+            ],
+          ),
+        ],
+      ],
+    );
+  }
+}
+
+class _TrailingStatus extends StatelessWidget {
+  const _TrailingStatus({required this.widget, required this.compact});
+
+  final _LessonCard widget;
+  final bool compact;
+
+  @override
+  Widget build(BuildContext context) {
+    if (widget.completed) {
+      return Icon(
+        Icons.check_circle,
+        color: ComicColors.green,
+        size: compact ? 30 : 36,
+      );
+    }
+    if (widget.current) {
+      return Container(
+        constraints: BoxConstraints(maxWidth: compact ? 92 : 110),
+        padding: EdgeInsets.symmetric(
+          horizontal: compact ? 8 : 10,
+          vertical: compact ? 6 : 8,
+        ),
+        decoration: BoxDecoration(
+          color: ComicColors.red,
+          border: Border.all(color: ComicColors.ink, width: 2),
+          borderRadius: BorderRadius.circular(999),
+        ),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            '▶ START',
+            style: comicBody(
+              context,
+              fontSize: 12,
+              color: ComicColors.cream,
+            ),
+          ),
+        ),
+      );
+    }
+    if (!widget.locked) {
+      return Container(
+        constraints: BoxConstraints(maxWidth: compact ? 76 : 90),
+        padding: EdgeInsets.symmetric(
+          horizontal: compact ? 8 : 10,
+          vertical: compact ? 5 : 6,
+        ),
+        decoration: BoxDecoration(
+          color: ComicColors.yellow,
+          border: Border.all(color: ComicColors.ink, width: 2),
+          borderRadius: BorderRadius.circular(999),
+        ),
+        child: FittedBox(
+          fit: BoxFit.scaleDown,
+          child: Text(
+            '${widget.xp} XP',
+            style: comicBody(context, fontSize: compact ? 13 : 14),
+          ),
+        ),
+      );
+    }
+    return Icon(Icons.lock, size: compact ? 26 : 30, color: Colors.grey);
   }
 }
 
