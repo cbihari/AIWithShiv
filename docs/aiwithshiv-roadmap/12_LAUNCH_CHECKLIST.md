@@ -20,9 +20,12 @@ Provide a practical Play Store and App Store launch checklist for AIWithShiv.
 ## iOS Checklist
 
 - [x] Confirm bundle ID.
+- [x] Confirm iOS deployment target.
 - [ ] Configure signing team.
 - [x] Configure app icons.
 - [x] Configure launch screen.
+- [x] Build iOS release without codesign.
+- [x] Build iOS simulator artifact.
 - [ ] Build archive in Xcode.
 - [ ] Test on real iPhone.
 - [ ] Upload to TestFlight.
