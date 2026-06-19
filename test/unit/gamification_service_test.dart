@@ -11,7 +11,7 @@ void main() {
 
     expect(result.xp, 260);
     expect(result.coins, 65);
-    expect(result.level, 2);
+    expect(result.level, 3);
     expect(result.completedLessons, ['lesson-1']);
   });
 }

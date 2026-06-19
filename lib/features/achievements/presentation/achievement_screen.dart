@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../../core/services/level_system.dart';
 import '../../../shared/models/achievement.dart';
 import '../../../shared/models/user_progress.dart';
 import '../../../shared/widgets/app_state_widgets.dart';
@@ -356,28 +357,39 @@ class _LevelPath extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final next = ((progress.level) * 100) - progress.xp;
+    final levelInfo = LevelSystem.infoForXp(progress.xp);
     return WhiteComicItemCard(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Your Hero Level: ${progress.level}',
-              style:
-                  comicDisplay(context, fontSize: 34, color: ComicColors.red)),
+          Text(
+            'Your Hero Level: ${levelInfo.level}',
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+            style: comicDisplay(context, fontSize: 34, color: ComicColors.red),
+          ),
+          Text(
+            levelInfo.title,
+            style: comicBody(context, fontSize: 17),
+          ),
           const SizedBox(height: 12),
           Row(
             children: [
-              for (var i = 1; i <= 5; i++) ...[
-                Text(i == progress.level.clamp(1, 5) ? '🤖' : '⭐',
+              for (var i = 1; i <= LevelSystem.thresholds.length; i++) ...[
+                Text(i == levelInfo.level ? '🤖' : '⭐',
                     style: const TextStyle(fontSize: 28)),
-                if (i < 5)
+                if (i < LevelSystem.thresholds.length)
                   Expanded(child: Container(height: 5, color: ComicColors.ink)),
               ],
             ],
           ),
           const SizedBox(height: 10),
-          Text('${next.clamp(0, 100)} XP to next level',
-              style: comicBody(context, fontSize: 16)),
+          Text(
+            levelInfo.isMaxLevel
+                ? 'Cosmic level unlocked! ⚡'
+                : '${levelInfo.xpToNextLevel} XP to next level',
+            style: comicBody(context, fontSize: 16),
+          ),
         ],
       ),
     );

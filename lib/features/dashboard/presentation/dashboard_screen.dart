@@ -10,6 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../../core/ads/ad_widgets.dart';
 import '../../../core/localization/app_strings.dart';
 import '../../../core/localization/language_service.dart';
+import '../../../core/services/level_system.dart';
 import '../../../core/services/offline_service.dart';
 import '../../../core/services/sound_service.dart';
 import '../../../core/services/tts_service.dart';
@@ -68,7 +69,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                   onRetry: () => ref.invalidate(dashboardProvider),
                   data: (state) {
                     final progress = state.progress;
-                    final maxXp = (((progress.xp ~/ 100) + 1) * 100);
                     final quizDoneToday = progress.lastActivityAt != null &&
                         _isToday(progress.lastActivityAt!);
                     return ListView(
@@ -97,7 +97,6 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                               const SizedBox(height: 18),
                               _XpPanel(
                                 xp: progress.xp,
-                                maxXp: maxXp,
                                 strings: strings,
                               ),
                               const SizedBox(height: 22),
@@ -472,19 +471,15 @@ class _DashboardShivPainter extends CustomPainter {
 class _XpPanel extends StatelessWidget {
   const _XpPanel({
     required this.xp,
-    required this.maxXp,
     required this.strings,
   });
 
   final int xp;
-  final int maxXp;
   final AppStrings strings;
 
   @override
   Widget build(BuildContext context) {
-    final level = (xp ~/ 100) + 1;
-    final levelStart = (level - 1) * 100;
-    final inLevelXp = xp - levelStart;
+    final levelInfo = LevelSystem.infoForXp(xp);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
@@ -492,7 +487,10 @@ class _XpPanel extends StatelessWidget {
           children: [
             Text('⚡ ${strings.xp}', style: comicBody(context, fontSize: 18)),
             const Spacer(),
-            Text(strings.level(level), style: comicBody(context, fontSize: 18)),
+            Text(
+              strings.level(levelInfo.level),
+              style: comicBody(context, fontSize: 18),
+            ),
           ],
         ),
         const SizedBox(height: 8),
@@ -505,7 +503,7 @@ class _XpPanel extends StatelessWidget {
           ),
           clipBehavior: Clip.antiAlias,
           child: TweenAnimationBuilder<double>(
-            tween: Tween(begin: 0, end: (inLevelXp / 100).clamp(0, 1)),
+            tween: Tween(begin: 0, end: levelInfo.progressFraction),
             duration: const Duration(milliseconds: 750),
             builder: (context, value, child) => FractionallySizedBox(
               alignment: Alignment.centerLeft,
@@ -517,7 +515,9 @@ class _XpPanel extends StatelessWidget {
         ),
         const SizedBox(height: 6),
         Text(
-          strings.xpToNext(inLevelXp),
+          levelInfo.isMaxLevel
+              ? strings.maxLevelUnlocked
+              : strings.xpToNext(levelInfo.xpIntoLevel, levelInfo.levelSpan),
           textAlign: TextAlign.center,
           style: comicBody(context, fontSize: 16),
         ),

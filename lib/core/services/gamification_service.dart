@@ -1,4 +1,5 @@
 import '../../shared/models/user_progress.dart';
+import 'level_system.dart';
 
 class GamificationService {
   const GamificationService();
@@ -9,7 +10,7 @@ class GamificationService {
     int xp,
   ) {
     final nextXp = progress.xp + xp;
-    final nextLevel = (nextXp ~/ 250) + 1;
+    final nextLevel = LevelSystem.levelForXp(nextXp);
     return progress.copyWith(
       xp: nextXp,
       coins: progress.coins + 15,
@@ -29,7 +30,7 @@ class GamificationService {
     return progress.copyWith(
       xp: nextXp,
       coins: progress.coins + earnedCoins,
-      level: (nextXp ~/ 250) + 1,
+      level: LevelSystem.levelForXp(nextXp),
       streakDays: _nextStreak(progress.lastActivityAt, progress.streakDays),
       completedLessons: {...progress.completedLessons, lessonId}.toList(),
       lastActivityAt: DateTime.now(),

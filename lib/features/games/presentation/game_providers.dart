@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../core/di/providers.dart';
+import '../../../core/services/level_system.dart';
 import '../../../shared/models/game.dart';
 import '../../achievements/presentation/achievement_providers.dart';
 import '../../auth/presentation/auth_providers.dart';
@@ -108,7 +109,7 @@ class GameCompletionNotifier
         var updatedProgress = progress.copyWith(
           xp: nextXp,
           coins: progress.coins + awardedCoins,
-          level: (nextXp ~/ 250) + 1,
+          level: LevelSystem.levelForXp(nextXp),
           streakDays: _nextStreak(progress.lastActivityAt, progress.streakDays),
           lastActivityAt: DateTime.now(),
         );

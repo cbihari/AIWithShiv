@@ -14,9 +14,11 @@ class AppStrings {
   String get mute => isHindi ? 'आवाज बंद करें' : 'Mute';
   String get xp => 'XP';
   String level(int value) => isHindi ? 'Level $value' : 'Level $value';
-  String xpToNext(int value) => isHindi
-      ? '$value / 100 XP अगले level तक'
-      : '$value / 100 XP to next level';
+  String xpToNext(int current, int target) => isHindi
+      ? '$current / $target XP अगले level तक'
+      : '$current / $target XP to next level';
+  String get maxLevelUnlocked =>
+      isHindi ? 'Cosmic level unlock हो गया! ⚡' : 'Cosmic level unlocked! ⚡';
   String get startLearning => isHindi ? 'सीखना शुरू करें' : 'Start Learning';
   String get dailyQuiz => isHindi ? 'Daily Quiz' : 'Daily Quiz';
   String get askShiv => isHindi ? 'Shiv से पूछें' : 'Ask Shiv';
