@@ -6,6 +6,15 @@ This folder is the working roadmap system for taking AIWithShiv from current Flu
 
 ## Recommended Reading Order
 
+If you are continuing launch work after the Phase 1-8 rollout, start with:
+
+1. `FINAL_LAUNCH_READINESS_REPORT.md`
+2. `12_LAUNCH_CHECKLIST.md`
+3. `PHASE_7_ANDROID_LAUNCH_RUNBOOK.md`
+4. `PHASE_8_IOS_LAUNCH_RUNBOOK.md`
+
+For full roadmap context, read:
+
 1. `00_PROJECT_OVERVIEW.md`
 2. `01_PRODUCT_VISION.md`
 3. `02_CURRICULUM_ROADMAP.md`
@@ -47,13 +56,16 @@ This folder is the working roadmap system for taking AIWithShiv from current Flu
 
 ## Moving From Docs To Implementation
 
-Recommended first implementation phase:
+Phase 1-8 implementation and launch-prep docs now exist. The next work is manual store/device work:
 
-1. Add a content validation script.
-2. Review all lessons/quizzes using `15_CONTENT_QA_CHECKLIST.md`.
-3. Improve repeated or weak quiz questions.
-4. Complete Hindi content coverage.
-5. Run `flutter analyze` and `flutter test`.
+1. Run Android physical-device QA.
+2. Create Android upload keystore and signed AAB.
+3. Upload to Play Console internal testing.
+4. Configure Apple Developer Team and upload to TestFlight.
+5. Run physical iPhone TestFlight QA.
+6. Publish privacy/support URLs.
+7. Capture final store screenshots.
+8. Complete Play Console and App Store Connect forms.
 
 ## Important Boundaries
 
@@ -70,4 +82,3 @@ Recommended first implementation phase:
 - A content creator can write new lessons consistently.
 - A founder can understand launch readiness and risks.
 - Roadmap supports phased Android/iOS release.
-
