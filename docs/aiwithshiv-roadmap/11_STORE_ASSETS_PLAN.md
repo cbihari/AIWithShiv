@@ -117,24 +117,24 @@ Use store copy:
 - Final store screenshots.
 - Preview video.
 - Production privacy policy URL.
-- Final app title/subtitle.
+- Final app title/subtitle in store pack.
 - Final category/age rating review.
 
 ## Recommended Next Steps
 
-1. Finish product/curriculum polish.
+1. Use `PHASE_5_STORE_PRIVACY_PACK.md` for final listing copy, screenshot captions, and data safety draft notes.
 2. Capture real device screenshots.
-3. Finalize privacy policy.
+3. Publish final privacy policy URL after legal review.
 4. Create feature graphic and preview video.
 
 ## Implementation Checklist
 
-- [ ] Choose final store title.
-- [ ] Write final descriptions.
+- [x] Choose final store title.
+- [x] Write final descriptions.
 - [ ] Produce screenshots.
 - [ ] Produce feature graphic.
 - [ ] Produce privacy policy URL.
-- [ ] Prepare child safety declarations.
+- [x] Prepare child safety declaration draft notes.
 
 ## Acceptance Criteria
 
@@ -142,4 +142,3 @@ Use store copy:
 - Parent trust and privacy are visible.
 - Screenshots match actual app.
 - No copyrighted inspiration is copied.
-

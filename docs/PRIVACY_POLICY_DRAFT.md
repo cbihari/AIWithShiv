@@ -1,34 +1,81 @@
 # AIWithShiv Privacy Policy Draft
 
-This is an engineering draft and must be reviewed by qualified legal counsel before release.
+This is an implementation-aligned draft for the local-first v1 app. It must be reviewed by qualified legal counsel before release.
 
-## Data Collected
+## Summary
 
-- Account data: learner display name, email, authentication identifiers.
-- Parent data: parent email for consent and reports.
-- Learning data: courses, lesson progress, quiz results, XP, coins, streaks, achievements.
-- Safety data: limited ShivBot safety events, rate limit counters, and abuse-prevention metadata.
-- Analytics data: app events needed to understand learning funnels and reliability.
+AIWithShiv is designed for children aged 5-10 to learn basic AI concepts through comic lessons, quizzes, games, voice narration, and rewards.
 
-## Child Data
+Core learning does not require a child login. The app does not need a child's phone number, email, password, address, school ID, or private photo for core learning.
 
-AIWithShiv is designed for learners, including children. For children below the applicable consent age, parental consent must be obtained before collecting personal information beyond what is necessary to request consent.
+## Core Local Data
 
-## Use of Data
+The core app stores learning progress and preferences locally on the device.
 
-Data is used to provide learning progress, personalize lessons by age group, protect child safety, prevent abuse, and send parent reports when enabled.
+Local data may include:
 
-## Sharing
+- Completed lessons.
+- Quiz progress.
+- Game progress.
+- XP, coins, streaks, level, and badges.
+- Avatar, hero name, sound, language, accessibility, and shop preferences.
 
-Do not sell child data. Do not use child data for behavioral advertising. Third-party processors must provide protections consistent with this policy and applicable law.
+This local core learning data is not required to be sent to AIWithShiv servers for v1 core learning.
 
-## AI Processing
+## Data Not Needed For Core Learning
 
-ShivBot prompts should be minimized and routed through secured backend services. Secrets must never be stored in the mobile app. Parents should be able to request deletion of child chat data where retained.
+AIWithShiv core learning does not require:
 
-## Retention and Deletion
+- Child email.
+- Child phone number.
+- Child password.
+- Child address.
+- School ID.
+- Private photos.
+- Social profile.
 
-Users and parents must be able to request access, correction, export, and deletion of personal data. Consent withdrawal must be as easy as consent collection.
+## Optional ShivBot
+
+If ShivBot AI chat is enabled, child prompts may be sent to a protected backend so ShivBot can answer safely. The Flutter app must not contain direct AI API keys.
+
+Children should not type private information into ShivBot. ShivBot is educational and can make mistakes.
+
+Before enabling ShivBot in production, the production privacy policy must explain:
+
+- What prompt data is sent.
+- Whether prompts are stored.
+- How long backend data is retained.
+- How parents can request deletion of backend data if retained.
+
+## Optional Ads
+
+Ads are disabled by default unless explicitly enabled through app configuration.
+
+If ads are enabled in production, the production privacy policy and store disclosures must identify the ad provider, child-directed treatment, data processing, and where ads appear. Ads must not appear during lessons, quizzes, games, ShivBot chat, profile, or trophies.
+
+## Analytics And Crash Reporting
+
+Analytics and crash reporting should remain optional and privacy-safe. If enabled later, update this policy and store disclosures before release.
+
+## Children's Privacy
+
+AIWithShiv is intended to be child-friendly and privacy-conscious. The v1 core learning flow avoids child accounts and unnecessary child personal data collection.
+
+Parents or guardians should supervise young children's use of AI tools and remind children not to share private information.
+
+## Data Sharing
+
+AIWithShiv does not sell child data.
+
+For the core local-first learning flow with ads disabled and ShivBot disabled, no core learning data is shared with external services.
+
+If optional services are enabled, update this section with exact service providers and data practices.
+
+## Deletion
+
+For local-only core learning data, deleting/uninstalling the app removes local app data subject to Android/iOS platform behavior.
+
+If optional backend services are enabled, provide a clear support process for backend data deletion requests.
 
 ## Contact
 
