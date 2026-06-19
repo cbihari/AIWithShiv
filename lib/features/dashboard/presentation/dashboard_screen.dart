@@ -586,7 +586,7 @@ class _MenuGrid extends StatelessWidget {
         crossAxisCount: 2,
         crossAxisSpacing: 14,
         mainAxisSpacing: 14,
-        mainAxisExtent: compact ? 150 : 166,
+        mainAxisExtent: compact ? 172 : 186,
       ),
       itemBuilder: (context, index) => _MenuCard(data: cards[index]),
     );
@@ -614,6 +614,8 @@ class _MenuCard extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         final compact = constraints.maxWidth < 150;
+        final emojiSize = compact ? 34.0 : 40.0;
+        final titleHeight = compact ? 72.0 : 78.0;
         return PressableComicCard(
           color: data.color,
           onTap: data.onTap,
@@ -621,22 +623,23 @@ class _MenuCard extends StatelessWidget {
             children: [
               Center(
                 child: Padding(
-                  padding: EdgeInsets.all(compact ? 10 : 12),
+                  padding: EdgeInsets.all(compact ? 8 : 10),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
                     children: [
                       Text(
                         data.emoji,
-                        style: TextStyle(fontSize: compact ? 40 : 48),
+                        style: TextStyle(fontSize: emojiSize),
                       ),
-                      const SizedBox(height: 8),
+                      SizedBox(height: compact ? 6 : 8),
                       SizedBox(
                         width: double.infinity,
-                        height: compact ? 58 : 64,
+                        height: titleHeight,
                         child: FittedBox(
                           fit: BoxFit.scaleDown,
                           child: SizedBox(
-                            width: compact ? 118 : 140,
+                            width: compact ? 120 : 148,
                             child: Text(
                               data.title,
                               maxLines: 2,
@@ -644,7 +647,7 @@ class _MenuCard extends StatelessWidget {
                               textAlign: TextAlign.center,
                               style: comicDisplay(
                                 context,
-                                fontSize: compact ? 27 : 30,
+                                fontSize: compact ? 25 : 28,
                                 color: data.textColor,
                               ),
                             ),

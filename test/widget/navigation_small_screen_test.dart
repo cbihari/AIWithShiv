@@ -73,6 +73,32 @@ void main() {
       expect(find.text('START MISSION 🚀'), findsOneWidget);
     });
   }
+
+  testWidgets('Hindi Dashboard cards fit with larger text scale', (
+    tester,
+  ) async {
+    addTearDown(() => tester.view.resetPhysicalSize());
+    addTearDown(() => tester.view.resetDevicePixelRatio());
+    tester.view
+      ..physicalSize = const Size(393, 852)
+      ..devicePixelRatio = 1;
+    LanguageService.language.value = AppLanguage.hindi;
+
+    await tester.pumpWidget(
+      MediaQuery(
+        data: const MediaQueryData(
+          size: Size(393, 852),
+          textScaler: TextScaler.linear(1.2),
+        ),
+        child: _testApp(const DashboardScreen()),
+      ),
+    );
+    await tester.pump(const Duration(milliseconds: 100));
+
+    expect(tester.takeException(), isNull);
+    expect(find.text('सीखना शुरू करें'), findsOneWidget);
+    expect(find.text('Shiv से पूछें'), findsOneWidget);
+  });
 }
 
 Widget _testApp(Widget child) {
