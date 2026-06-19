@@ -85,25 +85,27 @@ Future school version could include:
 
 ## What Is Missing
 
-- Parent onboarding content.
-- Teacher guide PDFs.
-- Printable certificates.
-- Parent privacy explanation inside app.
+- Parent onboarding content inside the app.
+- Teacher guide PDF/export formatting.
+- Printable certificate artwork.
+- Parent privacy explanation inside app/profile.
 - Course summary exports.
 
 ## Recommended Next Steps
 
-1. Add parent/teacher copy to docs first.
+1. Use `PHASE_4_PARENT_TEACHER_PACK.md` as the source copy for parent, teacher, privacy, and certificate materials.
 2. Create a simple "For Parents" screen later.
-3. Add course completion certificate later.
+3. Add course completion certificate UI later.
 
 ## Implementation Checklist
 
-- [ ] Write parent intro copy.
-- [ ] Write teacher one-page guide per course.
-- [ ] Write privacy explanation in parent language.
-- [ ] Create certificate templates.
-- [ ] Decide whether parent content lives in app or store website.
+- [x] Write parent intro copy.
+- [x] Write teacher one-page guide per course.
+- [x] Write privacy explanation in parent language.
+- [x] Create certificate copy/templates.
+- [x] Decide whether parent content lives in app or store website.
+
+Decision: For v1, parent and teacher content starts in docs so it can be reused for store copy, a website, PDF, or a future in-app "For Parents" screen without changing the child-first app flow.
 
 ## Acceptance Criteria
 
@@ -111,4 +113,3 @@ Future school version could include:
 - Teacher can use one course in a classroom.
 - School partner can see educational value.
 - No child private data is required.
-
