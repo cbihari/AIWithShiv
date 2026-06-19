@@ -1,6 +1,11 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:aiwithshiv/core/localization/language_service.dart';
+import 'package:aiwithshiv/core/localization/localized_content.dart';
+import 'package:aiwithshiv/shared/models/course.dart';
+import 'package:aiwithshiv/shared/models/lesson.dart';
+import 'package:aiwithshiv/shared/models/quiz.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -116,6 +121,41 @@ void main() {
           contains(game['route']),
           reason: '${game['id']} must point to a registered route',
         );
+      }
+    }
+  });
+
+  test('all Phase 1 course, lesson, and quiz content has Hindi coverage', () {
+    final courses = _readJsonList('assets/data/courses.json');
+    final lessons = _readJsonList('assets/data/lessons.json');
+    final quizzes = _readJsonList('assets/data/quizzes.json');
+
+    for (final rawCourse in courses) {
+      final course = Course.fromJson(rawCourse);
+      final localized = LocalizedContent.course(course, AppLanguage.hindi);
+      expect(localized.description, isNot(course.description),
+          reason: course.id);
+    }
+
+    for (final rawLesson in lessons) {
+      final lesson = Lesson.fromJson(rawLesson);
+      final localized = LocalizedContent.lesson(lesson, AppLanguage.hindi);
+      expect(localized.story, isNot(lesson.story), reason: lesson.id);
+      expect(localized.concepts, isNotEmpty, reason: lesson.id);
+    }
+
+    for (final rawQuiz in quizzes) {
+      final quiz = Quiz.fromJson(rawQuiz);
+      final localized = LocalizedContent.quiz(quiz, AppLanguage.hindi);
+      expect(localized.title, isNotEmpty, reason: quiz.id);
+      for (var index = 0; index < quiz.questions.length; index++) {
+        expect(
+          localized.questions[index].prompt,
+          isNot(quiz.questions[index].prompt),
+          reason: localized.questions[index].id,
+        );
+        expect(localized.questions[index].options, hasLength(4));
+        expect(localized.questions[index].explanation, isNotEmpty);
       }
     }
   });
