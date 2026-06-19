@@ -2,6 +2,7 @@ import 'package:aiwithshiv/features/dashboard/presentation/dashboard_providers.d
 import 'package:aiwithshiv/features/dashboard/presentation/dashboard_screen.dart';
 import 'package:aiwithshiv/features/quizzes/presentation/quiz_providers.dart';
 import 'package:aiwithshiv/features/quizzes/presentation/quiz_screen.dart';
+import 'package:aiwithshiv/core/localization/language_service.dart';
 import 'package:aiwithshiv/shared/models/lesson.dart';
 import 'package:aiwithshiv/shared/models/quiz.dart';
 import 'package:aiwithshiv/shared/models/user_progress.dart';
@@ -18,6 +19,11 @@ void main() {
 
   setUp(() {
     SharedPreferences.setMockInitialValues({});
+    LanguageService.language.value = AppLanguage.english;
+  });
+
+  tearDown(() {
+    LanguageService.language.value = AppLanguage.english;
   });
 
   for (final size in smallScreens) {
@@ -34,6 +40,31 @@ void main() {
       await tester.pump(const Duration(milliseconds: 100));
       expect(tester.takeException(), isNull);
       expect(find.text('Start Learning'), findsOneWidget);
+
+      await tester.pumpWidget(_testApp(const QuizScreen()));
+      await tester.pump(const Duration(milliseconds: 100));
+      expect(tester.takeException(), isNull);
+      expect(find.text('Daily Quiz'), findsOneWidget);
+      expect(find.text('START MISSION 🚀'), findsOneWidget);
+    });
+  }
+
+  for (final size in smallScreens) {
+    testWidgets(
+        'Hindi Dashboard and Daily Quiz fit ${size.width}x${size.height}', (
+      tester,
+    ) async {
+      addTearDown(() => tester.view.resetPhysicalSize());
+      addTearDown(() => tester.view.resetDevicePixelRatio());
+      tester.view
+        ..physicalSize = size
+        ..devicePixelRatio = 1;
+      LanguageService.language.value = AppLanguage.hindi;
+
+      await tester.pumpWidget(_testApp(const DashboardScreen()));
+      await tester.pump(const Duration(milliseconds: 100));
+      expect(tester.takeException(), isNull);
+      expect(find.text('सीखना शुरू करें'), findsOneWidget);
 
       await tester.pumpWidget(_testApp(const QuizScreen()));
       await tester.pump(const Duration(milliseconds: 100));

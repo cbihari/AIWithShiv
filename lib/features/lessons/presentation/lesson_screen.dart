@@ -210,11 +210,13 @@ class _LessonView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final panels = _storyPanels(lesson.story);
+    final compactAppBar = MediaQuery.sizeOf(context).width < 360;
     return Scaffold(
       backgroundColor: const Color(0xFFFFF8E7),
       appBar: AppBar(
         backgroundColor: ComicColors.red,
         foregroundColor: ComicColors.cream,
+        titleSpacing: compactAppBar ? 0 : null,
         leading: IconButton(
           icon: const Icon(Icons.close, color: ComicColors.cream),
           onPressed: onExit,
@@ -224,24 +226,41 @@ class _LessonView extends StatelessWidget {
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
           textAlign: TextAlign.center,
-          style: comicDisplay(context, fontSize: 28, color: ComicColors.cream),
+          style: comicDisplay(
+            context,
+            fontSize: compactAppBar ? 22 : 28,
+            color: ComicColors.cream,
+          ),
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.only(right: 10),
+            padding: EdgeInsets.only(right: compactAppBar ? 4 : 10),
             child: Center(
               child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                constraints: BoxConstraints(
+                  maxWidth: compactAppBar ? 58 : 118,
+                ),
+                padding: EdgeInsets.symmetric(
+                  horizontal: compactAppBar ? 7 : 10,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: ComicColors.ink.withValues(alpha: 0.2),
                   border: Border.all(color: ComicColors.cream, width: 2),
                   borderRadius: BorderRadius.circular(999),
                 ),
-                child: Text(
-                  strings.lessonCount(lesson.order, 10),
-                  style: comicBody(context,
-                      fontSize: 14, color: ComicColors.cream),
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    compactAppBar
+                        ? '${lesson.order}/10'
+                        : strings.lessonCount(lesson.order, 10),
+                    style: comicBody(
+                      context,
+                      fontSize: compactAppBar ? 13 : 14,
+                      color: ComicColors.cream,
+                    ),
+                  ),
                 ),
               ),
             ),
@@ -401,18 +420,29 @@ class _StoryPanel extends StatelessWidget {
                     child: Text('🤖', style: TextStyle(fontSize: 24))),
               ),
               const SizedBox(width: 10),
-              Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
-                decoration: BoxDecoration(
-                  color: ComicColors.yellow,
-                  border: Border.all(color: ComicColors.ink, width: 3),
-                  borderRadius: BorderRadius.circular(999),
-                ),
-                child: Text(
-                  strings.shivSays,
-                  style:
-                      comicBody(context, fontSize: 16, color: ComicColors.ink),
+              Flexible(
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Container(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 12, vertical: 7),
+                    decoration: BoxDecoration(
+                      color: ComicColors.yellow,
+                      border: Border.all(color: ComicColors.ink, width: 3),
+                      borderRadius: BorderRadius.circular(999),
+                    ),
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Text(
+                        strings.shivSays,
+                        style: comicBody(
+                          context,
+                          fontSize: 16,
+                          color: ComicColors.ink,
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
