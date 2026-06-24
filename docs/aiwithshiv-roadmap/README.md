@@ -9,9 +9,10 @@ This folder is the working roadmap system for taking AIWithShiv from current Flu
 If you are continuing launch work after the Phase 1-8 rollout, start with:
 
 1. `FINAL_LAUNCH_READINESS_REPORT.md`
-2. `12_LAUNCH_CHECKLIST.md`
-3. `PHASE_7_ANDROID_LAUNCH_RUNBOOK.md`
-4. `PHASE_8_IOS_LAUNCH_RUNBOOK.md`
+2. `POST_ROADMAP_LAUNCH_EXECUTION.md`
+3. `12_LAUNCH_CHECKLIST.md`
+4. `PHASE_7_ANDROID_LAUNCH_RUNBOOK.md`
+5. `PHASE_8_IOS_LAUNCH_RUNBOOK.md`
 
 For full roadmap context, read:
 
@@ -58,14 +59,15 @@ For full roadmap context, read:
 
 Phase 1-8 implementation and launch-prep docs now exist. The next work is manual store/device work:
 
-1. Run Android physical-device QA.
-2. Create Android upload keystore and signed AAB.
-3. Upload to Play Console internal testing.
-4. Configure Apple Developer Team and upload to TestFlight.
-5. Run physical iPhone TestFlight QA.
-6. Publish privacy/support URLs.
-7. Capture final store screenshots.
-8. Complete Play Console and App Store Connect forms.
+1. Run `node scripts/verify_launch_readiness.mjs`.
+2. Run Android physical-device QA.
+3. Create Android upload keystore and signed AAB.
+4. Upload to Play Console internal testing.
+5. Configure Apple Developer Team and upload to TestFlight.
+6. Run physical iPhone TestFlight QA.
+7. Publish privacy/support URLs.
+8. Capture final store screenshots.
+9. Complete Play Console and App Store Connect forms.
 
 ## Important Boundaries
 
