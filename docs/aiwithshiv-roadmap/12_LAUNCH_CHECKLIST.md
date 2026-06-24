@@ -76,6 +76,8 @@ Provide a practical Play Store and App Store launch checklist for AIWithShiv.
 - [x] Game reward replay tests.
 - [ ] ShivBot fallback/backend test.
 
+Use `PHASE_6_REAL_DEVICE_QA_CHECKLIST.md` for the required Android/iPhone physical-device QA pass before store internal testing.
+
 ## Final Build Commands
 
 Android:

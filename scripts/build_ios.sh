@@ -3,8 +3,8 @@ set -euo pipefail
 
 flutter clean
 flutter pub get
-flutter build ipa --release \
+flutter build ios --release --no-codesign \
   --dart-define=APP_ENV="${APP_ENV:-prod}" \
-  --dart-define=OPENAI_API_BASE_URL="${OPENAI_API_BASE_URL:-https://api.openai.com/v1}" \
-  --dart-define=GEMINI_API_BASE_URL="${GEMINI_API_BASE_URL:-https://generativelanguage.googleapis.com/v1beta}" \
-  --dart-define=BEDROCK_PROXY_BASE_URL="${BEDROCK_PROXY_BASE_URL:-https://example-bedrock-proxy.cloudfunctions.net}"
+  --dart-define=ENABLE_ADS="${ENABLE_ADS:-false}" \
+  --dart-define=AUTH_ENABLED="${AUTH_ENABLED:-false}" \
+  --dart-define=SHIVBOT_PROVIDER="${SHIVBOT_PROVIDER:-local}"

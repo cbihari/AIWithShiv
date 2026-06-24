@@ -11,8 +11,9 @@ If you are continuing launch work after the Phase 1-8 rollout, start with:
 1. `FINAL_LAUNCH_READINESS_REPORT.md`
 2. `POST_ROADMAP_LAUNCH_EXECUTION.md`
 3. `12_LAUNCH_CHECKLIST.md`
-4. `PHASE_7_ANDROID_LAUNCH_RUNBOOK.md`
-5. `PHASE_8_IOS_LAUNCH_RUNBOOK.md`
+4. `PHASE_6_REAL_DEVICE_QA_CHECKLIST.md`
+5. `PHASE_7_ANDROID_LAUNCH_RUNBOOK.md`
+6. `PHASE_8_IOS_LAUNCH_RUNBOOK.md`
 
 For full roadmap context, read:
 
