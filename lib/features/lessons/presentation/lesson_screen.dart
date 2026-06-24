@@ -267,10 +267,11 @@ class _LessonView extends StatelessWidget {
           ),
         ],
       ),
-      body: ChildComicBackground(
+      body: IndianAdventureComicBackground(
         child: Column(
           children: [
             _LessonProgressBar(progress: progress),
+            const _IndianLessonCueStrip(),
             Expanded(
               child: ListView(
                 controller: scrollController,
@@ -334,6 +335,54 @@ class _LessonView extends StatelessWidget {
   }
 }
 
+class _IndianLessonCueStrip extends StatelessWidget {
+  const _IndianLessonCueStrip();
+
+  @override
+  Widget build(BuildContext context) {
+    final cues = ['🏫 School', '🍱 Tiffin', '🏏 Cricket', '🪔 Rangoli'];
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+      decoration: const BoxDecoration(
+        color: ComicColors.cream,
+        border: Border(bottom: BorderSide(color: ComicColors.ink, width: 3)),
+      ),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          children: [
+            for (final cue in cues)
+              Padding(
+                padding: const EdgeInsets.only(right: 8),
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: cue.contains('Tiffin')
+                        ? ComicColors.yellow
+                        : cue.contains('Cricket')
+                            ? ComicColors.green
+                            : cue.contains('Rangoli')
+                                ? ComicColors.blue
+                                : Colors.white,
+                    border: Border.all(color: ComicColors.ink, width: 2),
+                    borderRadius: BorderRadius.circular(999),
+                  ),
+                  child: Text(
+                    cue,
+                    style: comicBody(context,
+                        fontSize: 14, color: ComicColors.ink),
+                  ),
+                ),
+              ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class _LessonProgressBar extends StatelessWidget {
   const _LessonProgressBar({required this.progress});
 
@@ -386,6 +435,12 @@ class _StoryPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final color = index.isEven ? Colors.white : ComicColors.cream;
+    final panelCues = [
+      'School scene',
+      'Tiffin idea',
+      'Cricket clue',
+      'Rangoli pattern'
+    ];
     return Container(
       padding: const EdgeInsets.all(18),
       decoration: BoxDecoration(
@@ -441,6 +496,27 @@ class _StoryPanel extends StatelessWidget {
                           color: ComicColors.ink,
                         ),
                       ),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 8),
+              Transform.rotate(
+                angle: 0.08,
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 9, vertical: 6),
+                  decoration: BoxDecoration(
+                    color: ComicColors.blue,
+                    border: Border.all(color: ComicColors.ink, width: 2),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    panelCues[index % panelCues.length],
+                    style: comicBody(
+                      context,
+                      fontSize: 12,
+                      color: ComicColors.cream,
                     ),
                   ),
                 ),

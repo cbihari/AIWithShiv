@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -286,8 +287,18 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
     showDialog<void>(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text(strings.appTitle),
-        content: Text(strings.aboutText),
+        title: SvgPicture.asset(
+          'assets/branding/logo_light.svg',
+          width: 230,
+          fit: BoxFit.contain,
+        ),
+        content: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(strings.aboutText),
+          ],
+        ),
         actions: [
           FilledButton(
             onPressed: () => Navigator.pop(context),

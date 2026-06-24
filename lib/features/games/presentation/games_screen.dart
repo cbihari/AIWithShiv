@@ -29,64 +29,136 @@ class GamesScreen extends ConsumerWidget {
       valueListenable: LanguageService.language,
       builder: (context, language, _) {
         final strings = AppStrings(language);
-        return ChildCardScreen(
-          title: '🎮 ${strings.aiGames}',
-          backRoute: '/dashboard',
-          child: AsyncValueView(
-            value: games,
-            loading: const LessonListShimmer(),
-            onRetry: () => ref.invalidate(gamesProvider),
-            data: (items) {
-              final gameProgress =
-                  progress.valueOrNull ?? GameProgress.starter('guest');
-              final localizedGames = [
-                for (final game in items) LocalizedContent.game(game, language),
-              ];
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  ComicPanel(
-                    color: ComicColors.yellow,
-                    padding: const EdgeInsets.all(14),
-                    borderWidth: 3,
-                    child: Text(
-                      strings.gamesSafety,
-                      textAlign: TextAlign.center,
-                      style: comicBody(context, fontSize: 17),
+        return PopScope(
+          canPop: false,
+          onPopInvokedWithResult: (didPop, result) {
+            if (!didPop) context.go('/dashboard');
+          },
+          child: Scaffold(
+            appBar: AppBar(
+              backgroundColor: ComicColors.red,
+              foregroundColor: ComicColors.cream,
+              leading: IconButton(
+                icon: const Icon(Icons.arrow_back),
+                onPressed: () => context.go('/dashboard'),
+              ),
+              title: Text(
+                '🎮 ${strings.aiGames}',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: comicDisplay(
+                  context,
+                  fontSize: 32,
+                  color: ComicColors.cream,
+                ),
+              ),
+            ),
+            body: SlapstickComicBackground(
+              child: SafeArea(
+                child: ListView(
+                  padding: const EdgeInsets.all(16),
+                  children: [
+                    const _GameSoundRow(),
+                    const SizedBox(height: 12),
+                    AsyncValueView(
+                      value: games,
+                      loading: const LessonListShimmer(),
+                      onRetry: () => ref.invalidate(gamesProvider),
+                      data: (items) {
+                        final gameProgress = progress.valueOrNull ??
+                            GameProgress.starter('guest');
+                        final localizedGames = [
+                          for (final game in items)
+                            LocalizedContent.game(game, language),
+                        ];
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            ComicPanel(
+                              color: ComicColors.yellow,
+                              padding: const EdgeInsets.all(14),
+                              borderWidth: 3,
+                              child: Text(
+                                strings.gamesSafety,
+                                textAlign: TextAlign.center,
+                                style: comicBody(context, fontSize: 17),
+                              ),
+                            ),
+                            const SizedBox(height: 16),
+                            LayoutBuilder(
+                              builder: (context, constraints) {
+                                final wide = constraints.maxWidth >= 560;
+                                return GridView.builder(
+                                  shrinkWrap: true,
+                                  physics: const NeverScrollableScrollPhysics(),
+                                  itemCount: localizedGames.length,
+                                  gridDelegate:
+                                      SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: wide ? 2 : 1,
+                                    crossAxisSpacing: 14,
+                                    mainAxisSpacing: 14,
+                                    mainAxisExtent: wide ? 190 : 170,
+                                  ),
+                                  itemBuilder: (context, index) {
+                                    final game = localizedGames[index];
+                                    return _GameCard(
+                                      game: game,
+                                      strings: strings,
+                                      completed: gameProgress.completedGames
+                                          .contains(game.id),
+                                    );
+                                  },
+                                );
+                              },
+                            ),
+                          ],
+                        );
+                      },
                     ),
-                  ),
-                  const SizedBox(height: 16),
-                  LayoutBuilder(
-                    builder: (context, constraints) {
-                      final wide = constraints.maxWidth >= 560;
-                      return GridView.builder(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        itemCount: localizedGames.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: wide ? 2 : 1,
-                          crossAxisSpacing: 14,
-                          mainAxisSpacing: 14,
-                          mainAxisExtent: wide ? 190 : 170,
-                        ),
-                        itemBuilder: (context, index) {
-                          final game = localizedGames[index];
-                          return _GameCard(
-                            game: game,
-                            strings: strings,
-                            completed:
-                                gameProgress.completedGames.contains(game.id),
-                          );
-                        },
-                      );
-                    },
-                  ),
-                ],
-              );
-            },
+                  ],
+                ),
+              ),
+            ),
           ),
         );
       },
+    );
+  }
+}
+
+class _GameSoundRow extends StatelessWidget {
+  const _GameSoundRow();
+
+  @override
+  Widget build(BuildContext context) {
+    const labels = ['BOING!', 'PLAY!', 'POW!'];
+    const colors = [ComicColors.blue, ComicColors.yellow, ComicColors.red];
+    return Wrap(
+      alignment: WrapAlignment.center,
+      spacing: 8,
+      runSpacing: 6,
+      children: [
+        for (var i = 0; i < labels.length; i++)
+          Transform.rotate(
+            angle: i == 1 ? 0.1 : -0.1,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),
+              decoration: BoxDecoration(
+                color: colors[i],
+                border: Border.all(color: ComicColors.ink, width: 2),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Text(
+                labels[i],
+                style: comicBody(
+                  context,
+                  fontSize: 12,
+                  color: i == 1 ? ComicColors.ink : ComicColors.cream,
+                ),
+              ),
+            ),
+          ),
+      ],
     );
   }
 }
@@ -283,7 +355,7 @@ class _GameDetailScreenState extends ConsumerState<GameDetailScreen> {
                     ),
                   ),
                 ),
-                body: ChildComicBackground(
+                body: SlapstickComicBackground(
                   child: SafeArea(
                     child: ListView(
                       padding: const EdgeInsets.all(16),

@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/ads/ad_service.dart';
+import 'core/constants/app_constants.dart';
 import 'core/localization/language_service.dart';
 import 'core/routing/app_router.dart';
 import 'core/services/accessibility_service.dart';
@@ -63,7 +64,7 @@ class _AIWithShivAppState extends ConsumerState<AIWithShivApp>
           ValueListenableBuilder<AppLanguage>(
         valueListenable: LanguageService.language,
         builder: (context, language, child) => MaterialApp.router(
-          title: 'AIWithShiv',
+          title: AppConstants.appName,
           debugShowCheckedModeBanner: false,
           locale: language.locale,
           supportedLocales: const [Locale('en'), Locale('hi')],

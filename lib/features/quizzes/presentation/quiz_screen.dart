@@ -380,7 +380,7 @@ class _DailyQuizHome extends StatelessWidget {
     final today = DateTime.now();
     final dateLabel = '${today.day}/${today.month}/${today.year}';
     return Scaffold(
-      body: ChildComicBackground(
+      body: SlapstickComicBackground(
         child: SafeArea(
           child: LayoutBuilder(
             builder: (context, constraints) => SingleChildScrollView(
@@ -392,6 +392,8 @@ class _DailyQuizHome extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    const _SlapstickSoundRow(labels: ['POP!', 'THINK!', 'GO!']),
+                    const SizedBox(height: 8),
                     Row(
                       children: [
                         IconButton(
@@ -617,12 +619,14 @@ class _QuestionScreen extends StatelessWidget {
     final selectedCorrect = selectedIndex != null &&
         question.acceptedAnswers.contains(selectedIndex);
     return Scaffold(
-      body: ChildComicBackground(
+      body: SlapstickComicBackground(
         child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
               children: [
+                const _SlapstickSoundRow(labels: ['WHAM!', 'AHA!', 'ZING!']),
+                const SizedBox(height: 8),
                 _QuestionTop(
                   strings: strings,
                   current: questionIndex + 1,
@@ -690,6 +694,44 @@ class _QuestionScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class _SlapstickSoundRow extends StatelessWidget {
+  const _SlapstickSoundRow({required this.labels});
+
+  final List<String> labels;
+
+  @override
+  Widget build(BuildContext context) {
+    final colors = [ComicColors.red, ComicColors.yellow, ComicColors.blue];
+    return Wrap(
+      alignment: WrapAlignment.center,
+      spacing: 8,
+      runSpacing: 6,
+      children: [
+        for (var i = 0; i < labels.length; i++)
+          Transform.rotate(
+            angle: i == 1 ? 0.08 : -0.08,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 9, vertical: 5),
+              decoration: BoxDecoration(
+                color: colors[i % colors.length],
+                border: Border.all(color: ComicColors.ink, width: 2),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Text(
+                labels[i],
+                style: comicBody(
+                  context,
+                  fontSize: 12,
+                  color: i == 1 ? ComicColors.ink : ComicColors.cream,
+                ),
+              ),
+            ),
+          ),
+      ],
     );
   }
 }

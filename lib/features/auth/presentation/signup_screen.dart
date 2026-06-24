@@ -80,7 +80,8 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                       ).showSnackBar(SnackBar(content: Text(error.toString()))),
                     );
                   },
-            child: Text(isLoading ? 'Creating account...' : 'Join AIWithShiv'),
+            child:
+                Text(isLoading ? 'Creating account...' : 'Join AI with Shiv'),
           ),
         ],
       ),

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-label="AI with Shiv brand reference sheet">
+  <rect width="1200" height="820" fill="#FFF8E7"/>
+  <text x="48" y="58" font-family="Arial Black, sans-serif" font-size="28" fill="#1A1A1A">AI with Shiv brand system</text>
+
+  <text x="70" y="112" font-family="Arial Black, sans-serif" font-size="22" fill="#1A1A1A">App icon</text>
+  <rect x="48" y="132" width="300" height="260" rx="24" fill="#FFF8E7" stroke="#1A1A1A" stroke-width="3"/>
+  <image href="app_icon.svg" x="98" y="158" width="200" height="200"/>
+
+  <text x="446" y="112" font-family="Arial Black, sans-serif" font-size="22" fill="#1A1A1A">Logo - light bg</text>
+  <rect x="424" y="132" width="706" height="260" rx="24" fill="#FFF8E7" stroke="#1A1A1A" stroke-width="3"/>
+  <image href="logo_light.svg" x="464" y="180" width="620" height="160"/>
+
+  <rect x="48" y="426" width="1082" height="190" rx="28" fill="#1A1A1A"/>
+  <text x="80" y="468" font-family="Arial Black, sans-serif" font-size="20" fill="#FFF8E7">App icon - dark</text>
+  <image href="app_icon.svg" x="84" y="492" width="96" height="96"/>
+  <text x="270" y="468" font-family="Arial Black, sans-serif" font-size="20" fill="#FFF8E7">Logo - dark bg</text>
+  <image href="logo_dark.svg" x="270" y="468" width="620" height="160"/>
+
+  <g font-family="Arial, sans-serif" font-size="17" fill="#1A1A1A">
+    <rect x="70" y="686" width="120" height="72" rx="10" fill="#D32F2F" stroke="#1A1A1A" stroke-width="3"/>
+    <text x="70" y="782">comic-red</text><text x="70" y="804">#D32F2F</text>
+    <rect x="248" y="686" width="120" height="72" rx="10" fill="#FFC52D" stroke="#1A1A1A" stroke-width="3"/>
+    <text x="248" y="782">comic-yellow</text><text x="248" y="804">#FFC52D</text>
+    <rect x="426" y="686" width="120" height="72" rx="10" fill="#0077FF" stroke="#1A1A1A" stroke-width="3"/>
+    <text x="426" y="782">electric-blue</text><text x="426" y="804">#0077FF</text>
+    <rect x="604" y="686" width="120" height="72" rx="10" fill="#4CAF50" stroke="#1A1A1A" stroke-width="3"/>
+    <text x="604" y="782">xp-green</text><text x="604" y="804">#4CAF50</text>
+    <rect x="782" y="686" width="120" height="72" rx="10" fill="#FFF8E7" stroke="#1A1A1A" stroke-width="3"/>
+    <text x="782" y="782">cream</text><text x="782" y="804">#FFF8E7</text>
+    <rect x="960" y="686" width="120" height="72" rx="10" fill="#1A1A1A" stroke="#1A1A1A" stroke-width="3"/>
+    <text x="960" y="782">ink-black</text><text x="960" y="804">#1A1A1A</text>
+  </g>
+</svg>

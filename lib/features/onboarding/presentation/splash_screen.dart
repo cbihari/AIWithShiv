@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -27,18 +28,19 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child: Semantics(
-          label: 'AIWithShiv loading screen',
+          label: 'AI with Shiv loading screen',
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Icon(
-                Icons.auto_awesome,
-                size: 80,
-                color: Theme.of(context).colorScheme.primary,
+              SvgPicture.asset(
+                'assets/branding/app_icon.svg',
+                width: 120,
+                height: 120,
+                fit: BoxFit.contain,
               ),
               const SizedBox(height: 16),
               Text(
-                'AIWithShiv',
+                'AI with Shiv',
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
               const SizedBox(height: 8),

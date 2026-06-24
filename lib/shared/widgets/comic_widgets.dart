@@ -2,18 +2,19 @@ import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ComicColors {
   const ComicColors._();
 
-  static const red = Color(0xFFFF3B30);
-  static const yellow = Color(0xFFFFCC00);
-  static const blue = Color(0xFF00B4D8);
-  static const green = Color(0xFF06D6A0);
+  static const red = Color(0xFFD32F2F);
+  static const yellow = Color(0xFFFFC52D);
+  static const blue = Color(0xFF0077FF);
+  static const green = Color(0xFF4CAF50);
   static const navy = Color(0xFF1A1A2E);
-  static const cream = Color(0xFFFFF9F0);
-  static const ink = Color(0xFF101018);
+  static const cream = Color(0xFFFFF8E7);
+  static const ink = Color(0xFF1A1A1A);
   static const saffron = Color(0xFFFF8A00);
   static const purple = Color(0xFF8B4CF6);
 }
@@ -602,24 +603,11 @@ class _Logo extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const Icon(Icons.flash_on, size: 36, color: ComicColors.yellow),
-        const SizedBox(width: 6),
-        Flexible(
-          child: Text(
-            'AI with Shiv',
-            maxLines: 1,
-            overflow: TextOverflow.ellipsis,
-            style: comicDisplay(
-              context,
-              fontSize: compact ? 34 : 48,
-              color: ComicColors.red,
-            ).copyWith(
-              shadows: const [
-                Shadow(color: ComicColors.yellow, offset: Offset(2, 2)),
-                Shadow(color: ComicColors.ink, offset: Offset(4, 4)),
-              ],
-            ),
-          ),
+        SvgPicture.asset(
+          'assets/branding/logo_light.svg',
+          width: compact ? 170 : 250,
+          height: compact ? 44 : 64,
+          fit: BoxFit.contain,
         ),
       ],
     );

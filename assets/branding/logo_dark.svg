@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="160" viewBox="0 0 620 160" role="img" aria-label="AI with Shiv logo for dark backgrounds">
+  <g transform="translate(8 8) scale(0.28125)">
+    <rect x="16" y="16" width="480" height="480" rx="112" fill="#D32F2F" stroke="#1A1A1A" stroke-width="6"/>
+    <g fill="#1A1A1A" opacity="0.12">
+      <circle cx="54" cy="58" r="4"/><circle cx="82" cy="58" r="4"/><circle cx="110" cy="58" r="4"/>
+      <circle cx="68" cy="86" r="4"/><circle cx="96" cy="86" r="4"/><circle cx="124" cy="86" r="4"/>
+      <circle cx="402" cy="394" r="4"/><circle cx="430" cy="394" r="4"/><circle cx="458" cy="394" r="4"/>
+      <circle cx="388" cy="422" r="4"/><circle cx="416" cy="422" r="4"/><circle cx="444" cy="422" r="4"/>
+    </g>
+    <path d="M166 286 C114 306 104 354 131 404 C180 386 205 345 195 304 Z" fill="#D32F2F" stroke="#1A1A1A" stroke-width="6"/>
+    <line x1="256" y1="151" x2="256" y2="113" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="256" cy="103" r="18" fill="#FFC52D" stroke="#1A1A1A" stroke-width="4"/>
+    <circle cx="256" cy="244" r="116" fill="#FFF8E7" stroke="#1A1A1A" stroke-width="6"/>
+    <circle cx="213" cy="233" r="26" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4"/>
+    <circle cx="299" cy="233" r="26" fill="#FFFFFF" stroke="#1A1A1A" stroke-width="4"/>
+    <circle cx="216" cy="237" r="10" fill="#1A1A1A"/><circle cx="302" cy="237" r="10" fill="#1A1A1A"/>
+    <path d="M221 287 C239 306 273 306 291 287" fill="none" stroke="#1A1A1A" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="181" cy="272" r="7" fill="#FFC52D" stroke="#1A1A1A" stroke-width="4"/>
+    <circle cx="331" cy="272" r="7" fill="#FFC52D" stroke="#1A1A1A" stroke-width="4"/>
+    <path d="M371 324 L425 324 L397 370 L446 370 L356 474 L380 397 L330 397 Z" fill="#FFC52D" stroke="#1A1A1A" stroke-width="4"/>
+  </g>
+  <text x="174" y="104" font-family="Bangers, Impact, Arial Black, sans-serif" font-weight="900" letter-spacing="0" font-size="86" fill="#FFC52D">AI</text>
+  <text x="286" y="104" font-family="Bangers, Impact, Arial Black, sans-serif" font-weight="900" letter-spacing="0" font-size="72" fill="#FFF8E7">with Shiv</text>
+</svg>

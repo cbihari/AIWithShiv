@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../core/services/sound_service.dart';
@@ -42,57 +43,73 @@ class _WelcomeScreenState extends State<WelcomeScreen>
           child: Stack(
             children: [
               const Positioned.fill(child: FloatingStars()),
-              Padding(
-                padding: const EdgeInsets.all(24),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.stretch,
-                  children: [
-                    AnimatedBuilder(
-                      animation: _floatController,
-                      builder: (context, child) {
-                        return Transform.translate(
-                          offset: Offset(
-                            0,
-                            math.sin(_floatController.value * math.pi) * -14,
+              LayoutBuilder(
+                builder: (context, constraints) => SingleChildScrollView(
+                  padding: const EdgeInsets.all(24),
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                      minHeight: constraints.maxHeight - 48,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Center(
+                          child: SvgPicture.asset(
+                            'assets/branding/logo_light.svg',
+                            width: 230,
+                            fit: BoxFit.contain,
                           ),
-                          child: child,
-                        );
-                      },
-                      child: const Center(child: ShivAvatar(size: 190)),
+                        ),
+                        const SizedBox(height: 14),
+                        AnimatedBuilder(
+                          animation: _floatController,
+                          builder: (context, child) {
+                            return Transform.translate(
+                              offset: Offset(
+                                0,
+                                math.sin(_floatController.value * math.pi) *
+                                    -14,
+                              ),
+                              child: child,
+                            );
+                          },
+                          child: const Center(child: ShivAvatar(size: 176)),
+                        ),
+                        const SizedBox(height: 18),
+                        Text(
+                          'Namaste! I am Shiv! 🤖⚡',
+                          textAlign: TextAlign.center,
+                          style: comicDisplay(
+                            context,
+                            fontSize: 46,
+                            color: ComicColors.red,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        Text(
+                          "Let's learn about AI together dost!",
+                          textAlign: TextAlign.center,
+                          style: comicBody(
+                            context,
+                            fontSize: 22,
+                            color: ComicColors.ink,
+                          ),
+                        ),
+                        const SizedBox(height: 24),
+                        AnimatedScale(
+                          scale: _buttonPressed ? 0.92 : 1,
+                          duration: const Duration(milliseconds: 110),
+                          child: ComicButton(
+                            label: "Let's Go! 🚀",
+                            color: ComicColors.red,
+                            expand: true,
+                            onPressed: _goNext,
+                          ),
+                        ),
+                      ],
                     ),
-                    const SizedBox(height: 26),
-                    Text(
-                      'Namaste! I am Shiv! 🤖⚡',
-                      textAlign: TextAlign.center,
-                      style: comicDisplay(
-                        context,
-                        fontSize: 50,
-                        color: ComicColors.red,
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "Let's learn about AI together dost!",
-                      textAlign: TextAlign.center,
-                      style: comicBody(
-                        context,
-                        fontSize: 22,
-                        color: ComicColors.ink,
-                      ),
-                    ),
-                    const SizedBox(height: 34),
-                    AnimatedScale(
-                      scale: _buttonPressed ? 0.92 : 1,
-                      duration: const Duration(milliseconds: 110),
-                      child: ComicButton(
-                        label: "Let's Go! 🚀",
-                        color: ComicColors.red,
-                        expand: true,
-                        onPressed: _goNext,
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ],

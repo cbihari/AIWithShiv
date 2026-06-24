@@ -61,7 +61,7 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
             }
           },
           child: Scaffold(
-            body: ChildComicBackground(
+            body: SuperheroComicBackground(
               child: SafeArea(
                 child: AsyncValueView(
                   value: dashboard,
@@ -90,6 +90,8 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
                           padding: const EdgeInsets.fromLTRB(18, 20, 18, 30),
                           child: Column(
                             children: [
+                              const _HeroMissionBanner(),
+                              const SizedBox(height: 16),
                               _AnimatedDashboardShiv(
                                 capeColor: capeColor,
                                 strings: strings,
@@ -149,6 +151,73 @@ class _DashboardScreenState extends ConsumerState<DashboardScreen> {
     return value.year == now.year &&
         value.month == now.month &&
         value.day == now.day;
+  }
+}
+
+class _HeroMissionBanner extends StatelessWidget {
+  const _HeroMissionBanner();
+
+  @override
+  Widget build(BuildContext context) {
+    return ComicPanel(
+      color: ComicColors.yellow,
+      padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 12),
+      borderWidth: 4,
+      child: Row(
+        children: [
+          Container(
+            width: 54,
+            height: 54,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: ComicColors.red,
+              shape: BoxShape.circle,
+              border: Border.all(color: ComicColors.ink, width: 4),
+            ),
+            child: const Text('⚡', style: TextStyle(fontSize: 28)),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Text(
+              'Hero Command Center',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: comicDisplay(
+                context,
+                fontSize: 32,
+                color: ComicColors.red,
+              ),
+            ),
+          ),
+          const _ActionBadge(label: 'ZAP!'),
+        ],
+      ),
+    );
+  }
+}
+
+class _ActionBadge extends StatelessWidget {
+  const _ActionBadge({required this.label});
+
+  final String label;
+
+  @override
+  Widget build(BuildContext context) {
+    return Transform.rotate(
+      angle: -0.12,
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+        decoration: BoxDecoration(
+          color: ComicColors.blue,
+          border: Border.all(color: ComicColors.ink, width: 3),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Text(
+          label,
+          style: comicBody(context, fontSize: 15, color: ComicColors.cream),
+        ),
+      ),
+    );
   }
 }
 
