@@ -8,6 +8,8 @@ Prepare AIWithShiv for Google Play internal testing, closed testing, and product
 
 - Added Android release signing support using local `android/key.properties`.
 - Added safe signing example file: `android/key.properties.example`.
+- Added `scripts/verify_android_signing.mjs` to fail fast when Play upload signing is not ready.
+- Added `scripts/build_android_store.sh` for guarded Play Store AAB builds.
 - Kept keystore and password files untracked/ignored.
 - Updated app metadata description to children aged 5-10.
 - Added Android launch runbook.
@@ -17,6 +19,8 @@ Prepare AIWithShiv for Google Play internal testing, closed testing, and product
 
 - `android/app/build.gradle.kts`
 - `android/key.properties.example`
+- `scripts/verify_android_signing.mjs`
+- `scripts/build_android_store.sh`
 - `pubspec.yaml`
 - `docs/aiwithshiv-roadmap/PHASE_7_ANDROID_LAUNCH_RUNBOOK.md`
 - `docs/aiwithshiv-roadmap/12_LAUNCH_CHECKLIST.md`
@@ -25,6 +29,7 @@ Prepare AIWithShiv for Google Play internal testing, closed testing, and product
 
 - Android package name is set to `com.aiwithshiv.app`.
 - AAB build command is documented.
+- Store AAB build now requires real signing files before it runs.
 - APK QA build command is documented.
 - Data safety draft notes exist for ads-disabled/local-first launch.
 - Internal testing checklist is documented.
@@ -34,6 +39,7 @@ Prepare AIWithShiv for Google Play internal testing, closed testing, and product
 - Create real upload keystore.
 - Keep `android/key.properties` local and uncommitted.
 - Rebuild release AAB with real upload signing.
+- Run `node scripts/verify_android_signing.mjs`.
 - Upload AAB to Play Console.
 - Publish privacy policy URL.
 - Add screenshots and feature graphic.
@@ -42,9 +48,9 @@ Prepare AIWithShiv for Google Play internal testing, closed testing, and product
 
 ## Important Signing Note
 
-If `android/key.properties` is missing, the project falls back to debug signing so local release builds still compile. This fallback artifact must not be uploaded to Play Console.
+If `android/key.properties` is missing, the Gradle project can still fall back to debug signing for local compile verification. This fallback artifact must not be uploaded to Play Console.
 
-For Play Console, create the real upload keystore and `android/key.properties`, then rebuild the AAB.
+For Play Console, create the real upload keystore and `android/key.properties`, then run `bash scripts/build_android_store.sh`.
 
 ## Current Phase Status
 

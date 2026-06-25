@@ -66,7 +66,7 @@ keytool -genkey -v \
 
 cp android/key.properties.example android/key.properties
 
-flutter build appbundle --release --dart-define=APP_ENV=prod --dart-define=ENABLE_ADS=false --dart-define=AUTH_ENABLED=false --dart-define=SHIVBOT_PROVIDER=local
+bash scripts/build_android_store.sh
 flutter build apk --release --dart-define=APP_ENV=prod --dart-define=ENABLE_ADS=false --dart-define=AUTH_ENABLED=false --dart-define=SHIVBOT_PROVIDER=local
 node scripts/verify_launch_readiness.mjs
 ```

@@ -9,6 +9,7 @@ Provide a practical Play Store and App Store launch checklist for AIWithShiv.
 - [x] Confirm package name.
 - [x] Configure release signing support.
 - [ ] Create real Play upload keystore locally.
+- [ ] Run `node scripts/verify_android_signing.mjs`.
 - [x] Build Android App Bundle.
 - [ ] Test release APK/AAB on real Android device.
 - [ ] Confirm min SDK and target SDK.
@@ -85,7 +86,7 @@ Android:
 ```bash
 flutter clean
 flutter pub get
-flutter build appbundle --release --dart-define=APP_ENV=prod --dart-define=ENABLE_ADS=false
+bash scripts/build_android_store.sh
 ```
 
 iOS:

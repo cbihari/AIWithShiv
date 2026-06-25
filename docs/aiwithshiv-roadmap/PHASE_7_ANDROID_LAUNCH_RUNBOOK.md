@@ -66,16 +66,22 @@ flutter clean
 flutter pub get
 ```
 
-Build Play Store AAB:
+Verify Android release signing:
 
 ```bash
-flutter build appbundle --release --dart-define=APP_ENV=prod --dart-define=ENABLE_ADS=false
+node scripts/verify_android_signing.mjs
+```
+
+Build Play Store AAB with signing guard:
+
+```bash
+bash scripts/build_android_store.sh
 ```
 
 Build manual QA APK:
 
 ```bash
-flutter build apk --release --dart-define=APP_ENV=prod --dart-define=ENABLE_ADS=false
+flutter build apk --release --dart-define=APP_ENV=prod --dart-define=ENABLE_ADS=false --dart-define=AUTH_ENABLED=false --dart-define=SHIVBOT_PROVIDER=local
 ```
 
 Expected artifacts:
@@ -89,6 +95,7 @@ Run:
 
 ```bash
 node scripts/validate_content.mjs
+node scripts/verify_android_signing.mjs
 flutter analyze
 flutter test
 ```
